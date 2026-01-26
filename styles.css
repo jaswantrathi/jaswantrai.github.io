@@ -263,35 +263,70 @@ footer p {
   }
 }
 
-/* Additional Styles for Other Pages */
-.services-section, .about-section, .gallery-section, .contact-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-  text-align: center;
+/* Additional Styles for Services Page */
+.workshop-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
-.service-card, .gallery-item {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover, .gallery-item:hover {
-  transform: translateY(-5px);
-}
-
-.service-card img, .gallery-item img {
+.workshop-gallery img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.service-card h3, .gallery-item h3 {
-  padding: 1rem;
-  font-size: 1.2rem;
+.workshop-gallery img:hover {
+  transform: scale(1.05);
+}
+
+.tech-specs {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+}
+
+.tech-specs h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.tech-specs ul, .tech-specs ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-specs li {
+  margin-bottom: 0.5rem;
+}
+
+.why-choose {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.benefit {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.benefit:hover {
+  transform: translateY(-5px);
+}
+
+.benefit h4 {
+  color: #3498db;
+  margin-bottom: 0.5rem;
 }
 
 /* Form Styles */
