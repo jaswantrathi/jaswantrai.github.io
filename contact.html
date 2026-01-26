@@ -26,7 +26,9 @@
     <section class="contact-section">
       <h1>Contact Us</h1>
       <p>Reach out for inquiries, quotes, or support.</p>
-      <form action="send_email.php" method="POST">
+      <!-- Formspree integration: Sign up at https://formspree.io, create a form, and replace YOUR_FORM_ID below -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="New Contact Form Submission">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
