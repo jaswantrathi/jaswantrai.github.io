@@ -5,7 +5,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ICON BIOTRONICS | Medical & Dental Equipment Solutions in Dubai</title>
-  <link rel="stylesheet" href="styles.css">
+  /* styles.css (Updated for Better Image Handling) */
+/* ... (Previous styles remain) */
+
+.gallery-grid img, .service-card img, .equipment-showcase img {
+  object-fit: cover;
+  height: 280px;          /* Uniform height for consistency */
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid img:hover, .service-card img:hover {
+  transform: scale(1.08);
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.services-section p, .about-section p {
+  margin-bottom: 1rem;
+  color: #475569;
+}
 </head>
 <body>
 
