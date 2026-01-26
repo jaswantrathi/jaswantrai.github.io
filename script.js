@@ -19,14 +19,17 @@ document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links (only for hash links)
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: 'smooth' });
+    const href = this.getAttribute('href');
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   });
 });
