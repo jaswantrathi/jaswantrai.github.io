@@ -1,162 +1,232 @@
-<!-- services.html (Services Page - More Detailed with Dental Section) -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | ICON BIOTRONICS</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services | ICON BIOTRONICS</title>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+<style>
+:root {
+  --primary: #0a3d62;
+  --secondary: #1e90ff;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  padding: 6rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #0a3d62, #1e90ff);
+  color: white;
+}
+
+.section-padding {
+  padding: 5rem 0;
+}
+
+.service-card {
+  padding: 2rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: all 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.trust-badge {
+  background: #f4f6f9;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cta-section {
+  background: #0a3d62;
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+img {
+  border-radius: 10px;
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <nav>
-      <div class="logo">ICON BIOTRONICS</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </header>
+<nav class="container-fluid">
+<ul>
+<li><strong>ICON BIOTRONICS</strong></li>
+</ul>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html" role="button">Request Service</a></li>
+</ul>
+</nav>
 
-  <main>
-    <section class="services-section">
-      <h1>Our Comprehensive Services</h1>
-      <p>We offer end-to-end solutions with a focus on precision, compliance, and minimal downtime. Our services adhere to international standards like IEC 60601, ISO 13485, and FDA guidelines. With over 15 years of experience, we serve hospitals, clinics, and dental practices across the UAE.</p>
+<main class="container">
 
-      <h2>Medical Equipment Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_58971730.jpeg" alt="MRI Repair & Calibration">
-          <h3>MRI & Imaging Systems Repair</h3>
-          <p>Expert diagnostics and repair for MRI (1.5T–3T), CT scanners (64-256 slices), and X-ray systems. Includes coil testing, gradient amplifier repairs, helium leak detection, and software updates. Precision calibration to ±0.1% accuracy. 24/7 emergency response with OEM-certified parts.</p>
-          <ul>
-            <li>Helium recovery and recompression</li>
-            <li>RF shield integrity testing</li>
-            <li>PACS integration support</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <img src="https://cdn2.picryl.com/photo/2013/03/14/brian-speck-a-bio-medical-contractor-tests-medical-0728c9-1024.jpg" alt="Ventilator & Life-Support Maintenance">
-          <h3>Life Support & Critical Care Maintenance</h3>
-          <p>Preventive and corrective maintenance for ventilators, anesthesia machines, defibrillators, and patient monitors per IEC 60601 standards. Includes leak testing, battery cycling, alarm verification, and performance audits. Customized PM contracts ensure 99.9% uptime with IoT-based predictive analytics.</p>
-          <ul>
-            <li>Flow sensor calibration (0-15 L/min)</li>
-            <li>Pressure transducer validation</li>
-            <li>Electrical safety testing (leakage current <100μA)</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <img src="https://images.pexels.com/photos/16204290/pexels-photo-16204290/free-photo-of-doctor-hand-on-device.jpeg" alt="Ultrasound & Diagnostic Supplies">
-          <h3>Diagnostic Equipment & Supplies</h3>
-          <p>Wide range of probes, transducers, batteries, and cables for ultrasound (2D/3D/4D), endoscopy, and radiology—FDA-compliant with full traceability. Inventory management, just-in-time delivery, and consignment stocking to reduce costs by 30%.</p>
-          <ul>
-            <li>Probe frequency range: 2-18 MHz</li>
-            <li>Battery life extension services</li>
-            <li>Endoscope reprocessing validation</li>
-          </ul>
-        </div>
-      </div>
+<div class="hero">
+<h1>Comprehensive Biomedical Engineering Services</h1>
+<p>Precision • Compliance • Reliability • 24/7 Support Across UAE</p>
+</div>
 
-      <h2>Specialized Dental Services</h2>
-      <p>Expanding our expertise to dental equipment, we provide tailored services for clinics in Dubai and the UAE, ensuring compliance with dental-specific standards like EN 13060 for sterilization and ADA guidelines.</p>
-      <div class="services-grid">
-        <div class="service-card">
-          <img src="https://s3.mordorintelligence.com/global-dental-equipment-market-industry/global-dental-equipment-market-industry_1667396586883_Dental_Equipment_Market___Logo.webp" alt="Dental Chair Repair">
-          <h3>Dental Chair & Delivery Systems</h3>
-          <p>Hydraulic and electrical repairs for dental chairs (A-dec, Belmont, Pelton). Includes upholstery replacement, motor calibration, waterline disinfection, and integration with delivery systems. Torque accuracy ±5% for handpiece mounts. Suction system optimization for 95% debris removal.</p>
-          <ul>
-            <li>Foot pedal responsiveness testing</li>
-            <li>Amalgam separator maintenance</li>
-            <li>LED light curing unit calibration</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <img src="https://s3.mordorintelligence.com/uae-dental-devices-market/uae-dental-devices-market_1671874787348_UAE_Dental_Devices_Market.webp" alt="Dental X-Ray Maintenance">
-          <h3>Dental Imaging & Radiology</h3>
-          <p>Calibration and maintenance for intraoral X-rays, panoramic units, and CBCT scanners. Radiation safety checks per ICRP guidelines, sensor cleaning, and software optimization for clear imaging at low doses (≤20 mSv/year). DICOM compatibility ensured.</p>
-          <ul>
-            <li>Collimator alignment precision</li>
-            <li>Artifact reduction algorithms</li>
-            <li>Patient dose monitoring</li>
-          </ul>
-        </div>
-        <div class="service-card">
-          <img src="https://s3.mordorintelligence.com/brazil-dental-devices-market/brazil-dental-devices-market_1668415702430_Brazil_Dental_Equipment_Logo.webp" alt="Sterilization Supplies">
-          <h3>Sterilization & Handpiece Services</h3>
-          <p>Autoclave validation (Class B/S), handpiece lubrication and balancing, and supplies like burs, scalers, and intraoral cameras. Biological indicator testing, cycle logging, and Bowie-Dick tests for infection control compliance. Handpiece speed up to 400,000 RPM with vibration <0.5μm.</p>
-          <ul>
-            <li>Sterilization cycle: 121°C, 15 psi, 30 min</li>
-            <li>Handpiece bearing replacement</li>
-            <li>Ultrasonic scaler frequency 28-32 kHz</li>
-          </ul>
-        </div>
-      </div>
+<section class="section-padding fade-in">
+<h2>Medical Imaging & Diagnostic Systems</h2>
+<div class="grid">
 
-      <h2>Our State-of-the-Art Workshop</h2>
-      <p>Located in Dubai's Bur Dubai district, our 2000 sq ft facility is equipped with advanced diagnostic tools, clean rooms, and a team of certified biomedical engineers. We handle everything from minor repairs to major overhauls, ensuring all work meets international standards.</p>
-      <div class="workshop-gallery">
-        <img src="https://micromain.com/wp-content/uploads/Calibration-1.jpg" alt="Calibration Lab with Precision Tools">
-        <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_270439641.jpeg" alt="Technician Repairing Radiology Equipment">
-        <img src="https://cdn2.picryl.com/photo/2013/03/14/brian-speck-a-bio-medical-contractor-tests-medical-0728c9-1024.jpg" alt="Biomedical Engineer Testing Device">
-        <img src="https://images.pexels.com/photos/7108418/pexels-photo-7108418.jpeg" alt="Ultrasound Machine Maintenance">
-        <img src="https://www.modernheartandvascular.com/wp-content/uploads/2024/10/carotid-doppler-modern-heart-and-vascular-institute-1024x606.png" alt="Doppler System Calibration">
-        <img src="https://lifeimaging.com.au/wp-content/uploads/2024/08/doctor-ct-scan.jpg" alt="CT Scanner Service in Progress">
-      </div>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="MRI Service">
+<h3>MRI & CT Systems</h3>
+<p>Repair, calibration, helium recovery, gradient amplifier servicing, PACS integration and software upgrades for 1.5T–3T MRI and multi-slice CT systems.</p>
+<ul>
+<li>±0.1% calibration precision</li>
+<li>OEM-certified components</li>
+<li>Emergency 24/7 response</li>
+</ul>
+</div>
 
-      <h2>Technical Specifications & Capabilities</h2>
-      <div class="tech-specs">
-        <h3>Equipment We Service</h3>
-        <ul>
-          <li><strong>Imaging Systems:</strong> MRI (1.5T-3T), CT (64-256 slices), X-ray (digital/analog), Mammography, Dental CBCT (FOV up to 16x10 cm), Ultrasound (portable/console).</li>
-          <li><strong>Life Support:</strong> Ventilators (invasive/non-invasive, flow rates 0-15 L/min), Anesthesia machines, Defibrillators, Patient monitors.</li>
-          <li><strong>Diagnostic:</strong> ECG (12-lead), Holter monitors, Lab analyzers (throughput 500 tests/hr), Intraoral cameras (HD 1080p), Endoscopes.</li>
-          <li><strong>Dental Specific:</strong> Handpieces (speed 200,000-400,000 RPM), Autoclaves (steam pressure 2.1 bar), Scalers (28-32 kHz), Dental lasers (980nm).</li>
-          <li><strong>Other:</strong> Surgical lights, Suction units, Sterilizers, Wheelchairs, Hospital beds.</li>
-        </ul>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b" alt="Ultrasound Service">
+<h3>Ultrasound & X-Ray</h3>
+<p>Probe repair, frequency validation (2–18 MHz), radiation compliance testing and preventive maintenance per IEC 60601 standards.</p>
+<ul>
+<li>Low-dose optimization</li>
+<li>DICOM compliance</li>
+<li>Image quality validation</li>
+</ul>
+</div>
 
-        <h3>Service Process</h3>
-        <ol>
-          <li><strong>On-Site Assessment:</strong> Initial inspection and diagnostic testing.</li>
-          <li><strong>Workshop Repair:</strong> Disassembly, component-level repair, and reassembly in controlled environment.</li>
-          <li><strong>Testing & Calibration:</strong> Functional testing, safety checks, and calibration to manufacturer specs.</li>
-          <li><strong>Quality Assurance:</strong> Documentation, warranty, and follow-up support.</li>
-        </ol>
+</div>
+</section>
 
-        <h3>Certifications & Compliance</h3>
-        <p>ISO 9001:2015, ISO 13485:2016, CE Marking, FDA Registered, UAE MOHAP Approved. All technicians certified by CBET or equivalent.</p>
-      </div>
+<section class="section-padding fade-in">
+<h2>Life Support & Critical Care Equipment</h2>
+<div class="grid">
 
-      <h2>Why Choose ICON BIOTRONICS?</h2>
-      <div class="why-choose">
-        <div class="benefit">
-          <h4>Expertise & Experience</h4>
-          <p>15+ years serving UAE healthcare with a 98% customer satisfaction rate.</p>
-        </div>
-        <div class="benefit">
-          <h4>Rapid Response</h4>
-          <p>24/7 emergency service with average repair time under 48 hours.</p>
-        </div>
-        <div class="benefit">
-          <h4>Cost-Effective</h4>
-          <p>OEM parts and preventive maintenance reduce long-term costs by 40%.</p>
-        </div>
-        <div class="benefit">
-          <h4>Comprehensive Support</h4>
-          <p>Training, documentation, and ongoing maintenance contracts.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c" alt="Ventilator Maintenance">
+<h3>Ventilators & Anesthesia</h3>
+<p>Leak testing, flow calibration (0–15 L/min), battery cycling and performance audits to ensure patient safety and uninterrupted operation.</p>
+<ul>
+<li>Leakage current < 100μA</li>
+<li>Pressure validation</li>
+<li>Alarm verification</li>
+</ul>
+</div>
 
-  <footer>
-    <p>&copy; 2026 ICON BIOTRONICS. All rights reserved.</p>
-    <p>Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E. | +971 55 325 2589 | iconbiotronics.uae@gmail.com</p>
-  </footer>
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67" alt="Patient Monitor">
+<h3>Patient Monitoring Systems</h3>
+<p>ECG validation, defibrillator testing, parameter accuracy calibration and full biomedical compliance documentation.</p>
+<ul>
+<li>12-lead ECG testing</li>
+<li>Functional load simulation</li>
+<li>Calibration certification</li>
+</ul>
+</div>
 
-  <script src="script.js"></script>
+</div>
+</section>
+
+<section class="section-padding fade-in">
+<h2>Dental Equipment Services</h2>
+<div class="grid">
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="Dental Chair Service">
+<h3>Dental Chairs & Units</h3>
+<p>Hydraulic repairs, suction optimization, motor calibration and waterline disinfection compliant with ADA and EN 13060 standards.</p>
+</div>
+
+<div class="service-card">
+<img src="https://images.unsplash.com/photo-1588776814546-ec7eebf9a1c4" alt="Sterilization Equipment">
+<h3>Sterilization & Autoclaves</h3>
+<p>Class B validation, biological indicator testing, handpiece balancing up to 400,000 RPM and infection control verification.</p>
+</div>
+
+</div>
+</section>
+
+<section class="section-padding fade-in">
+<h2>Certifications & Compliance</h2>
+<div class="grid">
+<div class="trust-badge">ISO 9001:2015</div>
+<div class="trust-badge">ISO 13485:2016</div>
+<div class="trust-badge">CE Marking</div>
+<div class="trust-badge">FDA Registered</div>
+<div class="trust-badge">MOHAP Approved</div>
+<div class="trust-badge">CBET Certified Engineers</div>
+</div>
+</section>
+
+<section class="cta-section fade-in">
+<h2>Need Immediate Technical Support?</h2>
+<p>Our certified biomedical engineers are available 24/7 across Dubai & UAE.</p>
+<a href="contact.html" role="button" class="contrast">Request Emergency Service</a>
+<p style="margin-top:1rem;"><strong>+971 55 325 2589</strong></p>
+</section>
+
+</main>
+
+<section aria-label="Subscribe example">
+<div class="container">
+<article>
+<hgroup>
+<h2>Stay Updated</h2>
+<h3>Receive maintenance alerts & service updates</h3>
+</hgroup>
+<form class="grid">
+<input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Your Name" required />
+<input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
+<button type="submit" onclick="event.preventDefault()">Subscribe</button>
+</form>
+</article>
+</div>
+</section>
+
+<footer class="container">
+<small>
+<a href="#">Privacy Policy</a> • 
+<a href="#">Terms & Conditions</a>
+</small>
+<p>Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E.<br>
++971 55 325 2589 | iconbiotronics.uae@gmail.com</p>
+</footer>
+
+<script>
+const elements = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('visible');
+}
+});
+});
+elements.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
