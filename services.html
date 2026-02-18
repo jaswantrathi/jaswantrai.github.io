@@ -1,232 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Services | ICON BIOTRONICS</title>
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-
-<style>
-:root {
-  --primary: #0a3d62;
-  --secondary: #1e90ff;
-}
-
-body {
-  scroll-behavior: smooth;
-}
-
-.hero {
-  padding: 6rem 0;
-  text-align: center;
-  background: linear-gradient(135deg, #0a3d62, #1e90ff);
-  color: white;
-}
-
-.section-padding {
-  padding: 5rem 0;
-}
-
-.service-card {
-  padding: 2rem;
-  border-radius: 12px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  transition: all 0.4s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-.trust-badge {
-  background: #f4f6f9;
-  padding: 1rem;
-  border-radius: 10px;
-  text-align: center;
-  font-weight: 600;
-}
-
-.cta-section {
-  background: #0a3d62;
-  color: white;
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-img {
-  border-radius: 10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            color: #333;
+        }
+        .hero {
+            background: linear-gradient(to right, #667eea, #764ba2);
+            padding: 60px 20px;
+            text-align: center;
+            color: white;
+        }
+        .description {
+            color: #333;
+        }
+    </style>
 </head>
-
 <body>
-
-<nav class="container-fluid">
-<ul>
-<li><strong>ICON BIOTRONICS</strong></li>
-</ul>
-<ul>
-<li><a href="index.html">Home</a></li>
-<li><a href="about.html">About</a></li>
-<li><a href="contact.html" role="button">Request Service</a></li>
-</ul>
-</nav>
-
-<main class="container">
-
-<div class="hero">
-<h1>Comprehensive Biomedical Engineering Services</h1>
-<p>Precision • Compliance • Reliability • 24/7 Support Across UAE</p>
-</div>
-
-<section class="section-padding fade-in">
-<h2>Medical Imaging & Diagnostic Systems</h2>
-<div class="grid">
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" alt="MRI Service">
-<h3>MRI & CT Systems</h3>
-<p>Repair, calibration, helium recovery, gradient amplifier servicing, PACS integration and software upgrades for 1.5T–3T MRI and multi-slice CT systems.</p>
-<ul>
-<li>±0.1% calibration precision</li>
-<li>OEM-certified components</li>
-<li>Emergency 24/7 response</li>
-</ul>
-</div>
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b" alt="Ultrasound Service">
-<h3>Ultrasound & X-Ray</h3>
-<p>Probe repair, frequency validation (2–18 MHz), radiation compliance testing and preventive maintenance per IEC 60601 standards.</p>
-<ul>
-<li>Low-dose optimization</li>
-<li>DICOM compliance</li>
-<li>Image quality validation</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<section class="section-padding fade-in">
-<h2>Life Support & Critical Care Equipment</h2>
-<div class="grid">
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c" alt="Ventilator Maintenance">
-<h3>Ventilators & Anesthesia</h3>
-<p>Leak testing, flow calibration (0–15 L/min), battery cycling and performance audits to ensure patient safety and uninterrupted operation.</p>
-<ul>
-<li>Leakage current < 100μA</li>
-<li>Pressure validation</li>
-<li>Alarm verification</li>
-</ul>
-</div>
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1579154204601-01588f351e67" alt="Patient Monitor">
-<h3>Patient Monitoring Systems</h3>
-<p>ECG validation, defibrillator testing, parameter accuracy calibration and full biomedical compliance documentation.</p>
-<ul>
-<li>12-lead ECG testing</li>
-<li>Functional load simulation</li>
-<li>Calibration certification</li>
-</ul>
-</div>
-
-</div>
-</section>
-
-<section class="section-padding fade-in">
-<h2>Dental Equipment Services</h2>
-<div class="grid">
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="Dental Chair Service">
-<h3>Dental Chairs & Units</h3>
-<p>Hydraulic repairs, suction optimization, motor calibration and waterline disinfection compliant with ADA and EN 13060 standards.</p>
-</div>
-
-<div class="service-card">
-<img src="https://images.unsplash.com/photo-1588776814546-ec7eebf9a1c4" alt="Sterilization Equipment">
-<h3>Sterilization & Autoclaves</h3>
-<p>Class B validation, biological indicator testing, handpiece balancing up to 400,000 RPM and infection control verification.</p>
-</div>
-
-</div>
-</section>
-
-<section class="section-padding fade-in">
-<h2>Certifications & Compliance</h2>
-<div class="grid">
-<div class="trust-badge">ISO 9001:2015</div>
-<div class="trust-badge">ISO 13485:2016</div>
-<div class="trust-badge">CE Marking</div>
-<div class="trust-badge">FDA Registered</div>
-<div class="trust-badge">MOHAP Approved</div>
-<div class="trust-badge">CBET Certified Engineers</div>
-</div>
-</section>
-
-<section class="cta-section fade-in">
-<h2>Need Immediate Technical Support?</h2>
-<p>Our certified biomedical engineers are available 24/7 across Dubai & UAE.</p>
-<a href="contact.html" role="button" class="contrast">Request Emergency Service</a>
-<p style="margin-top:1rem;"><strong>+971 55 325 2589</strong></p>
-</section>
-
-</main>
-
-<section aria-label="Subscribe example">
-<div class="container">
-<article>
-<hgroup>
-<h2>Stay Updated</h2>
-<h3>Receive maintenance alerts & service updates</h3>
-</hgroup>
-<form class="grid">
-<input type="text" id="firstname" name="firstname" placeholder="Your Name" aria-label="Your Name" required />
-<input type="email" id="email" name="email" placeholder="Your Email" aria-label="Your Email" required />
-<button type="submit" onclick="event.preventDefault()">Subscribe</button>
-</form>
-</article>
-</div>
-</section>
-
-<footer class="container">
-<small>
-<a href="#">Privacy Policy</a> • 
-<a href="#">Terms & Conditions</a>
-</small>
-<p>Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E.<br>
-+971 55 325 2589 | iconbiotronics.uae@gmail.com</p>
-</footer>
-
-<script>
-const elements = document.querySelectorAll('.fade-in');
-const observer = new IntersectionObserver(entries => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add('visible');
-}
-});
-});
-elements.forEach(el => observer.observe(el));
-</script>
-
+    <header class="hero">
+        <h1>Our Awesome Services</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Service 1</h2>
+            <p class="description">Description of service 1.</p>
+        </section>
+        <section>
+            <h2>Service 2</h2>
+            <p class="description">Description of service 2.</p>
+        </section>
+        <section>
+            <h2>Service 3</h2>
+            <p class="description">Description of service 3.</p>
+        </section>
+    </main>
 </body>
 </html>
