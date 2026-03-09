@@ -1,51 +1,123 @@
-<!-- contact.html (Unchanged, but included for completeness) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Us | ICON BIOTRONICS</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact | ICON BIOTRONICS — Dubai Biomedical Engineering</title>
+<meta name="description" content="Contact ICON BIOTRONICS. Office 301, Fardan Business Tower, Bur Dubai. +971-55-325-2589. 24/7 emergency biomedical engineering support UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.ct-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
+.ci-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.25rem}
+.ci-ico{width:40px;height:40px;border-radius:10px;background:rgba(0,232,212,.1);border:1px solid rgba(0,232,212,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.ci-txt strong{display:block;color:#fff;font-size:.85rem;margin-bottom:.15rem}
+.ci-txt span,.ci-txt a{color:rgba(255,255,255,.42);font-size:.82rem}
+.wa-btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:1.5rem;padding:.8rem 1.75rem;background:#25D366;color:#fff;border-radius:50px;font-weight:700;font-size:.88rem;transition:.3s}
+.wa-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,.4);color:#fff}
+.cf-card{background:var(--glass);border:1px solid var(--border);border-radius:var(--r2);padding:2.5rem}
+.cf-card h3{font-family:'Exo 2',sans-serif;font-size:1.25rem;margin-bottom:2rem}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.cf-f{margin-bottom:1rem}
+.cf-f label{display:block;font-size:.75rem;font-weight:600;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:1px;margin-bottom:.45rem}
+.cf-f input,.cf-f textarea,.cf-f select{width:100%;padding:.875rem 1rem;background:rgba(255,255,255,.05);border:1.5px solid var(--border);border-radius:var(--r);color:#fff;font-size:.88rem;font-family:'DM Sans',sans-serif;transition:.3s}
+.cf-f input:focus,.cf-f textarea:focus,.cf-f select:focus{outline:none;border-color:var(--cyan);background:rgba(0,232,212,.04);box-shadow:0 0 0 3px rgba(0,232,212,.08)}
+.cf-f select option{background:var(--navy)}
+::placeholder{color:rgba(255,255,255,.2)}
+.btn-sub{width:100%;padding:1rem;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:var(--dark);border:none;border-radius:50px;font-weight:700;font-size:.95rem;cursor:pointer;font-family:'DM Sans',sans-serif;transition:.3s;margin-top:.5rem}
+.btn-sub:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,232,212,.4)}
+.form-ok{display:none;text-align:center;padding:1.5rem;color:var(--cyan);font-weight:600}
+.map-wrap{border-radius:var(--r2);overflow:hidden;border:1px solid var(--border);margin-top:3rem}
+@media(max-width:900px){.ct-grid{grid-template-columns:1fr}.cf-row{grid-template-columns:1fr}}
+</style>
+</head><body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="media.html">Media</a><a href="contact.html">Contact</a><a href="tel:+971553252589" class="nav-cta">📞 24/7 Emergency</a></div>
+    <button class="hamburger" id="hb"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mn"><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="services.html">⚙️ Services</a><a href="gallery.html">🖼️ Gallery</a><a href="media.html">📰 Media</a><a href="contact.html">📬 Contact</a><a href="tel:+971553252589" class="mob-emrg">🚨 Emergency: +971-55-325-2589</a></div>
+<div class="pg-hero"><div class="pg-hero-in"><div class="eyebrow-pill">Get In Touch</div><h1>Start the Conversation</h1><p>Emergency repair, maintenance contract, or just a question — we respond fast.</p><nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></nav></div></div>
 
-  <header>
-    <nav>
-      <div class="logo">ICON BIOTRONICS</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
+<!-- CONTACT SECTION -->
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="ct-grid">
+      <div class="rv-l">
+        <h3 style="font-family:'Exo 2',sans-serif;font-size:1.5rem;margin-bottom:.75rem">We're Here to Help</h3>
+        <p style="color:rgba(255,255,255,.5);font-size:.92rem;margin-bottom:2rem">Whether you need emergency repair, a maintenance contract, or have questions about a specific device — our team responds fast.</p>
+        <div class="ci-item"><div class="ci-ico">📍</div><div class="ci-txt"><strong>Head Office</strong><span>Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E.</span></div></div>
+        <div class="ci-item"><div class="ci-ico">📞</div><div class="ci-txt"><strong>Phone / Emergency</strong><span><a href="tel:+971553252589">+971 55 325 2589</a></span></div></div>
+        <div class="ci-item"><div class="ci-ico">✉️</div><div class="ci-txt"><strong>Email</strong><span><a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a></span></div></div>
+        <div class="ci-item"><div class="ci-ico">🕐</div><div class="ci-txt"><strong>Working Hours</strong><span>Mon–Sat: 8:00 AM – 6:00 PM | Emergency: 24/7</span></div></div>
+        <a href="https://wa.me/971553252589?text=Hello%20ICON%20BIOTRONICS%2C%20I%20need%20equipment%20support." class="wa-btn" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Chat on WhatsApp</a>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap;margin-top:2rem"><span class="fcb">ISO 9001:2015</span><span class="fcb">ISO 13485</span><span class="fcb">CE Marking</span><span class="fcb">DHA Approved</span></div>
       </div>
-    </nav>
-  </header>
-
-  <main>
-    <section class="contact-section">
-      <h1>Contact Us</h1>
-      <p>Reach out for inquiries, quotes, or support.</p>
-      <form action="https://formspree.io/f/mpqdpgrz" method="POST">
-        <input type="hidden" name="_subject" value="New Contact Form Submission">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div class="contact-info">
-        <p><strong>Address:</strong> Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E.</p>
-        <p><strong>Phone:</strong> +971 55 325 2589</p>
-        <p><strong>Email:</strong> iconbiotronics.uae@gmail.com</p>
+      <div class="rv-r">
+        <div class="cf-card">
+          <h3>Send Us a Message</h3>
+          <form id="cForm" action="https://formspree.io/f/mpqdpgrz" method="POST">
+            <div class="cf-row">
+              <div class="cf-f"><label>Full Name</label><input type="text" name="name" placeholder="Dr. John Smith" required></div>
+              <div class="cf-f"><label>Facility</label><input type="text" name="facility" placeholder="Dubai Hospital"></div>
+            </div>
+            <div class="cf-row">
+              <div class="cf-f"><label>Email</label><input type="email" name="email" placeholder="you@hospital.ae" required></div>
+              <div class="cf-f"><label>Phone</label><input type="tel" name="phone" placeholder="+971 50 000 0000"></div>
+            </div>
+            <div class="cf-f">
+              <label>Service Required</label>
+              <select name="service">
+                <option value="">Select a service...</option>
+                <option>MRI / CT System Repair</option>
+                <option>Ultrasound / X-Ray Service</option>
+                <option>Ventilator / Life Support</option>
+                <option>Patient Monitoring</option>
+                <option>Dental Equipment</option>
+                <option>Annual Maintenance Contract (AMC)</option>
+                <option>Routine PPM Visit</option>
+                <option>Equipment Installation</option>
+                <option>Emergency Callout</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="cf-f"><label>Message</label><textarea name="message" rows="4" placeholder="Describe the issue or service needed..."></textarea></div>
+            <button type="submit" class="btn-sub">Send Message →</button>
+            <div class="form-ok" id="fOk">✓ Message received! We'll respond within 2 hours.</div>
+          </form>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
+    <div class="map-wrap rv">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.5!2d55.3047!3d25.2532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjXCsDE1JzExLjUiTiA1NcKwMTgnMTYuOSJF!5e0!3m2!1sen!2sae!4v1700000000000" width="100%" height="380" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2026 ICON BIOTRONICS. All rights reserved.</p>
-    <p>Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E. | +971 55 325 2589 | iconbiotronics.uae@gmail.com</p>
-  </footer>
+<!-- FAQ -->
+<section class="sec" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">FAQ</div><h2 class="sec-h2">Common Questions</h2></div>
+    <div style="max-width:860px;margin:0 auto">
+      <div class="faq-item"><button class="faq-q">What is your emergency response time? <span class="faq-ic">+</span></button><div class="faq-a"><p>AMC/CMC contract clients receive a 4-hour on-site SLA within Dubai and 6 hours for other Emirates. Non-contract emergency callouts are typically 2–8 hours. Our 24/7 hotline connects you to a live engineer.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Are your engineers OEM-certified? <span class="faq-ic">+</span></button><div class="faq-a"><p>Yes. Our engineers hold factory certifications from GE HealthCare, Philips, Siemens Healthineers, Dräger, Mindray, and more — matching OEM field-engineer technical standards.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Do you provide DHA/MOH-compliant documentation? <span class="faq-ic">+</span></button><div class="faq-a"><p>Every service generates a full compliance package: calibration certificates, test results, maintenance records — formatted for DHA, MOH, HAAD, and JCIA audits. Delivered digitally within 24 hours.</p></div></div>
+      <div class="faq-item"><button class="faq-q">How much can we save vs. an OEM service contract? <span class="faq-ic">+</span></button><div class="faq-a"><p>Our clients typically save 30–45% versus direct OEM contracts. For a 3T MRI, this can be AED 80,000–150,000 annually. We offer a free cost-comparison analysis — just contact us.</p></div></div>
+      <div class="faq-item"><button class="faq-q">Do you supply spare parts? <span class="faq-ic">+</span></button><div class="faq-a"><p>Yes. We maintain stocked inventory of OEM and certified-equivalent parts. Specialised components are sourced within 24–72 hours through direct supply agreements with leading parts distributors.</p></div></div>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="emrg"><div class="emrg-in"><div class="emrg-badge"><span class="dot"></span>24/7 Hotline Active Now</div><h2>Equipment Down? Call Us Immediately.</h2><p>Average 4-hour on-site response. Coverage: All UAE.</p><div class="btn-row"><a href="tel:+971553252589" class="btn btn-w">📞 +971-55-325-2589</a></div></div></section>
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand"><a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a><p>Dubai's trusted partner for medical &amp; dental equipment service, repair, maintenance and supply. Serving UAE healthcare since 2009.</p><div class="fcb-row" style="margin-top:1.25rem"><span class="fcb">ISO 9001:2015</span><span class="fcb">ISO 13485</span><span class="fcb">CE Marking</span><span class="fcb">DHA Approved</span></div></div>
+    <div class="foot-col"><h4>Services</h4><a href="services.html">MRI &amp; CT Systems</a><a href="services.html">Life Support</a><a href="services.html">Dental Equipment</a><a href="services.html">Routine Maintenance</a><a href="services.html">Installation &amp; Training</a><a href="services.html">AMC / CMC Plans</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="about.html">About Us</a><a href="gallery.html">Gallery</a><a href="media.html">Media Center</a><a href="contact.html">Contact</a><a href="#">Privacy Policy</a></div>
+    <div class="foot-col"><h4>Contact</h4><a href="tel:+971553252589">+971 55 325 2589</a><a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a><a href="#">Office 301, Fardan Business Tower, Bur Dubai</a><a href="https://wa.me/971553252589" target="_blank" rel="noopener" style="color:#25D366!important">💬 WhatsApp Us</a></div>
+  </div>
+  <div class="foot-bot"><p>&copy; 2026 ICON BIOTRONICS. All rights reserved. Registered in Dubai, UAE.</p><div class="fcb-row"><span class="fcb">24/7 Support</span><span class="fcb">UAE-Wide Coverage</span></div></div>
+</footer>
+<a href="https://wa.me/971553252589" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="script.js"></script>
+</body></html>
