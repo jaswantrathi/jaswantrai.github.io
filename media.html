@@ -1,0 +1,226 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Media Center | ICON BIOTRONICS — News, Articles & Resources</title>
+<meta name="description" content="ICON BIOTRONICS Media Center — latest news, industry articles, technical guides, certifications and biomedical engineering resources for UAE healthcare professionals.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Media grid */
+.news-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.news-c{background:var(--glass);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:all .4s var(--ease)}
+.news-c:hover{border-color:rgba(0,232,212,.4);transform:translateY(-4px)}
+.news-img{width:100%;height:200px;object-fit:cover;display:block}
+.news-b{padding:1.5rem}
+.news-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.news-cat{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.2rem .6rem;border-radius:20px}
+.cat-news{background:rgba(0,232,212,.1);color:var(--cyan);border:1px solid rgba(0,232,212,.2)}
+.cat-guide{background:rgba(255,176,32,.1);color:var(--gold);border:1px solid rgba(255,176,32,.2)}
+.cat-cert{background:rgba(34,197,94,.1);color:var(--green);border:1px solid rgba(34,197,94,.2)}
+.cat-event{background:rgba(255,90,53,.1);color:var(--coral);border:1px solid rgba(255,90,53,.2)}
+.news-date{font-size:.72rem;color:rgba(255,255,255,.3)}
+.news-b h3{font-size:.97rem;color:#fff;margin-bottom:.5rem;line-height:1.4}
+.news-b p{font-size:.82rem;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:1rem}
+.news-link{font-size:.8rem;font-weight:700;color:var(--cyan);display:inline-flex;align-items:center;gap:.35rem;transition:.3s}
+.news-link:hover{gap:.6rem}
+/* Featured article */
+.feat-art{display:grid;grid-template-columns:1.2fr 1fr;gap:0;background:var(--glass);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-bottom:3rem}
+.feat-img{width:100%;height:100%;min-height:340px;object-fit:cover;display:block}
+.feat-b{padding:2.5rem;display:flex;flex-direction:column;justify-content:center}
+.feat-b h2{font-size:1.5rem;color:#fff;margin-bottom:.85rem;line-height:1.3}
+.feat-b p{font-size:.88rem;color:rgba(255,255,255,.52);line-height:1.75;margin-bottom:1.5rem}
+/* Infographics */
+.info-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.info-c{background:linear-gradient(135deg,var(--navy),var(--navy2));border:1px solid var(--border);border-radius:var(--r2);padding:2rem;text-align:center;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.info-c:hover{border-color:rgba(0,232,212,.4);transform:translateY(-4px)}
+.info-c::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:.3s}
+.info-c:hover::after{opacity:1}
+.info-icon{font-size:2.5rem;margin-bottom:1rem}
+.info-num{font-family:'Exo 2',sans-serif;font-size:3rem;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.25rem}
+.info-lbl{font-size:.85rem;color:rgba(255,255,255,.55);margin-bottom:.5rem}
+.info-sub{font-size:.75rem;color:rgba(255,255,255,.3);line-height:1.6}
+/* Resources */
+.res-g{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+.res-c{background:var(--glass);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;transition:all .3s var(--ease)}
+.res-c:hover{border-color:rgba(0,232,212,.35);background:rgba(0,232,212,.04)}
+.res-ico{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;background:rgba(0,232,212,.1);border:1px solid rgba(0,232,212,.2)}
+.res-c h4{font-size:.9rem;color:#fff;margin-bottom:.3rem}
+.res-c p{font-size:.78rem;color:rgba(255,255,255,.4);line-height:1.6}
+/* Press logos */
+.press-g{display:grid;grid-template-columns:repeat(5,1fr);gap:1.25rem}
+.press-c{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem;text-align:center;transition:.3s}
+.press-c:hover{border-color:rgba(0,232,212,.35)}
+.press-n{font-family:'Exo 2',sans-serif;font-size:.85rem;font-weight:700;color:rgba(255,255,255,.4)}
+.press-s{font-size:.62rem;color:rgba(255,255,255,.2);margin-top:3px;letter-spacing:1px;text-transform:uppercase}
+/* Newsletter */
+.nl-wrap{background:linear-gradient(135deg,rgba(0,232,212,.07),rgba(0,191,165,.04));border:1px solid rgba(0,232,212,.2);border-radius:var(--r2);padding:3rem;text-align:center}
+.nl-wrap h3{font-family:'Exo 2',sans-serif;font-size:1.5rem;margin-bottom:.65rem}
+.nl-wrap p{color:rgba(255,255,255,.5);font-size:.9rem;margin-bottom:1.75rem}
+.nl-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto}
+.nl-form input{flex:1;padding:.85rem 1rem;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:50px;color:#fff;font-family:'DM Sans',sans-serif;font-size:.88rem}
+.nl-form input:focus{outline:none;border-color:var(--cyan)}
+.nl-form button{padding:.85rem 1.5rem;background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:var(--dark);border:none;border-radius:50px;font-weight:700;font-size:.85rem;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;transition:.3s}
+.nl-form button:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,232,212,.4)}
+@media(max-width:900px){.news-g{grid-template-columns:1fr 1fr}.feat-art{grid-template-columns:1fr}.info-g{grid-template-columns:1fr 1fr}.res-g{grid-template-columns:1fr}.press-g{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.news-g{grid-template-columns:1fr}.info-g{grid-template-columns:1fr}.press-g{grid-template-columns:1fr 1fr}.nl-form{flex-direction:column}.nl-form input,.nl-form button{width:100%}}
+</style>
+</head><body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="media.html">Media</a><a href="contact.html">Contact</a><a href="tel:+971553252589" class="nav-cta">📞 24/7 Emergency</a></div>
+    <button class="hamburger" id="hb"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mn"><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="services.html">⚙️ Services</a><a href="gallery.html">🖼️ Gallery</a><a href="media.html">📰 Media</a><a href="contact.html">📬 Contact</a><a href="tel:+971553252589" class="mob-emrg">🚨 Emergency: +971-55-325-2589</a></div>
+<div class="pg-hero"><div class="pg-hero-in"><div class="eyebrow-pill">News & Resources</div><h1>Media Center</h1><p>Industry news, technical guides, regulatory updates, and biomedical engineering resources for UAE healthcare professionals.</p><nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Media Center</span></nav></div></div>
+
+<!-- INFOGRAPHICS / STATS -->
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Industry Data</div><h2 class="sec-h2">UAE Biomedical Engineering in Numbers</h2><p class="sec-sub">Key market indicators shaping healthcare engineering across the UAE in 2025.</p></div>
+    <div class="info-g">
+      <div class="info-c rv"><div class="info-icon">🏥</div><div class="info-num" data-t="34" data-s="B+">0</div><div class="info-lbl">UAE Healthcare Market (USD) by 2030</div><div class="info-sub">Driven by Vision 2031, privatisation and population growth — the UAE is the fastest-growing healthcare market in the MENA region.</div></div>
+      <div class="info-c rv"><div class="info-icon">📈</div><div class="info-num" data-t="8" data-s=".4%">0</div><div class="info-lbl">Annual Market Growth Rate (CAGR)</div><div class="info-sub">Compound annual growth rate for UAE medical device market 2024–2030, driven by new hospital builds and digital health adoption.</div></div>
+      <div class="info-c rv"><div class="info-icon">⚙️</div><div class="info-num" data-t="95" data-s="%">0</div><div class="info-lbl">Hospitals Using Outsourced Biomedical Services</div><div class="info-sub">The overwhelming majority of UAE healthcare facilities now rely on specialist independent biomedical engineering companies for maintenance and compliance.</div></div>
+      <div class="info-c rv"><div class="info-icon">💰</div><div class="info-num" data-t="40" data-s="%">0</div><div class="info-lbl">Average Savings vs. OEM Contracts</div><div class="info-sub">Verified average cost savings ICON BIOTRONICS clients achieve versus direct manufacturer service agreements — with equal or better service quality.</div></div>
+      <div class="info-c rv"><div class="info-icon">🏛️</div><div class="info-num" data-t="4000" data-s="+">0</div><div class="info-lbl">DHA Licensed Healthcare Facilities in Dubai</div><div class="info-sub">4,000+ DHA-licensed hospitals, clinics, day surgery centres, pharmacies and diagnostic labs operating in Dubai alone as of 2025.</div></div>
+      <div class="info-c rv"><div class="info-icon">🔋</div><div class="info-num" data-t="30" data-s="%">0</div><div class="info-lbl">Equipment Downtime Reduction via PPM</div><div class="info-sub">Facilities on planned preventive maintenance programmes report up to 30% fewer unplanned equipment failures compared to reactive maintenance.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section class="sec" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Featured Article</div><h2 class="sec-h2">Latest from ICON BIOTRONICS</h2></div>
+    <div class="feat-art rv">
+      <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_58971730.jpeg" alt="MRI Engineering" class="feat-img">
+      <div class="feat-b">
+        <div style="display:flex;gap:.5rem;margin-bottom:1rem"><span class="news-cat cat-news">Company News</span><span class="news-date">March 2026</span></div>
+        <h2>ICON BIOTRONICS Achieves ISO 13485:2016 Recertification — Raising the Bar for UAE Biomedical Services</h2>
+        <p>We are proud to announce the successful recertification of our ISO 13485:2016 Medical Device Quality Management System. This internationally recognized standard confirms that our engineering processes, documentation practices and quality controls meet the highest global benchmarks for medical device service providers — giving our clients complete confidence in every calibration certificate and maintenance report we issue.</p>
+        <a href="#" class="btn btn-p" style="align-self:flex-start">Read Full Article →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS GRID -->
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">News & Articles</div><h2 class="sec-h2">Engineering Insights & Company Updates</h2></div>
+    <div class="news-g">
+      <div class="news-c rv">
+        <img src="https://cdn2.picryl.com/photo/2013/03/14/brian-speck-a-bio-medical-contractor-tests-medical-0728c9-1024.jpg" alt="PPM" class="news-img">
+        <div class="news-b">
+          <div class="news-meta"><span class="news-cat cat-guide">Technical Guide</span><span class="news-date">Feb 2026</span></div>
+          <h3>The Complete Guide to Planned Preventive Maintenance for Dubai Hospitals</h3>
+          <p>FMECA-based risk analysis, quarterly visit scheduling, documentation standards and how PPM programmes protect DHA compliance — a practical guide for biomedical managers.</p>
+          <a href="#" class="news-link">Read More →</a>
+        </div>
+      </div>
+      <div class="news-c rv">
+        <img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/block/adobestock_292422976_0.jpeg" alt="MRI" class="news-img">
+        <div class="news-b">
+          <div class="news-meta"><span class="news-cat cat-news">Industry News</span><span class="news-date">Jan 2026</span></div>
+          <h3>UAE Medical Device Market to Reach $2.4B by 2028 — What It Means for Biomedical Engineers</h3>
+          <p>Analysis of the latest market projections, new hospital projects across Dubai and Abu Dhabi, and the growing demand for qualified biomedical engineering services in the UAE.</p>
+          <a href="#" class="news-link">Read More →</a>
+        </div>
+      </div>
+      <div class="news-c rv">
+        <img src="https://i.pinimg.com/1200x/78/c1/07/78c107c0a43c341d9c2f1018eaf2ef02.jpg" alt="Dental" class="news-img">
+        <div class="news-b">
+          <div class="news-meta"><span class="news-cat cat-guide">Technical Guide</span><span class="news-date">Jan 2026</span></div>
+          <h3>Class B Autoclave Validation: What Every Dubai Dental Practice Needs to Know in 2026</h3>
+          <p>DHA requirements for dental sterilization equipment, biological indicator testing, documentation and how to ensure your practice is audit-ready at all times.</p>
+          <a href="#" class="news-link">Read More →</a>
+        </div>
+      </div>
+      <div class="news-c rv">
+        <img src="https://i.pinimg.com/1200x/6f/85/e6/6f85e6df409fc60c5830d0d81dd852ba.jpg" alt="ICU" class="news-img">
+        <div class="news-b">
+          <div class="news-meta"><span class="news-cat cat-cert">Regulatory</span><span class="news-date">Dec 2025</span></div>
+          <h3>JCIA Accreditation and Biomedical Equipment: Documentation Standards You Must Meet</h3>
+          <p>A detailed breakdown of Joint Commission International requirements for medical equipment management programs — from maintenance records to risk-based inventories.</p>
+          <a href="#" class="news-link">Read More →</a>
+        </div>
+      </div>
+      <div class="news-c rv">
+        <img src="https://cdn2.picryl.com/photo/2020/04/06/tech-sgt-alec-platt-biomedical-equipment-specialist-1d4fd5-1024.jpg" alt="Engineer" class="news-img">
+        <div class="news-b">
+          <div class="news-meta"><span class="news-cat cat-event">Event</span><span class="news-date">Nov 2025</span></div>
+          <h3>ICON BIOTRONICS at Arab Health 2026 — Visit Us at Stand B14</h3>
+          <p>We are proud to announce our participation at Arab Health 2026, the world's second-largest healthcare exhibition. Join us to discuss your equipment management needs.</p>
+          <a href="#" class="news-link">Read More →</a>
+        </div>
+      </div>
+      <div class="news-c rv">
+        <img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/blog/collaboration-planning-or-nurses-in-meeting-for-a-2023-03-09-08-47-01-utc_0.jpg" alt="Training" class="news-img">
+        <div class="news-b">
+          <div class="news-meta"><span class="news-cat cat-news">Company News</span><span class="news-date">Oct 2025</span></div>
+          <h3>New Biomedical Engineering Training Programme Launches for UAE Healthcare Teams</h3>
+          <p>ICON BIOTRONICS launches structured in-house and on-site training for clinical engineers and biomedical technicians — now open for enrolment for 2026 cohorts.</p>
+          <a href="#" class="news-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="sec" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Downloads & Resources</div><h2 class="sec-h2">Technical Resources for Healthcare Professionals</h2><p class="sec-sub">Guides, checklists, and reference documents for biomedical managers and clinical engineers.</p></div>
+    <div class="res-g">
+      <div class="res-c rv"><div class="res-ico">📄</div><div><h4>AMC Contract Guide — What to Look For</h4><p>A practical guide to evaluating biomedical maintenance contracts — SLA terms, coverage scope, compliance documentation and OEM vs. independent service quality.</p><a href="contact.html" style="font-size:.8rem;color:var(--cyan);font-weight:700;display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;transition:.3s">Request Download →</a></div></div>
+      <div class="res-c rv"><div class="res-ico">📋</div><div><h4>DHA Equipment Compliance Checklist 2026</h4><p>Complete checklist for biomedical equipment compliance with Dubai Health Authority requirements — covering maintenance records, calibration certificates and inspection schedules.</p><a href="contact.html" style="font-size:.8rem;color:var(--cyan);font-weight:700;display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;transition:.3s">Request Download →</a></div></div>
+      <div class="res-c rv"><div class="res-ico">🔬</div><div><h4>MRI Safety & Maintenance: A Clinical Engineer's Reference</h4><p>Comprehensive technical reference covering helium management, RF shielding, quench safety, gradient amplifier maintenance and IEC standards for MRI systems.</p><a href="contact.html" style="font-size:.8rem;color:var(--cyan);font-weight:700;display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;transition:.3s">Request Download →</a></div></div>
+      <div class="res-c rv"><div class="res-ico">🦷</div><div><h4>Dental Practice Equipment Management Handbook</h4><p>Everything a dental practice manager needs to know about equipment compliance — chair servicing schedules, autoclave validation, X-ray QA and DHA audit preparation.</p><a href="contact.html" style="font-size:.8rem;color:var(--cyan);font-weight:700;display:inline-flex;align-items:center;gap:.35rem;margin-top:.75rem;transition:.3s">Request Download →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS / MEDIA MENTIONS -->
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Press & Media</div><h2 class="sec-h2">Media Mentions & Industry Partnerships</h2></div>
+    <div class="press-g">
+      <div class="press-c rv"><div class="press-n">Arab Health</div><div class="press-s">Exhibition Partner</div></div>
+      <div class="press-c rv"><div class="press-n">Gulf Business</div><div class="press-s">Media Feature</div></div>
+      <div class="press-c rv"><div class="press-n">Khaleej Times</div><div class="press-s">Press Coverage</div></div>
+      <div class="press-c rv"><div class="press-n">Healthcare Middle East</div><div class="press-s">Industry Feature</div></div>
+      <div class="press-c rv"><div class="press-n">Medical Arabia</div><div class="press-s">Contributor</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="sec-sm" style="background:var(--navy);padding:3.5rem 2rem">
+  <div class="wrap">
+    <div class="nl-wrap rv">
+      <h3>Stay Updated with Industry News</h3>
+      <p>Get the latest UAE healthcare regulations, equipment maintenance guides and company news delivered to your inbox.</p>
+      <form class="nl-form" onsubmit="event.preventDefault();this.innerHTML='<p style=color:var(--cyan);font-weight:700>✓ Subscribed! Thank you.</p>'">
+        <input type="email" placeholder="your@hospital.ae" required>
+        <button type="submit">Subscribe →</button>
+      </form>
+      <p style="font-size:.72rem;color:rgba(255,255,255,.25);margin-top:1rem">No spam. Unsubscribe any time. We respect your privacy.</p>
+    </div>
+  </div>
+</section>
+
+<section class="emrg"><div class="emrg-in"><div class="emrg-badge"><span class="dot"></span>24/7 Hotline Active</div><h2>Have a Service Need? Talk to an Engineer Now.</h2><p>Our certified biomedical engineers are on-call across Dubai & UAE.</p><div class="btn-row"><a href="tel:+971553252589" class="btn btn-w">📞 +971-55-325-2589</a><a href="contact.html" class="btn btn-ow">Request Service</a></div></div></section>
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand"><a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a><p>Dubai's trusted partner for medical &amp; dental equipment service, repair, maintenance and supply. Serving UAE healthcare since 2009.</p><div class="fcb-row" style="margin-top:1.25rem"><span class="fcb">ISO 9001:2015</span><span class="fcb">ISO 13485</span><span class="fcb">CE Marking</span><span class="fcb">DHA Approved</span></div></div>
+    <div class="foot-col"><h4>Services</h4><a href="services.html">MRI &amp; CT Systems</a><a href="services.html">Life Support</a><a href="services.html">Dental Equipment</a><a href="services.html">Routine Maintenance</a><a href="services.html">Installation &amp; Training</a><a href="services.html">AMC / CMC Plans</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="about.html">About Us</a><a href="gallery.html">Gallery</a><a href="media.html">Media Center</a><a href="contact.html">Contact</a><a href="#">Privacy Policy</a></div>
+    <div class="foot-col"><h4>Contact</h4><a href="tel:+971553252589">+971 55 325 2589</a><a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a><a href="#">Office 301, Fardan Business Tower, Bur Dubai</a><a href="https://wa.me/971553252589" target="_blank" rel="noopener" style="color:#25D366!important">💬 WhatsApp Us</a></div>
+  </div>
+  <div class="foot-bot"><p>&copy; 2026 ICON BIOTRONICS. All rights reserved. Registered in Dubai, UAE.</p><div class="fcb-row"><span class="fcb">24/7 Support</span><span class="fcb">UAE-Wide Coverage</span></div></div>
+</footer>
+<a href="https://wa.me/971553252589" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="script.js"></script>
+</body></html>

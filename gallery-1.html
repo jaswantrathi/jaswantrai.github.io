@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gallery | ICON BIOTRONICS — Equipment & Operations</title>
+<meta name="description" content="Gallery of biomedical equipment serviced by ICON BIOTRONICS — MRI, CT, Ultrasound, Dental, Life Support and engineering operations across UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.filter-bar{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem}
+.filter-btn{padding:.5rem 1.2rem;border-radius:50px;border:1.5px solid var(--border);background:none;color:rgba(255,255,255,.55);font-weight:600;font-size:.8rem;cursor:pointer;transition:.3s;font-family:'DM Sans',sans-serif}
+.filter-btn.active,.filter-btn:hover{background:var(--cyan);color:var(--dark);border-color:var(--cyan)}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.g-item{border-radius:var(--r);overflow:hidden;cursor:pointer;position:relative;background:var(--navy2);transition:all .4s var(--ease)}
+.g-item.hidden{display:none}
+.g-item img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .5s var(--ease)}
+.g-item:hover img{transform:scale(1.07)}
+.g-item.tall img{height:460px}
+.g-item.wide{grid-column:span 2}
+.g-item.wide img{height:220px}
+.g-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,13,26,.82),rgba(5,13,26,.08));opacity:0;transition:.3s;display:flex;align-items:flex-end;padding:1rem}
+.g-item:hover .g-ov{opacity:1}
+.g-cap{color:#fff;font-size:.78rem;font-weight:600}
+@media(max-width:768px){.gallery-grid{grid-template-columns:1fr 1fr}.g-item.tall,.g-item.wide{grid-column:auto}.g-item.tall img,.g-item.wide img{height:180px}}
+@media(max-width:480px){.gallery-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head><body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="media.html">Media</a><a href="contact.html">Contact</a><a href="tel:+971553252589" class="nav-cta">📞 24/7 Emergency</a></div>
+    <button class="hamburger" id="hb"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mn"><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="services.html">⚙️ Services</a><a href="gallery.html">🖼️ Gallery</a><a href="media.html">📰 Media</a><a href="contact.html">📬 Contact</a><a href="tel:+971553252589" class="mob-emrg">🚨 Emergency: +971-55-325-2589</a></div>
+<div class="pg-hero"><div class="pg-hero-in"><div class="eyebrow-pill">Our Work</div><h1>Equipment & Operations Gallery</h1><p>A visual showcase of the equipment we service and the expertise we bring to every job.</p><nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Gallery</span></nav></div></div>
+
+<section class="sec" style="background:var(--light,#F0F4F8)">
+  <div class="wrap">
+    <div class="filter-bar">
+      <button class="filter-btn active" data-f="all">All</button>
+      <button class="filter-btn" data-f="img">Imaging</button>
+      <button class="filter-btn" data-f="life">Life Support</button>
+      <button class="filter-btn" data-f="dent">Dental</button>
+      <button class="filter-btn" data-f="eng">Engineers</button>
+    </div>
+    <div class="gallery-grid">
+      <div class="g-item tall" data-c="img"><img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/block/adobestock_1169377445.jpeg" alt="MRI System" loading="lazy"><div class="g-ov"><span class="g-cap">MRI System</span></div></div>
+      <div class="g-item" data-c="img"><img src="https://www.modernheartandvascular.com/wp-content/uploads/2022/10/CT-Scanner-1-Modern-Heart-and-Vascular-Institute-Cardiology-Heart-and-Vein-1024x763.png.webp" alt="CT Scanner" loading="lazy"><div class="g-ov"><span class="g-cap">CT Scanner</span></div></div>
+      <div class="g-item" data-c="eng"><img src="https://cdn2.picryl.com/photo/2020/04/06/tech-sgt-alec-platt-biomedical-equipment-specialist-1d4fd5-1024.jpg" alt="Biomedical Technician" loading="lazy"><div class="g-ov"><span class="g-cap">Biomedical Technician</span></div></div>
+      <div class="g-item tall" data-c="dent"><img src="https://i.pinimg.com/1200x/78/c1/07/78c107c0a43c341d9c2f1018eaf2ef02.jpg" alt="Dental Chair" loading="lazy"><div class="g-ov"><span class="g-cap">Dental Treatment Unit</span></div></div>
+      <div class="g-item wide" data-c="img"><img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_292422976_0.jpeg" alt="Ultrasound" loading="lazy"><div class="g-ov"><span class="g-cap">Ultrasound System</span></div></div>
+      <div class="g-item" data-c="eng"><img src="https://cdn2.picryl.com/photo/2013/03/14/brian-speck-a-bio-medical-contractor-tests-medical-0728c9-1024.jpg" alt="Equipment Testing" loading="lazy"><div class="g-ov"><span class="g-cap">Equipment Testing</span></div></div>
+      <div class="g-item" data-c="life"><img src="https://i.pinimg.com/1200x/6f/85/e6/6f85e6df409fc60c5830d0d81dd852ba.jpg" alt="Patient Monitor" loading="lazy"><div class="g-ov"><span class="g-cap">Patient Monitor</span></div></div>
+      <div class="g-item" data-c="dent"><img src="https://i.pinimg.com/736x/cc/cb/ca/cccbca266fd514043e1745e8c1f1c352.jpg" alt="Autoclave" loading="lazy"><div class="g-ov"><span class="g-cap">Sterilization Autoclave</span></div></div>
+      <div class="g-item" data-c="life"><img src="https://i.pinimg.com/736x/83/bc/29/83bc29fb534bb70d93f1024cf851de43.jpg" alt="Ventilator" loading="lazy"><div class="g-ov"><span class="g-cap">Ventilator Service</span></div></div>
+      <div class="g-item" data-c="eng"><img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/blog/radiologist-using-ultra-sound-tool-above-woman-2023-11-27-05-07-14-utc.jpg" alt="Radiology" loading="lazy"><div class="g-ov"><span class="g-cap">Radiology Support</span></div></div>
+      <div class="g-item" data-c="img"><img src="https://micromain.com/wp-content/uploads/Calibration-1.jpg" alt="Calibration" loading="lazy"><div class="g-ov"><span class="g-cap">Precision Calibration</span></div></div>
+      <div class="g-item" data-c="eng"><img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/blog/collaboration-planning-or-nurses-in-meeting-for-a-2023-03-09-08-47-01-utc_0.jpg" alt="Team" loading="lazy"><div class="g-ov"><span class="g-cap">Clinical Team Planning</span></div></div>
+      <div class="g-item wide" data-c="life"><img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_58971730.jpeg" alt="MRI Engineer" loading="lazy"><div class="g-ov"><span class="g-cap">MRI Equipment Engineering</span></div></div>
+      <div class="g-item" data-c="dent"><img src="https://i.pinimg.com/736x/83/bc/29/83bc29fb534bb70d93f1024cf851de43.jpg" alt="Dental Laser" loading="lazy"><div class="g-ov"><span class="g-cap">Dental Laser System</span></div></div>
+      <div class="g-item" data-c="img"><img src="https://cdn2.picryl.com/photo/2020/04/06/tech-sgt-alec-platt-biomedical-equipment-specialist-1d4fd5-1024.jpg" alt="X-Ray" loading="lazy"><div class="g-ov"><span class="g-cap">X-Ray Calibration</span></div></div>
+      <div class="g-item" data-c="eng"><img src="https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg" alt="Engineer" loading="lazy"><div class="g-ov"><span class="g-cap">Senior Engineer On-Site</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div id="lb" class="lightbox"><button class="lb-close" id="lbClose">&times;</button><img src="" alt="" id="lbImg"></div>
+
+<section class="emrg"><div class="emrg-in"><div class="emrg-badge"><span class="dot"></span>24/7 Emergency Hotline Active</div><h2>Need Equipment Serviced?</h2><p>Our certified engineers are ready across Dubai & UAE right now.</p><div class="btn-row"><a href="tel:+971553252589" class="btn btn-w">📞 +971-55-325-2589</a><a href="contact.html" class="btn btn-ow">Request Service</a></div></div></section>
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand"><a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a><p>Dubai's trusted partner for medical &amp; dental equipment service, repair, maintenance and supply. Serving UAE healthcare since 2009.</p><div class="fcb-row" style="margin-top:1.25rem"><span class="fcb">ISO 9001:2015</span><span class="fcb">ISO 13485</span><span class="fcb">CE Marking</span><span class="fcb">DHA Approved</span></div></div>
+    <div class="foot-col"><h4>Services</h4><a href="services.html">MRI &amp; CT Systems</a><a href="services.html">Life Support</a><a href="services.html">Dental Equipment</a><a href="services.html">Routine Maintenance</a><a href="services.html">Installation &amp; Training</a><a href="services.html">AMC / CMC Plans</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="about.html">About Us</a><a href="gallery.html">Gallery</a><a href="media.html">Media Center</a><a href="contact.html">Contact</a><a href="#">Privacy Policy</a></div>
+    <div class="foot-col"><h4>Contact</h4><a href="tel:+971553252589">+971 55 325 2589</a><a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a><a href="#">Office 301, Fardan Business Tower, Bur Dubai</a><a href="https://wa.me/971553252589" target="_blank" rel="noopener" style="color:#25D366!important">💬 WhatsApp Us</a></div>
+  </div>
+  <div class="foot-bot"><p>&copy; 2026 ICON BIOTRONICS. All rights reserved. Registered in Dubai, UAE.</p><div class="fcb-row"><span class="fcb">24/7 Support</span><span class="fcb">UAE-Wide Coverage</span></div></div>
+</footer>
+<a href="https://wa.me/971553252589" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="script.js"></script>
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Services | ICON BIOTRONICS — Biomedical Engineering Dubai</title>
+<meta name="description" content="Full biomedical engineering services: MRI, CT, Ultrasound, Ventilators, Dental, Routine Maintenance, PPM, AMC, CMC, Installation, Training — Dubai UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.srv-row{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.sc{background:#fff;border-radius:var(--r2);padding:1.75rem;border:1.5px solid rgba(0,0,0,.07);display:flex;gap:1.25rem;align-items:flex-start;transition:all .4s var(--ease)}
+.sc:hover{border-color:var(--cyan2);box-shadow:0 12px 32px rgba(0,0,0,.1);transform:translateY(-3px)}
+.sc-ic{width:50px;height:50px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.sc h3{font-size:.93rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.sc p{font-size:.82rem;color:var(--muted);margin-bottom:.65rem;line-height:1.6}
+.sc-tags{display:flex;flex-wrap:wrap;gap:.3rem}
+.sc-tag{font-size:.65rem;font-weight:600;padding:.18rem .55rem;border-radius:20px;background:#F0F4F8;color:var(--muted)}
+.tab-img{width:100%;height:230px;object-fit:cover;border-radius:var(--r2);margin-bottom:2rem}
+.rtg{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.rtc{background:var(--glass);border:1px solid var(--border);border-radius:var(--r2);padding:1.5rem;text-align:center;transition:all .4s var(--ease)}
+.rtc:hover{border-color:rgba(0,232,212,.35);background:rgba(0,232,212,.04);transform:translateY(-4px)}
+.rtc h3{font-size:.88rem;color:#fff;margin-bottom:.4rem}
+.rtc p{font-size:.78rem;color:rgba(255,255,255,.42);line-height:1.6}
+.plans-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.plan{background:var(--glass);border:1px solid var(--border);border-radius:24px;padding:2.5rem;text-align:center;transition:all .4s var(--ease);position:relative;overflow:hidden}
+.plan.feat{border-color:var(--cyan);background:linear-gradient(160deg,rgba(0,232,212,.08),rgba(0,191,165,.04))}
+.plan.feat::before{content:'Most Popular';position:absolute;top:1.1rem;right:-2.5rem;background:var(--cyan);color:var(--dark);font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.3rem 3rem;transform:rotate(45deg)}
+.plan:hover{transform:translateY(-5px);box-shadow:0 20px 40px rgba(0,0,0,.3)}
+.plan-n{font-family:'Exo 2',sans-serif;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,.45);margin-bottom:.65rem}
+.plan-p{font-family:'Exo 2',sans-serif;font-size:2rem;font-weight:900;color:#fff;margin-bottom:.2rem}
+.plan-sub{font-size:.75rem;color:rgba(255,255,255,.32);margin-bottom:1.75rem}
+.plan-feat{text-align:left;margin-bottom:2rem}
+.pf{display:flex;align-items:flex-start;gap:.6rem;padding:.45rem 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.82rem;color:rgba(255,255,255,.62)}
+.pf::before{content:'✓';color:var(--cyan);font-weight:700;flex-shrink:0}
+.pf.no{color:rgba(255,255,255,.22)}.pf.no::before{content:'–';color:rgba(255,255,255,.18)}
+.cert-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
+.cert-c{background:#fff;border-radius:var(--r2);padding:1.75rem;text-align:center;border:1.5px solid rgba(0,0,0,.07);transition:.3s}
+.cert-c:hover{border-color:var(--cyan2);transform:translateY(-3px)}
+.cert-c h4{font-size:.88rem;color:var(--navy);margin-bottom:.3rem}
+.cert-c p{font-size:.76rem;color:var(--muted)}
+@media(max-width:900px){.srv-row{grid-template-columns:1fr}.rtg{grid-template-columns:1fr 1fr}.plans-g{grid-template-columns:1fr}.cert-g{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.rtg{grid-template-columns:1fr}.cert-g{grid-template-columns:1fr}.tabs-bar{width:100%}}
+</style>
+</head><body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="media.html">Media</a><a href="contact.html">Contact</a><a href="tel:+971553252589" class="nav-cta">📞 24/7 Emergency</a></div>
+    <button class="hamburger" id="hb"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mn"><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="services.html">⚙️ Services</a><a href="gallery.html">🖼️ Gallery</a><a href="media.html">📰 Media</a><a href="contact.html">📬 Contact</a><a href="tel:+971553252589" class="mob-emrg">🚨 Emergency: +971-55-325-2589</a></div>
+<div class="pg-hero"><div class="pg-hero-in"><div class="eyebrow-pill">What We Do</div><h1>Comprehensive Biomedical Engineering Services</h1><p>Precision · Compliance · Reliability · 24/7 UAE-Wide Support</p><nav class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Services</span></nav></div></div>
+
+<section class="sec" style="background:#F0F4F8">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow dark-ey">Explore Services</div><h2 class="sec-h2" style="color:var(--navy)">Our Full Service Portfolio</h2><p class="sec-sub dk">Click a category to explore in detail.</p></div>
+    <div class="tabs-bar">
+      <button class="tab-btn active" data-id="img" onclick="switchTab('img')">🔬 Imaging & Diagnostics</button>
+      <button class="tab-btn" data-id="life" onclick="switchTab('life')">❤️ Life Support</button>
+      <button class="tab-btn" data-id="dent" onclick="switchTab('dent')">🦷 Dental</button>
+      <button class="tab-btn" data-id="maint" onclick="switchTab('maint')">🔧 Routine Maintenance</button>
+      <button class="tab-btn" data-id="inst" onclick="switchTab('inst')">🏗️ Installation</button>
+      <button class="tab-btn" data-id="train" onclick="switchTab('train')">🎓 Training</button>
+    </div>
+
+    <div class="tab-pane active" id="tab-img">
+      <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_292422976_0.jpeg" alt="Imaging" class="tab-img">
+      <div class="srv-row">
+        <div class="sc rv"><div class="sc-ic ic-b">🧲</div><div><h3>MRI Systems (1.5T–3T)</h3><p>Helium recovery, gradient amplifier servicing, RF coil diagnostics, PACS integration and ±0.1% field calibration for Siemens, GE and Philips systems.</p><div class="sc-tags"><span class="sc-tag">Siemens</span><span class="sc-tag">GE</span><span class="sc-tag">Philips</span><span class="sc-tag">Helium Recovery</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-t">📡</div><div><h3>CT Scanners (Multi-Slice)</h3><p>X-ray tube replacement, gantry calibration, detector array servicing, dose optimization and IEC 60601 compliance for 16–256 slice systems.</p><div class="sc-tags"><span class="sc-tag">Low-Dose</span><span class="sc-tag">DICOM</span><span class="sc-tag">Gantry Cal.</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-g">📻</div><div><h3>Ultrasound Systems</h3><p>Probe repair, transducer frequency validation (2–18 MHz), image quality certification, software upgrades and AIUM-standard performance testing.</p><div class="sc-tags"><span class="sc-tag">2–18 MHz</span><span class="sc-tag">Probe Repair</span><span class="sc-tag">3D/4D</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-r">☢️</div><div><h3>X-Ray & Fluoroscopy</h3><p>Radiation safety compliance, detector calibration, tube alignment, leakage testing per IAEA standards and complete QA documentation.</p><div class="sc-tags"><span class="sc-tag">IAEA</span><span class="sc-tag">C-Arm</span><span class="sc-tag">QA Report</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-p">🧠</div><div><h3>Nuclear Medicine & PET</h3><p>Gamma camera calibration, SPECT/CT servicing, detector uniformity testing, isotope handling compliance and phantom performance validation.</p><div class="sc-tags"><span class="sc-tag">Gamma Camera</span><span class="sc-tag">SPECT/CT</span><span class="sc-tag">PET</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-b">🖥️</div><div><h3>PACS / RIS Integration</h3><p>Picture archiving installation, DICOM connectivity, HL7 integration, worklist configuration, disaster recovery and system performance optimisation.</p><div class="sc-tags"><span class="sc-tag">DICOM</span><span class="sc-tag">HL7</span><span class="sc-tag">Cloud PACS</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-life">
+      <img src="https://i.pinimg.com/1200x/6f/85/e6/6f85e6df409fc60c5830d0d81dd852ba.jpg" alt="Life Support" class="tab-img">
+      <div class="srv-row">
+        <div class="sc rv"><div class="sc-ic ic-r">🫁</div><div><h3>Ventilators & Anesthesia</h3><p>Flow calibration (0–15 L/min), leak testing, O₂ sensor accuracy, battery cycling and full IEC 60601 safety audits. Dräger, Hamilton, Mindray.</p><div class="sc-tags"><span class="sc-tag">Dräger</span><span class="sc-tag">Hamilton</span><span class="sc-tag">Mindray</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-t">💓</div><div><h3>Patient Monitoring Systems</h3><p>ECG validation, SpO₂ calibration, NIBP accuracy testing, defibrillator simulation and full IEC 60601-1 electrical safety testing.</p><div class="sc-tags"><span class="sc-tag">ECG</span><span class="sc-tag">SpO2</span><span class="sc-tag">IEC 60601-1</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-b">💉</div><div><h3>Infusion & Syringe Pumps</h3><p>Occlusion pressure testing, flow accuracy (&lt;±2%), dose error rate validation and firmware updates for BD, Fresenius and B.Braun.</p><div class="sc-tags"><span class="sc-tag">BD</span><span class="sc-tag">Fresenius</span><span class="sc-tag">B.Braun</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-g">⚡</div><div><h3>Defibrillators & AEDs</h3><p>Energy delivery verification, shock waveform analysis, electrode pad testing, charge time validation and battery health assessment.</p><div class="sc-tags"><span class="sc-tag">Zoll</span><span class="sc-tag">Philips AED</span><span class="sc-tag">Cardiac Science</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-p">🔬</div><div><h3>Laboratory Analysers</h3><p>Haematology, biochemistry, blood gas and coagulation analyser servicing, QC validation and calibration for Roche, Abbott and Siemens.</p><div class="sc-tags"><span class="sc-tag">Roche</span><span class="sc-tag">Abbott</span><span class="sc-tag">Blood Gas</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-b">🛏️</div><div><h3>Surgical & ICU Equipment</h3><p>Electrosurgical unit testing, operating table servicing, surgical light calibration and warming blanket validation.</p><div class="sc-tags"><span class="sc-tag">ESU Testing</span><span class="sc-tag">OR Tables</span><span class="sc-tag">Surgical Lights</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-dent">
+      <img src="https://i.pinimg.com/1200x/78/c1/07/78c107c0a43c341d9c2f1018eaf2ef02.jpg" alt="Dental" class="tab-img">
+      <div class="srv-row">
+        <div class="sc rv"><div class="sc-ic ic-t">🦷</div><div><h3>Dental Chairs & Treatment Units</h3><p>Hydraulic repair, suction optimisation, motor calibration, waterline disinfection and ADA & EN 13060 compliance. KaVo, Sirona, A-dec.</p><div class="sc-tags"><span class="sc-tag">KaVo</span><span class="sc-tag">Sirona</span><span class="sc-tag">A-dec</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-b">🧪</div><div><h3>Sterilization & Autoclaves</h3><p>Class B validation, biological indicator (spore) testing, chamber seal integrity and handpiece balancing up to 400,000 RPM.</p><div class="sc-tags"><span class="sc-tag">Melag</span><span class="sc-tag">Mocom</span><span class="sc-tag">Class B</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-g">📷</div><div><h3>Dental Imaging (X-Ray & CBCT)</h3><p>Radiation leakage per IAEA, CBCT calibration, panoramic X-ray QA, digital sensor servicing and dose optimisation reports.</p><div class="sc-tags"><span class="sc-tag">CBCT</span><span class="sc-tag">Panoramic</span><span class="sc-tag">IAEA</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-r">💨</div><div><h3>Dental Compressors & Suction</h3><p>Air quality testing (ISO 8573-1), vacuum pressure optimisation, filter replacement and infection control certification.</p><div class="sc-tags"><span class="sc-tag">ISO 8573-1</span><span class="sc-tag">Cattani</span><span class="sc-tag">Durr Dental</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-p">⚡</div><div><h3>Dental Laser Systems</h3><p>Diode and Er:YAG laser servicing, output power measurement, fibre optic testing and safety interlock validation.</p><div class="sc-tags"><span class="sc-tag">Diode Laser</span><span class="sc-tag">Er:YAG</span><span class="sc-tag">Biolase</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-t">🌡️</div><div><h3>Dental Lab Equipment</h3><p>Furnace calibration, milling machine (CAD/CAM) servicing, curing light validation and amalgamator servicing.</p><div class="sc-tags"><span class="sc-tag">CAD/CAM</span><span class="sc-tag">Curing Light</span><span class="sc-tag">Zirconia</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-maint">
+      <img src="https://cdn2.picryl.com/photo/2013/03/14/brian-speck-a-bio-medical-contractor-tests-medical-0728c9-1024.jpg" alt="Maintenance" class="tab-img">
+      <div class="srv-row">
+        <div class="sc rv"><div class="sc-ic ic-b">📋</div><div><h3>Planned Preventive Maintenance (PPM)</h3><p>Quarterly FMECA-based visits: visual inspection, functional testing, calibration, cleaning and full DHA/MOH-compliant reporting.</p><div class="sc-tags"><span class="sc-tag">FMECA</span><span class="sc-tag">Quarterly</span><span class="sc-tag">DHA Compliant</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-t">🛡️</div><div><h3>Annual Maintenance Contracts (AMC)</h3><p>Unlimited emergency callouts, scheduled PPM visits, parts & labour, 4-hour response SLA and full compliance certification.</p><div class="sc-tags"><span class="sc-tag">Unlimited Callouts</span><span class="sc-tag">Parts Included</span><span class="sc-tag">4hr SLA</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-g">📊</div><div><h3>Comprehensive Maintenance Contracts (CMC)</h3><p>All AMC benefits plus loaner equipment, dedicated account manager, multi-site coordination and digital asset dashboard.</p><div class="sc-tags"><span class="sc-tag">Loaner Units</span><span class="sc-tag">Multi-Site</span><span class="sc-tag">2hr SLA</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-r">🔍</div><div><h3>Corrective & Emergency Repair</h3><p>24/7 on-demand breakdown repair with root cause analysis, OEM-grade parts and same-day return-to-service documentation.</p><div class="sc-tags"><span class="sc-tag">24/7</span><span class="sc-tag">Root Cause</span><span class="sc-tag">OEM Parts</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-p">📈</div><div><h3>Equipment Condition Appraisal</h3><p>Pre-purchase inspection, end-of-life assessment, insurance documentation and lifecycle optimisation reports.</p><div class="sc-tags"><span class="sc-tag">Pre-Purchase</span><span class="sc-tag">Insurance Docs</span><span class="sc-tag">Lifecycle</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-b">🗂️</div><div><h3>Medical Equipment Asset Management</h3><p>Inventory tracking, equipment registers, maintenance history logs, compliance dashboards and scheduled alert management.</p><div class="sc-tags"><span class="sc-tag">Asset Register</span><span class="sc-tag">Dashboard</span><span class="sc-tag">Multi-Dept</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-inst">
+      <img src="https://cdn2.picryl.com/photo/2020/04/06/tech-sgt-alec-platt-biomedical-equipment-specialist-1d4fd5-1024.jpg" alt="Installation" class="tab-img">
+      <div class="srv-row">
+        <div class="sc rv"><div class="sc-ic ic-b">🏗️</div><div><h3>New Equipment Installation</h3><p>Turnkey installation: site preparation, electrical & network integration, equipment mounting, software config and commissioning sign-off.</p><div class="sc-tags"><span class="sc-tag">Turnkey</span><span class="sc-tag">Site Survey</span><span class="sc-tag">Network</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-t">⚙️</div><div><h3>Testing & Commissioning</h3><p>Full functional testing, IEC 60601 safety, performance benchmarking, DHA commissioning documentation and operator handover.</p><div class="sc-tags"><span class="sc-tag">IEC 60601</span><span class="sc-tag">Commissioning</span><span class="sc-tag">DHA Docs</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-g">🔄</div><div><h3>Equipment Relocation</h3><p>Safe disconnection, logistics coordination, reinstallation, recalibration and recommissioning — including MRI RF shielding validation.</p><div class="sc-tags"><span class="sc-tag">Relocation</span><span class="sc-tag">Recalibration</span><span class="sc-tag">RF Shielding</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-r">🗑️</div><div><h3>Decommissioning & Disposal</h3><p>Safe decommissioning with data sanitisation, hazmat handling (helium venting, X-ray disposal), and DHA-compliant documentation.</p><div class="sc-tags"><span class="sc-tag">Data Sanitisation</span><span class="sc-tag">Hazmat</span><span class="sc-tag">Compliant</span></div></div></div>
+      </div>
+    </div>
+
+    <div class="tab-pane" id="tab-train">
+      <img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/blog/collaboration-planning-or-nurses-in-meeting-for-a-2023-03-09-08-47-01-utc_0.jpg" alt="Training" class="tab-img">
+      <div class="srv-row">
+        <div class="sc rv"><div class="sc-ic ic-g">🎓</div><div><h3>Biomedical Staff Training</h3><p>Certification programmes for clinical engineers and biomedical technicians covering equipment operation, safety protocols and regulatory compliance.</p><div class="sc-tags"><span class="sc-tag">Certified</span><span class="sc-tag">On-Site</span><span class="sc-tag">CPD Hours</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-b">📚</div><div><h3>User & Operator Training</h3><p>Structured equipment operation training with competency assessment and documented sign-off ready for JCIA and DHA accreditation.</p><div class="sc-tags"><span class="sc-tag">Competency</span><span class="sc-tag">Accreditation</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-t">📜</div><div><h3>Regulatory Compliance Workshops</h3><p>DHA, MOH, HAAD and JCIA equipment maintenance requirements, documentation standards and audit preparation for biomedical teams.</p><div class="sc-tags"><span class="sc-tag">DHA/MOH</span><span class="sc-tag">JCIA</span><span class="sc-tag">Audit Prep</span></div></div></div>
+        <div class="sc rv"><div class="sc-ic ic-p">🛡️</div><div><h3>Radiation Safety Training</h3><p>Radiation protection principles, dose monitoring, IAEA guidelines, shielding requirements and safe X-ray/fluoroscopy operator procedures.</p><div class="sc-tags"><span class="sc-tag">IAEA</span><span class="sc-tag">Radiation Protection</span><span class="sc-tag">Certificate</span></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROUTINE BREAKDOWN -->
+<section class="sec" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Core Engineering</div><h2 class="sec-h2">What Routine Maintenance Covers</h2><p class="sec-sub">Systematic, scheduled care that prevents failures and protects your patients, staff, and revenue.</p></div>
+    <div class="rtg">
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">🔍</div><h3>Visual & Mechanical Inspection</h3><p>Cables, connectors, enclosures, alarms and mechanical components checked for early fault detection.</p></div>
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">⚖️</div><h3>Calibration & Verification</h3><p>Traceable calibration against national/international standards with issued certificates.</p></div>
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">🧹</div><h3>Cleaning & Decontamination</h3><p>Internal/external cleaning, filter replacement, cooling maintenance and infection control decontamination.</p></div>
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">🔋</div><h3>Battery & Power Testing</h3><p>Battery health, load testing, UPS verification, power supply calibration and replacement scheduling.</p></div>
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">🛡️</div><h3>Electrical Safety Testing</h3><p>Leakage current, earth bond resistance and dielectric strength per IEC 60601-1 with full documentation.</p></div>
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">💾</div><h3>Software & Firmware Updates</h3><p>Manufacturer-approved updates, security patches, network config review and backup management.</p></div>
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">📝</div><h3>Compliance Documentation</h3><p>Full service records and calibration certificates formatted for DHA, MOH and JCIA auditors.</p></div>
+      <div class="rtc rv"><div style="font-size:2rem;margin-bottom:.85rem">📊</div><h3>Performance Benchmarking</h3><p>Equipment performance trending over time to identify degradation early and schedule predictive maintenance.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Coverage Plans</div><h2 class="sec-h2">Choose the Right Maintenance Plan</h2><p class="sec-sub">Flexible contracts for every facility — from single clinic to multi-site hospital groups.</p></div>
+    <div class="plans-g">
+      <div class="plan rv"><div class="plan-n">Basic</div><div class="plan-p">Callout</div><div class="plan-sub">Pay-per-visit, no contract</div><div class="plan-feat"><div class="pf">Emergency breakdown repair</div><div class="pf">Service report provided</div><div class="pf">Labour in callout fee</div><div class="pf">Parts quoted separately</div><div class="pf no">No SLA guarantee</div><div class="pf no">No PPM visits</div></div><a href="contact.html" class="btn btn-o" style="width:100%;justify-content:center">Get a Quote</a></div>
+      <div class="plan feat rv"><div class="plan-n">AMC</div><div class="plan-p">Annual</div><div class="plan-sub">Annual Maintenance Contract</div><div class="plan-feat"><div class="pf">4-hour SLA (Dubai)</div><div class="pf">2× PPM visits per year</div><div class="pf">Unlimited callouts</div><div class="pf">Labour & travel included</div><div class="pf">DHA/MOH compliance docs</div><div class="pf">Priority engineer allocation</div></div><a href="contact.html" class="btn btn-p" style="width:100%;justify-content:center">Get a Quote</a></div>
+      <div class="plan rv"><div class="plan-n">CMC Premium</div><div class="plan-p">Comprehensive</div><div class="plan-sub">Comprehensive Maintenance Contract</div><div class="plan-feat"><div class="pf">2-hour SLA (Dubai)</div><div class="pf">4× PPM visits per year</div><div class="pf">All parts & labour included</div><div class="pf">Full compliance documentation</div><div class="pf">Dedicated account manager</div><div class="pf">Loaner equipment coverage</div></div><a href="contact.html" class="btn btn-o" style="width:100%;justify-content:center">Get a Quote</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section class="sec" style="background:#F0F4F8">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow dark-ey">Quality Assurance</div><h2 class="sec-h2" style="color:var(--navy)">Our Certifications</h2></div>
+    <div class="cert-g">
+      <div class="cert-c rv"><div style="font-size:2.5rem;margin-bottom:.75rem">🏆</div><h4>ISO 9001:2015</h4><p>Quality Management System certified across all service lines.</p></div>
+      <div class="cert-c rv"><div style="font-size:2.5rem;margin-bottom:.75rem">🔬</div><h4>ISO 13485:2016</h4><p>Medical Device Quality Management Systems certification.</p></div>
+      <div class="cert-c rv"><div style="font-size:2.5rem;margin-bottom:.75rem">🌐</div><h4>CE Marking</h4><p>European conformity standards compliance for all services.</p></div>
+      <div class="cert-c rv"><div style="font-size:2.5rem;margin-bottom:.75rem">🏛️</div><h4>DHA Approved</h4><p>Dubai Health Authority approved biomedical service provider.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="emrg"><div class="emrg-in"><div class="emrg-badge"><span class="dot"></span>24/7 Emergency Hotline Active</div><h2>Equipment Down? We Respond Fast.</h2><p>Certified engineers on-call now across Dubai & UAE — 365 days a year.</p><div class="btn-row"><a href="tel:+971553252589" class="btn btn-w">📞 +971-55-325-2589</a><a href="contact.html" class="btn btn-ow">Request Service Quote</a></div></div></section>
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand"><a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a><p>Dubai's trusted partner for medical &amp; dental equipment service, repair, maintenance and supply. Serving UAE healthcare since 2009.</p><div class="fcb-row" style="margin-top:1.25rem"><span class="fcb">ISO 9001:2015</span><span class="fcb">ISO 13485</span><span class="fcb">CE Marking</span><span class="fcb">DHA Approved</span></div></div>
+    <div class="foot-col"><h4>Services</h4><a href="services.html">MRI &amp; CT Systems</a><a href="services.html">Life Support</a><a href="services.html">Dental Equipment</a><a href="services.html">Routine Maintenance</a><a href="services.html">Installation &amp; Training</a><a href="services.html">AMC / CMC Plans</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="about.html">About Us</a><a href="gallery.html">Gallery</a><a href="media.html">Media Center</a><a href="contact.html">Contact</a><a href="#">Privacy Policy</a></div>
+    <div class="foot-col"><h4>Contact</h4><a href="tel:+971553252589">+971 55 325 2589</a><a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a><a href="#">Office 301, Fardan Business Tower, Bur Dubai</a><a href="https://wa.me/971553252589" target="_blank" rel="noopener" style="color:#25D366!important">💬 WhatsApp Us</a></div>
+  </div>
+  <div class="foot-bot"><p>&copy; 2026 ICON BIOTRONICS. All rights reserved. Registered in Dubai, UAE.</p><div class="fcb-row"><span class="fcb">24/7 Support</span><span class="fcb">UAE-Wide Coverage</span></div></div>
+</footer>
+<a href="https://wa.me/971553252589" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="script.js"></script>
+</body></html>
