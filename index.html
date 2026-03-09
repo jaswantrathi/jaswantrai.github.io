@@ -1,95 +1,201 @@
-<!-- index.html (Home Page - Updated with more expertise teaser) -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICON BIOTRONICS | Medical & Dental Equipment Solutions in Dubai</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <header>
-    <nav>
-      <div class="logo">ICON BIOTRONICS</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1>ICON BIOTRONICS</h1>
-      <p>Your Trusted Partner for Medical & Dental Equipment Service, Repair, Maintenance, and Supplies</p>
-      <a href="contact.html" class="cta-btn">Get a Quote</a>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ICON BIOTRONICS | Biomedical Engineering Dubai UAE</title>
+<meta name="description" content="Dubai's most trusted biomedical & dental equipment partner. MRI, CT, Ultrasound, Dental, 24/7 emergency support UAE.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+#hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:var(--nav-h)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,232,212,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,232,212,.04) 1px,transparent 1px);background-size:60px 60px}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse 65% 65% at 15% 55%,rgba(0,232,212,.13) 0%,transparent 60%),radial-gradient(ellipse 45% 50% at 85% 25%,rgba(0,191,165,.08) 0%,transparent 60%)}
+#pc{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.ecg-wrap{position:absolute;bottom:14%;left:0;right:0;height:80px;overflow:hidden;pointer-events:none;opacity:.45}
+.ecg-svg{width:200%;height:80px;animation:ecgM 4s linear infinite}
+@keyframes ecgM{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes floatP{0%{transform:translateY(100vh);opacity:0}10%{opacity:.35}90%{opacity:.35}100%{transform:translateY(-120px);opacity:0}}
+.hero-ct{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:2rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.htag{display:inline-flex;align-items:center;gap:.5rem;background:rgba(0,232,212,.1);border:1px solid rgba(0,232,212,.3);color:var(--cyan);padding:.38rem 1rem;border-radius:50px;font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:1.5rem}
+.htag .dot{width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
+.hero-h1{font-size:clamp(2.6rem,5.5vw,4.6rem);color:#fff;letter-spacing:-1.5px;line-height:1.05;margin-bottom:1.5rem}
+.hero-h1 .c{color:var(--cyan)}.hero-h1 .s{display:block;font-weight:300;font-size:.58em;color:rgba(255,255,255,.42);letter-spacing:0;margin-top:.35rem}
+.tw-wrap{font-size:1.05rem;color:rgba(255,255,255,.6);margin-bottom:2.5rem;min-height:1.75rem}
+.cursor{display:inline-block;width:2px;height:1em;background:var(--cyan);margin-left:2px;vertical-align:middle;animation:blink .7s infinite}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+/* Device card */
+.dcard{background:linear-gradient(135deg,rgba(14,30,53,.92),rgba(10,22,40,.97));border:1px solid rgba(0,232,212,.2);border-radius:22px;padding:2rem;box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);position:relative;animation:fdUp .9s .4s var(--ease) both}
+.dcard::before{content:'';position:absolute;top:-1px;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent)}
+.dcard-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem}
+.dbadge{font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--cyan);background:rgba(0,232,212,.1);padding:.28rem .75rem;border-radius:20px}
+.dlive{display:flex;align-items:center;gap:.4rem;font-size:.72rem;color:rgba(255,255,255,.4)}
+.dlive .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+.dimg{width:100%;height:175px;object-fit:cover;border-radius:12px;margin-bottom:1.25rem;border:1px solid rgba(0,232,212,.1)}
+.dmetrics{display:grid;grid-template-columns:repeat(3,1fr);gap:.65rem}
+.dmet{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.75rem;text-align:center}
+.dmet .v{font-family:'Exo 2',sans-serif;font-size:1.3rem;font-weight:900;color:var(--cyan)}
+.dmet .l{font-size:.62rem;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+@keyframes fdUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+/* Stats bar */
+.stats-bar{background:var(--navy2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem}
+.stats-row{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+/* Mkt cards */
+.mkt-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.mkt-c{background:var(--glass);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;transition:all .4s var(--ease);position:relative}
+.mkt-c:hover{border-color:rgba(0,232,212,.4);transform:translateY(-4px)}
+.mkt-c::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:0;transition:.3s}
+.mkt-c:hover::before{opacity:1}
+.mkt-v{font-family:'Exo 2',sans-serif;font-size:2.2rem;font-weight:900;color:#fff;line-height:1;margin-bottom:.2rem}
+.mkt-v span{font-size:1.2rem;color:var(--cyan)}
+.mkt-l{color:rgba(255,255,255,.5);font-size:.82rem;margin-bottom:.85rem}
+.mkt-spot{grid-column:1/-1;background:linear-gradient(135deg,rgba(0,232,212,.07),rgba(0,191,165,.04));border:1px solid rgba(0,232,212,.2);border-radius:var(--r2);padding:2.5rem;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.ms-big{font-family:'Exo 2',sans-serif;font-size:3.5rem;font-weight:900;color:var(--cyan);line-height:1}
+/* Why */
+.why-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-c{background:var(--glass);border:1px solid var(--border);border-radius:var(--r2);padding:2rem;transition:all .4s var(--ease);position:relative}
+.why-c:hover{background:rgba(0,232,212,.05);border-color:rgba(0,232,212,.3);transform:translateY(-4px)}
+.why-n{font-family:'Exo 2',sans-serif;font-size:4.5rem;font-weight:900;color:rgba(0,232,212,.07);position:absolute;top:-.5rem;right:1rem;line-height:1}
+.why-c h3{font-size:1rem;margin-bottom:.5rem}
+.why-c p{color:rgba(255,255,255,.45);font-size:.85rem;line-height:1.7}
+/* Srv preview */
+.srv-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.srv-c{background:#fff;border-radius:var(--r2);overflow:hidden;border:1.5px solid rgba(0,0,0,.07);transition:all .4s var(--ease);position:relative}
+.srv-c:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.12);border-color:var(--cyan2)}
+.srv-ci{width:100%;height:190px;object-fit:cover}
+.srv-cb{padding:1.5rem}
+.srv-cb h3{font-size:1rem;color:var(--navy);margin-bottom:.45rem}
+.srv-cb p{font-size:.82rem;color:var(--muted);margin-bottom:.85rem;line-height:1.6}
+.sarr{position:absolute;top:1rem;right:1rem;width:32px;height:32px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--cyan);font-size:.75rem;transition:.3s}
+.srv-c:hover .sarr{background:var(--cyan);color:var(--dark)}
+@media(max-width:1000px){.hero-ct{grid-template-columns:1fr;text-align:center;gap:2rem}.hero-btns{justify-content:center}.dcard{display:none}.mkt-g,.mkt-spot{grid-template-columns:1fr}.why-g,.srv-g{grid-template-columns:1fr 1fr}.stats-row{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.why-g,.srv-g{grid-template-columns:1fr}}
+</style>
+</head><body>
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a>
+    <div class="nav-links"><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="media.html">Media</a><a href="contact.html">Contact</a><a href="tel:+971553252589" class="nav-cta">📞 24/7 Emergency</a></div>
+    <button class="hamburger" id="hb"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mob-nav" id="mn"><a href="index.html">🏠 Home</a><a href="about.html">ℹ️ About</a><a href="services.html">⚙️ Services</a><a href="gallery.html">🖼️ Gallery</a><a href="media.html">📰 Media</a><a href="contact.html">📬 Contact</a><a href="tel:+971553252589" class="mob-emrg">🚨 Emergency: +971-55-325-2589</a></div>
+<section id="hero">
+  <div class="hero-grid"></div><div class="hero-glow"></div><div id="pc"></div>
+  <div class="ecg-wrap"><svg class="ecg-svg" viewBox="0 0 1200 80" preserveAspectRatio="none" fill="none"><path d="M0,40 L80,40 L100,40 L110,12 L125,68 L140,4 L155,76 L165,40 L180,40 L260,40 L280,40 L290,12 L305,68 L320,4 L335,76 L345,40 L360,40 L440,40 L460,40 L470,12 L485,68 L500,4 L515,76 L525,40 L540,40 L620,40 L640,40 L650,12 L665,68 L680,4 L695,76 L705,40 L720,40 L800,40 L820,40 L830,12 L845,68 L860,4 L875,76 L885,40 L900,40 L980,40 L1000,40 L1010,12 L1025,68 L1040,4 L1055,76 L1065,40 L1080,40 L1200,40" stroke="url(#eg)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="eg" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00E8D4" stop-opacity="0"/><stop offset="30%" stop-color="#00E8D4" stop-opacity=".8"/><stop offset="70%" stop-color="#00E8D4" stop-opacity=".8"/><stop offset="100%" stop-color="#00E8D4" stop-opacity="0"/></linearGradient></defs></svg></div>
+  <div class="hero-ct">
+    <div>
+      <div class="htag"><span class="dot"></span>Dubai's #1 Biomedical Engineering Company</div>
+      <h1 class="hero-h1">Precision Care for<br><span class="c">Critical Medical</span><span class="s">Equipment — Trusted Across UAE Since 2009</span></h1>
+      <div class="tw-wrap"><span id="tw"></span><span class="cursor"></span></div>
+      <div class="hero-btns"><a href="contact.html" class="btn btn-p">⚡ Request Service</a><a href="services.html" class="btn btn-o">View All Services →</a></div>
     </div>
-  </section>
+    <div class="dcard">
+      <div class="dcard-h"><span class="dbadge">Live Monitoring</span><span class="dlive"><span class="dot"></span>Engineers On-Call</span></div>
+      <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_58971730.jpeg" alt="MRI Service" class="dimg">
+      <div class="dmetrics"><div class="dmet"><div class="v">99%</div><div class="l">SLA Met</div></div><div class="dmet"><div class="v">4h</div><div class="l">Response</div></div><div class="dmet"><div class="v">18+</div><div class="l">Certified</div></div></div>
+    </div>
+  </div>
+</section>
 
-  <main>
-    <section class="intro">
-      <h2>Excellence in Biomedical & Dental Engineering</h2>
-      <p>With cutting-edge expertise in both medical and dental fields, we ensure your equipment—from MRI systems to dental chairs—performs optimally, supporting healthcare excellence across the UAE.</p>
-    </section>
+<div class="stats-bar"><div class="stats-row">
+  <div style="text-align:center" class="stat-div"><div class="stat-num" data-t="15" data-s="+">0</div><div class="stat-lbl">Years Experience</div></div>
+  <div style="text-align:center" class="stat-div"><div class="stat-num" data-t="500" data-s="+">0</div><div class="stat-lbl">Healthcare Clients</div></div>
+  <div style="text-align:center" class="stat-div"><div class="stat-num" data-t="5000" data-s="+">0</div><div class="stat-lbl">Equipment Serviced</div></div>
+  <div style="text-align:center"><div class="stat-num" data-t="24" data-s="/7">0</div><div class="stat-lbl">Emergency Support</div></div>
+</div></div>
 
-    <section class="certifications">
-      <h2>Our Certifications & Approvals</h2>
-      <div class="cert-grid">
-        <div class="cert-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/ISO_9001_2015.svg/1200px-ISO_9001_2015.svg.png" alt="ISO 9001 Certified" class="cert-logo">
-          <p>ISO 9001:2015 Certified for Quality Management</p>
-        </div>
-        <div class="cert-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/FDA_logo.svg/1200px-FDA_logo.svg.png" alt="FDA Approved" class="cert-logo">
-          <p>FDA Compliant Services & Supplies</p>
-        </div>
-        <div class="cert-item">
-          <img src="https://www.ce-marking.help/img/ce-marking.png" alt="CE Marked" class="cert-logo">
-          <p>CE Marking for European Standards Compliance</p>
-        </div>
+<div style="background:var(--navy2);padding:2rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden">
+  <p style="text-align:center;font-size:.68rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.5rem">Authorized Partners & OEM Brands We Support</p>
+  <div class="marquee-wrap"><div class="mq-track" id="mq"></div></div>
+</div>
+
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Market Intelligence</div><h2 class="sec-h2">UAE Healthcare — A $34B Opportunity</h2><p class="sec-sub">Why forward-thinking facilities trust professional biomedical partners.</p></div>
+    <div class="mkt-g">
+      <div class="mkt-c rv"><span class="tag tag-g" style="position:absolute;top:1.25rem;right:1.25rem">▲ Growing</span><div style="font-size:1.6rem;margin-bottom:.75rem">🏥</div><div class="mkt-v">$34<span>B</span></div><div class="mkt-l">UAE Healthcare Market Size by 2030</div><div class="bar"><div class="bar-fill" data-w="88"></div></div></div>
+      <div class="mkt-c rv"><span class="tag" style="position:absolute;top:1.25rem;right:1.25rem">↑ 8.4%</span><div style="font-size:1.6rem;margin-bottom:.75rem">🔬</div><div class="mkt-v">$1.8<span>B</span></div><div class="mkt-l">Medical Device Market UAE (2024)</div><div class="bar"><div class="bar-fill" data-w="60"></div></div></div>
+      <div class="mkt-c rv"><span class="tag tag-gold" style="position:absolute;top:1.25rem;right:1.25rem">Critical</span><div style="font-size:1.6rem;margin-bottom:.75rem">⚙️</div><div class="mkt-v">95<span>%</span></div><div class="mkt-l">Hospitals Outsourcing Biomedical Maintenance</div><div class="bar"><div class="bar-fill" data-w="95"></div></div></div>
+      <div class="mkt-c rv"><span class="tag tag-g" style="position:absolute;top:1.25rem;right:1.25rem">Proven</span><div style="font-size:1.6rem;margin-bottom:.75rem">📉</div><div class="mkt-v">30<span>%</span></div><div class="mkt-l">Downtime Reduction via PPM Programs</div><div class="bar"><div class="bar-fill" data-w="70"></div></div></div>
+      <div class="mkt-c rv"><span class="tag" style="position:absolute;top:1.25rem;right:1.25rem">DHA</span><div style="font-size:1.6rem;margin-bottom:.75rem">🏛️</div><div class="mkt-v">4,000<span>+</span></div><div class="mkt-l">DHA Licensed Healthcare Facilities in Dubai</div><div class="bar"><div class="bar-fill" data-w="75"></div></div></div>
+      <div class="mkt-c rv"><span class="tag tag-gold" style="position:absolute;top:1.25rem;right:1.25rem">ROI</span><div style="font-size:1.6rem;margin-bottom:.75rem">💰</div><div class="mkt-v">40<span>%</span></div><div class="mkt-l">Average Savings vs. OEM Contracts</div><div class="bar"><div class="bar-fill" data-w="80"></div></div></div>
+      <div class="mkt-spot rv">
+        <div><h3 style="font-family:'Exo 2',sans-serif;font-size:1.4rem;color:#fff;margin-bottom:.75rem">Why Dubai Hospitals Need Expert Biomedical Partners</h3><p style="color:rgba(255,255,255,.5);font-size:.9rem;line-height:1.8;max-width:680px">With UAE healthcare investment at an all-time high, hospitals cannot afford equipment downtime. Every unplanned MRI outage costs <strong style="color:var(--gold)">AED 25,000–80,000 per day</strong>. ICON BIOTRONICS delivers guaranteed SLA response times preventing these costly interruptions.</p></div>
+        <div style="text-align:center;flex-shrink:0"><div class="ms-big">AED 25K</div><div style="font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:1.5px;text-transform:uppercase;margin-top:.25rem">Daily Cost of Downtime</div></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section class="equipment-showcase">
-      <h2>Equipment We Service & Supply</h2>
-      <div class="gallery-grid">
-        <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_58971730.jpeg" alt="MRI Technician Performing Maintenance">
-        <img src="https://www.modernheartandvascular.com/wp-content/uploads/2022/10/CT-Scanner-1-Modern-Heart-and-Vascular-Institute-Cardiology-Heart-and-Vein-1024x763.png.webp" alt="High-Resolution CT Scanner">
-        <img src="https://images.pexels.com/photos/7108418/pexels-photo-7108418.jpeg" alt="Ultrasound Machine in Use">
-        <img src="https://s3.mordorintelligence.com/global-dental-equipment-market-industry/global-dental-equipment-market-industry_1667396586883_Dental_Equipment_Market___Logo.webp" alt="Dental Equipment Overview">
-        <img src="https://s3.mordorintelligence.com/uae-dental-devices-market/uae-dental-devices-market_1671874787348_UAE_Dental_Devices_Market.webp" alt="UAE Dental Devices">
-        <img src="https://cdn2.picryl.com/photo/2020/04/06/tech-sgt-alec-platt-biomedical-equipment-specialist-1d4fd5-1024.jpg" alt="Biomedical Engineer Servicing Device">
+<section class="sec" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Our Expertise</div><h2 class="sec-h2">What We Do Best</h2><p class="sec-sub">From imaging systems to dental sterilization — certified precision at every level.</p></div>
+    <div class="srv-g">
+      <div class="srv-c rv"><img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/block/adobestock_1169377445.jpeg" alt="Imaging" class="srv-ci"><div class="sarr">→</div><div class="srv-cb"><div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.65rem"><span class="tag">Imaging</span><span class="tag tag-gold">Critical</span></div><h3>Diagnostic Imaging Systems</h3><p>MRI, CT, Ultrasound, X-Ray — repair, calibration & PPM for all major brands.</p><a href="services.html" class="btn btn-p" style="padding:.55rem 1.1rem;font-size:.78rem">Learn More →</a></div></div>
+      <div class="srv-c rv"><img src="https://i.pinimg.com/736x/83/bc/29/83bc29fb534bb70d93f1024cf851de43.jpg" alt="Life Support" class="srv-ci"><div class="sarr">→</div><div class="srv-cb"><div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.65rem"><span class="tag tag-r">Life Support</span></div><h3>Critical Care Equipment</h3><p>Ventilators, monitors, infusion pumps, defibrillators — zero-downtime servicing.</p><a href="services.html" class="btn btn-p" style="padding:.55rem 1.1rem;font-size:.78rem">Learn More →</a></div></div>
+      <div class="srv-c rv"><img src="https://i.pinimg.com/1200x/78/c1/07/78c107c0a43c341d9c2f1018eaf2ef02.jpg" alt="Dental" class="srv-ci"><div class="sarr">→</div><div class="srv-cb"><div style="display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.65rem"><span class="tag tag-g">Dental</span></div><h3>Dental Equipment Services</h3><p>Chairs, autoclaves, CBCT, compressors — full-spectrum dental biomedical engineering.</p><a href="services.html" class="btn btn-p" style="padding:.55rem 1.1rem;font-size:.78rem">Learn More →</a></div></div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem"><a href="services.html" class="btn btn-p">View All 20+ Services →</a></div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Why Choose Us</div><h2 class="sec-h2">The ICON BIOTRONICS Difference</h2></div>
+    <div class="why-g">
+      <div class="why-c rv"><div class="why-n">01</div><div style="font-size:1.8rem;margin-bottom:1rem">⚡</div><h3>24/7 Emergency Response</h3><p>Rapid deployment within hours across all UAE. Critical equipment never stays down long.</p></div>
+      <div class="why-c rv"><div class="why-n">02</div><div style="font-size:1.8rem;margin-bottom:1rem">🏆</div><h3>ISO 9001:2015 & ISO 13485</h3><p>Every procedure follows internationally audited quality protocols exceeding DHA and JCIA requirements.</p></div>
+      <div class="why-c rv"><div class="why-n">03</div><div style="font-size:1.8rem;margin-bottom:1rem">🔬</div><h3>OEM-Certified Engineers</h3><p>Factory certifications from GE, Philips, Siemens, Dräger — OEM quality at independent pricing.</p></div>
+      <div class="why-c rv"><div class="why-n">04</div><div style="font-size:1.8rem;margin-bottom:1rem">💰</div><h3>40% Cost Savings vs OEM</h3><p>Our clients save 30–45% vs direct OEM contracts while receiving equal or superior service.</p></div>
+      <div class="why-c rv"><div class="why-n">05</div><div style="font-size:1.8rem;margin-bottom:1rem">📄</div><h3>Full Compliance Documentation</h3><p>DHA/MOH-ready calibration certificates and audit-trail documentation for every service.</p></div>
+      <div class="why-c rv"><div class="why-n">06</div><div style="font-size:1.8rem;margin-bottom:1rem">🌍</div><h3>UAE-Wide Coverage</h3><p>From Bur Dubai HQ, we serve all seven Emirates with dedicated teams available on-demand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--navy)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">How It Works</div><h2 class="sec-h2">From Call to Certified — 4 Steps</h2></div>
+    <div class="process-row">
+      <div class="pstep rv"><div class="pnum">1</div><h3>Contact & Triage</h3><p>Call, WhatsApp, or submit online. Certified specialist assigned within the hour.</p></div>
+      <div class="pstep rv"><div class="pnum">2</div><h3>On-Site Diagnosis</h3><p>Engineer arrives with OEM diagnostic software for precise fault identification.</p></div>
+      <div class="pstep rv"><div class="pnum">3</div><h3>Repair & Calibration</h3><p>OEM-grade parts and certified procedures restore full functionality with precision.</p></div>
+      <div class="pstep rv"><div class="pnum">4</div><h3>Certification & Handover</h3><p>Complete compliance docs and calibration certificates — DHA/MOH audit-ready.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="background:var(--dark)">
+  <div class="wrap">
+    <div class="sec-head rv"><div class="eyebrow">Client Stories</div><h2 class="sec-h2">Trusted by Dubai's Top Healthcare Providers</h2></div>
+    <div class="testi-outer rv">
+      <div class="testi-track" id="tt">
+        <div class="testi-card"><div class="testi-in"><div class="testi-stars">★★★★★</div><p class="testi-text">"ICON BIOTRONICS had our 3T MRI back online within 6 hours of the breakdown call. The engineer arrived at 2 AM without hesitation. The calibration report was perfect for our DHA audit."</p><div class="testi-auth"><strong>Dr. Ahmed Al-Rashidi</strong><span>Head of Radiology — Dubai Hospital</span></div></div></div>
+        <div class="testi-card"><div class="testi-in"><div class="testi-stars">★★★★★</div><p class="testi-text">"We switched from our OEM contract to ICON BIOTRONICS and saved 38% annually. The quality of work is identical — if not better. Our MOH inspector was thoroughly impressed."</p><div class="testi-auth"><strong>Eng. Sara Al-Mansoori</strong><span>Biomedical Manager — NMC Healthcare, Abu Dhabi</span></div></div></div>
+        <div class="testi-card"><div class="testi-in"><div class="testi-stars">★★★★★</div><p class="testi-text">"As a multi-branch dental group, ICON BIOTRONICS maintains all 14 of our chairs, autoclaves, and CBCT units. Zero unplanned downtime in 2 years. Exceptional service."</p><div class="testi-auth"><strong>Dr. Khalid Mahmoud</strong><span>Director — Smile Dental Group, Dubai</span></div></div></div>
       </div>
-    </section>
+      <div class="tdots"><div class="tdot active" onclick="goT(0)"></div><div class="tdot" onclick="goT(1)"></div><div class="tdot" onclick="goT(2)"></div></div>
+    </div>
+  </div>
+</section>
 
-    <section class="testimonials">
-      <h2>What Our Clients Say</h2>
-      <div class="test-grid">
-        <div class="test-card">
-          <p>"ICON BIOTRONICS provided exceptional repair services for our MRI machine. Minimal downtime and professional team!"</p>
-          <cite>- Dr. Ahmed K., Dubai Hospital</cite>
-        </div>
-        <div class="test-card">
-          <p>"Reliable maintenance for our dental chairs and X-rays. Highly recommended for dental clinics."</p>
-          <cite>- Dr. Sara L., Dental Clinic UAE</cite>
-        </div>
-        <div class="test-card">
-          <p>"Fast supplies delivery and expert advice on device upgrades. True partners in healthcare."</p>
-          <cite>- Eng. Khalid M., Medical Center</cite>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2026 ICON BIOTRONICS. All rights reserved.</p>
-    <p>Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E. | +971 55 325 2589 | iconbiotronics.uae@gmail.com</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+<section class="emrg">
+  <div class="emrg-in">
+    <div class="emrg-badge"><span class="dot"></span>24/7 Emergency Hotline Active Now</div>
+    <h2>Equipment Failure Costs You Money.<br>Call Us Before It Happens.</h2>
+    <p>Our certified biomedical engineers are on-call right now across Dubai & UAE.</p>
+    <div class="btn-row"><a href="tel:+971553252589" class="btn btn-w">📞 +971-55-325-2589</a><a href="contact.html" class="btn btn-ow">📋 Request a Quote</a></div>
+    <p style="color:rgba(255,255,255,.7);font-size:.85rem;margin-top:1.25rem">Average response: <strong style="color:#fff">4 hours</strong> · Coverage: <strong style="color:#fff">All UAE</strong></p>
+  </div>
+</section>
+<footer id="footer">
+  <div class="foot-grid">
+    <div class="foot-brand"><a href="index.html" class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></a><p>Dubai's trusted partner for medical &amp; dental equipment service, repair, maintenance and supply. Serving UAE healthcare since 2009.</p><div class="fcb-row" style="margin-top:1.25rem"><span class="fcb">ISO 9001:2015</span><span class="fcb">ISO 13485</span><span class="fcb">CE Marking</span><span class="fcb">DHA Approved</span></div></div>
+    <div class="foot-col"><h4>Services</h4><a href="services.html">MRI &amp; CT Systems</a><a href="services.html">Life Support</a><a href="services.html">Dental Equipment</a><a href="services.html">Routine Maintenance</a><a href="services.html">Installation &amp; Training</a><a href="services.html">AMC / CMC Plans</a></div>
+    <div class="foot-col"><h4>Company</h4><a href="about.html">About Us</a><a href="gallery.html">Gallery</a><a href="media.html">Media Center</a><a href="contact.html">Contact</a><a href="#">Privacy Policy</a></div>
+    <div class="foot-col"><h4>Contact</h4><a href="tel:+971553252589">+971 55 325 2589</a><a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a><a href="#">Office 301, Fardan Business Tower, Bur Dubai</a><a href="https://wa.me/971553252589" target="_blank" rel="noopener" style="color:#25D366!important">💬 WhatsApp Us</a></div>
+  </div>
+  <div class="foot-bot"><p>&copy; 2026 ICON BIOTRONICS. All rights reserved. Registered in Dubai, UAE.</p><div class="fcb-row"><span class="fcb">24/7 Support</span><span class="fcb">UAE-Wide Coverage</span></div></div>
+</footer>
+<a href="https://wa.me/971553252589" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+<script src="script.js"></script>
+</body></html>
