@@ -1,1 +1,385 @@
 <img src="images/hero/Publication4.jpg" alt="ICON BIOTRONICS Logo" class="logo-icon">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICON BIOTRONICS | Medical Equipment Service, Repair & Supplies in Dubai</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #475569;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    .hero {
+      background-image: url('https://endoexcellencecenter.com/wp-content/uploads/2025/10/photo-1666214282459-c7dff167ecc0.jpeg');
+      background-size: cover;
+      background-position: center;
+      height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 123, 255, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    section {
+      margin-bottom: 4rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #007bff;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .about {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .about img {
+      width: 50%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-text {
+      width: 50%;
+    }
+
+    .about-text p {
+      margin-bottom: 1rem;
+      color: #475569;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .service-card-content {
+      padding: 1.5rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #007bff;
+    }
+
+    .service-card p {
+      color: #475569;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    .trust {
+      background-color: #e0f2fe;
+      padding: 3rem 2rem;
+      border-radius: 8px;
+    }
+
+    .trust ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .trust li {
+      font-size: 1.2rem;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .trust li::before {
+      content: '✓';
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact input, .contact textarea {
+      padding: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+    }
+
+    .contact button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .contact button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background-color: #1e293b;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .about {
+        flex-direction: column;
+      }
+
+      .about img, .about-text {
+        width: 100%;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">ICON BIOTRONICS</div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>ICON BIOTRONICS</h1>
+      <p>Your Trusted Partner for Medical Equipment Service, Repair, Maintenance, and Supplies in Dubai</p>
+    </div>
+  </section>
+
+  <main>
+    <section id="about" class="about">
+      <img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/blog/collaboration-planning-or-nurses-in-meeting-for-a-2023-03-09-08-47-01-utc_0.jpg" alt="Professional Team at ICON BIOTRONICS">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>ICON BIOTRONICS is a leading provider of comprehensive solutions for medical equipment and devices in Dubai. With over 15 years of experience, we specialize in service, repair, maintenance, and supplies for a wide range of medical technologies.</p>
+        <p>Our team of certified biomedical engineers ensures that your equipment operates at peak performance, minimizing downtime and enhancing patient care. We deal in all types of devices, from diagnostic imaging to life-support systems, offering trusted expertise you can rely on.</p>
+        <p>Committed to quality and innovation, we partner with top manufacturers to deliver reliable supplies and technical support tailored to healthcare facilities across the UAE.</p>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://cdn10.picryl.com/photo/2000/09/08/senior-airman-matthew-helms-a-bio-medical-equipment-technician-assigned-to-143748-640.jpg" alt="Repair Services">
+          <div class="service-card-content">
+            <h3>Repair</h3>
+            <p>Expert repair services for all medical devices, using genuine parts and advanced diagnostics to restore functionality quickly and efficiently.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://cdn10.picryl.com/photo/1996/08/22/us-air-force-staff-sergeant-starling-ervin-a-medical-equipment-repair-technician-759238-1024.jpg" alt="Maintenance Services">
+          <div class="service-card-content">
+            <h3>Maintenance</h3>
+            <p>Preventive and corrective maintenance programs to extend equipment lifespan, ensure compliance, and reduce operational costs.</p>
+          </div>
+        </div>
+        <div class="service-card">
+          <img src="https://2fulfill.com/wp-content/uploads/2024/02/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvZmw1MDk4NzY2NDUzNy1pbWFnZS1rdTgwM2R3Ny5qcGc.webp" alt="Supplies">
+          <div class="service-card-content">
+            <h3>Supplies</h3>
+            <p>Wide range of high-quality medical supplies and consumables, sourced from trusted vendors, with fast delivery across Dubai.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Our Equipment & Operations</h2>
+      <div class="gallery-grid">
+        <img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/block/adobestock_463802493.jpeg" alt="Modern Medical Devices">
+        <img src="https://cdn2.picryl.com/photo/2020/05/14/staff-sgt-matthew-lavigne-a-biomedical-equipment-ec0c24-1024.jpg" alt="Technician at Work">
+        <img src="https://www.otlusa.biz/wp-content/uploads/2022/12/On-Time-Logistics-Warehousing-Services.jpg" alt="Warehouse Operations">
+        <img src="https://keyarx.com/wp-content/uploads/2025/03/meeting-of-doctors-in-a-comfortable-office-2025-03-07-13-37-09-utc-scaled.jpg" alt="Team Collaboration">
+        <img src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNTE5MTY3MDE4OTQtaW1hZ2UuanBn.jpg" alt="Lab Equipment">
+      </div>
+    </section>
+
+    <section class="trust">
+      <h2>Why Choose ICON BIOTRONICS?</h2>
+      <ul>
+        <li>15+ Years of Biomedical Expertise</li>
+        <li>Certified Engineers & Technicians</li>
+        <li>Comprehensive Coverage for All Device Types</li>
+        <li>Fast Response & 24/7 Support</li>
+        <li>Authorized Parts & Warranties</li>
+        <li>Trusted by Hospitals & Clinics Across UAE</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>Get in touch for inquiries, quotes, or support. We're here to help!</p>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p style="margin-top: 2rem;">Email: info@iconbiotronics.com | Phone: +971-XXX-XXXX | Location: Dubai, UAE</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 ICON BIOTRONICS. All rights reserved.
+  </footer>
+
+  <script>
+    // Basic form submission prevention (for demo)
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Message sent! (This is a demo)');
+    });
+  </script>
+
+</body>
+</html>
