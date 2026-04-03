@@ -1,147 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ICON BIOTRONICS | Biomedical Engineering UAE</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
-<meta name="description" content="ISO-certified biomedical engineering company in UAE specializing in MRI, CT, ventilators, and dental equipment repair.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ICON BIOTRONICS | Biomedical Engineering UAE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="ISO-certified biomedical engineering company in UAE specialising in MRI, CT, ventilators, and dental equipment repair.">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 
-<link rel="stylesheet" href="style.css">
-<script defer src="script.js"></script>
-
-<!-- SEO Schema -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "MedicalBusiness",
- "name": "ICON BIOTRONICS",
- "telephone": "+971553252589",
- "address": {
-   "@type": "PostalAddress",
-   "addressLocality": "Dubai",
-   "addressCountry": "UAE"
- }
-}
-</script>
+  <!-- SEO Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "ICON BIOTRONICS",
+    "telephone": "+971553252589",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dubai",
+      "addressCountry": "UAE"
+    }
+  }
+  </script>
 </head>
 
 <body>
 
-<nav>
-  <div class="container">
-    <strong>ICON BIOTRONICS</strong>
-    <div>
+<!-- ==============================
+     NAVIGATION
+     ============================== -->
+<nav id="nav">
+  <div class="nav-inner">
+
+    <a href="index.html" class="logo-wrap">
+      <div class="logo-icon">IB</div>
+      <div class="logo-text">
+        <strong>ICON BIOTRONICS</strong>
+        <span>Biomedical Engineering UAE</span>
+      </div>
+    </a>
+
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
-      <a href="contact.html">Contact</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html" class="nav-cta">📞 Contact</a>
     </div>
+
+    <button class="hamburger" id="hambBtn" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
   </div>
 </nav>
 
-<section class="hero fade elite-hero">
-  <div class="container">
-    <h1>UAE’s Trusted Biomedical Engineering Experts</h1>
-    <p>24/7 Emergency Support for MRI, CT, Ventilators & Dental Systems</p>
+<!-- Mobile Nav -->
+<div class="mob-nav" id="mobNav">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
+  <a href="tel:+971553252589" class="mob-emrg">📞 Emergency: +971 55 325 2589</a>
+</div>
 
-    <div class="hero-buttons">
-      <a href="tel:+971553252589" class="btn primary">📞 Call Now</a>
-      <a href="https://wa.me/971553252589" class="btn whatsapp">💬 WhatsApp</a>
+
+<!-- ==============================
+     HERO SECTION
+     ============================== -->
+<section class="pg-hero" style="padding: 6rem 2rem; border-bottom: none; background: linear-gradient(135deg, var(--navy2) 0%, var(--navy) 60%, #001a2e 100%); position: relative; overflow: hidden;">
+
+  <!-- Subtle grid overlay -->
+  <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(0,232,212,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,232,212,0.04) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;"></div>
+
+  <!-- Glow accent -->
+  <div style="position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(0,232,212,0.08) 0%,transparent 70%);pointer-events:none;"></div>
+
+  <div class="pg-hero-in rv" style="position:relative;z-index:2;">
+
+    <div class="eyebrow-pill">🇦🇪 UAE's #1 Biomedical Engineering Partner</div>
+
+    <h1 style="font-size:3rem;color:#fff;margin-bottom:1.25rem;line-height:1.2;">
+      Expert Care for<br>
+      <span style="color:var(--cyan);">Critical Medical Equipment</span>
+    </h1>
+
+    <p style="font-size:1.15rem;color:rgba(255,255,255,0.7);max-width:620px;margin:0 auto 2rem;text-align:center;">
+      24/7 emergency support for MRI, CT, ventilators &amp; dental systems.
+      Trusted by hospitals and clinics across the UAE.
+    </p>
+
+    <div class="btn-row" style="margin-bottom:2.5rem;">
+      <a href="tel:+971553252589" class="btn btn-p">📞 Call Now</a>
+      <a href="https://wa.me/971553252589" class="btn btn-o" style="border-color:#25D366;color:#25D366;">💬 WhatsApp</a>
+      <a href="services.html" class="btn btn-o">View Services</a>
     </div>
 
-    <div class="trust-badges">
-      <span>ISO 9001 Certified</span>
-      <span>ISO 13485</span>
-      <span>UAE Based</span>
-      <span>15+ Years Experience</span>
+    <!-- Trust badges -->
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.75rem;">
+      <span class="fcb">✅ ISO 9001 Certified</span>
+      <span class="fcb">✅ ISO 13485</span>
+      <span class="fcb">📍 UAE Based</span>
+      <span class="fcb">🏆 15+ Years Experience</span>
+      <span class="fcb"><span class="dot"></span>24/7 Emergency</span>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==============================
+     STATS STRIP
+     ============================== -->
+<section class="sec" style="background:rgba(0,232,212,0.04);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:2.5rem 2rem;">
+  <div class="wrap">
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;text-align:center;">
+      <div>
+        <div class="num" data-target="15" style="font-family:'Exo 2',sans-serif;font-size:2.8rem;font-weight:800;color:var(--cyan);">0</div>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin:0;">Years Experience</p>
+      </div>
+      <div>
+        <div class="num" data-target="98" style="font-family:'Exo 2',sans-serif;font-size:2.8rem;font-weight:800;color:var(--cyan);">0</div>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin:0;">Client Satisfaction %</p>
+      </div>
+      <div>
+        <div class="num" data-target="24" style="font-family:'Exo 2',sans-serif;font-size:2.8rem;font-weight:800;color:var(--cyan);">0</div>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin:0;">Hour Support</p>
+      </div>
+      <div>
+        <div class="num" data-target="500" style="font-family:'Exo 2',sans-serif;font-size:2.8rem;font-weight:800;color:var(--cyan);">0</div>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;margin:0;">Equipment Serviced</p>
+      </div>
     </div>
   </div>
 </section>
 
- <section class="section fade">
-  <div class="container">
-    <h2>Get Immediate Biomedical Support</h2>
 
-    <form action="https://formsubmit.co/iconbiotronics.uae@gmail.com" method="POST" class="elite-form">
+<!-- ==============================
+     QUICK CALLBACK FORM
+     ============================== -->
+<section class="sec rv">
+  <div class="wrap" style="max-width:560px;">
+    <div class="sec-head">
+      <p class="eyebrow">Immediate Support</p>
+      <h2 class="sec-h2">Request a Callback</h2>
+      <p class="sec-sub">Our engineers typically respond within 30 minutes.</p>
+    </div>
+
+    <form action="https://formsubmit.co/iconbiotronics.uae@gmail.com" method="POST" style="display:flex;flex-direction:column;gap:1rem;">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="tel" name="phone" placeholder="Phone Number" required>
-      <input type="text" name="equipment" placeholder="Equipment Type (MRI, CT, etc)">
-      
-      <button type="submit">Request Callback</button>
-
+      <input type="text" name="equipment" placeholder="Equipment Type (MRI, CT, Ventilator…)">
+      <textarea name="message" placeholder="Brief description of the issue" rows="3" style="resize:vertical;"></textarea>
       <input type="hidden" name="_captcha" value="false">
+      <button type="submit" style="width:100%;padding:1rem;font-size:1rem;">Send Request →</button>
     </form>
   </div>
 </section>
+
+
+<!-- ==============================
+     OUR EXPERTISE (CARDS)
+     ============================== -->
+<section class="sec rv" style="background:rgba(255,255,255,0.01);border-top:1px solid var(--border);">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <p class="eyebrow">What We Do</p>
+      <h2 class="sec-h2">Our Expertise</h2>
+      <p class="sec-sub">End-to-end biomedical engineering services for every clinical environment.</p>
     </div>
- </section>
 
-<section class="section fade">
-  <div class="container">
-    <h1>Precision Biomedical Engineering</h1>
-    <p>Trusted by Hospitals & Clinics Across UAE</p>
-    <button onclick="goContact()">Request Service</button>
-  </div>
-</section>
-
-<section class="section fade">
-  <div class="container">
-    <h2>Our Expertise</h2>
     <div class="grid">
       <div class="card">
-        <h3>MRI & CT Systems</h3>
-        <p>Advanced calibration and repair with OEM precision.</p>
+        <div style="font-size:2rem;margin-bottom:1rem;">🧲</div>
+        <h3>MRI &amp; CT Systems</h3>
+        <p>Advanced calibration, preventive maintenance, and precision repair with OEM-grade components.</p>
       </div>
       <div class="card">
+        <div style="font-size:2rem;margin-bottom:1rem;">🫁</div>
         <h3>Life Support</h3>
-        <p>Ventilators, ICU equipment & patient monitoring systems.</p>
+        <p>Ventilators, ICU equipment, anaesthesia machines &amp; patient monitoring systems.</p>
       </div>
       <div class="card">
+        <div style="font-size:2rem;margin-bottom:1rem;">🦷</div>
         <h3>Dental Equipment</h3>
-        <p>Autoclaves, dental chairs, sterilization validation.</p>
+        <p>Autoclaves, dental chairs, X-ray units &amp; sterilisation validation services.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:2rem;margin-bottom:1rem;">📋</div>
+        <h3>AMC &amp; CMC Contracts</h3>
+        <p>Annual and comprehensive maintenance contracts tailored to your facility's needs.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:2rem;margin-bottom:1rem;">🔬</div>
+        <h3>Lab &amp; Diagnostics</h3>
+        <p>Analysers, centrifuges, incubators, and point-of-care diagnostic equipment.</p>
+      </div>
+      <div class="card">
+        <div style="font-size:2rem;margin-bottom:1rem;">⚡</div>
+        <h3>Emergency Response</h3>
+        <p>24/7 rapid-response callouts across Dubai and the wider UAE — same-day service available.</p>
       </div>
     </div>
+
+    <div class="btn-row" style="margin-top:2.5rem;">
+      <a href="services.html" class="btn btn-p">All Services →</a>
+    </div>
+
   </div>
 </section>
 
-<section class="section fade">
-  <div class="container">
-    <h2>Client Testimonials</h2>
+
+<!-- ==============================
+     TESTIMONIALS
+     ============================== -->
+<section class="sec rv" style="border-top:1px solid var(--border);">
+  <div class="wrap">
+
+    <div class="sec-head">
+      <p class="eyebrow">Client Testimonials</p>
+      <h2 class="sec-h2">Trusted by Leading Healthcare Providers</h2>
+    </div>
+
     <div class="grid">
-      <div class="card">“Outstanding MRI support.”<br><b>Dubai Hospital</b></div>
-      <div class="card">“Fast and reliable service.”<br><b>Private Clinic UAE</b></div>
-      <div class="card">“Highly professional team.”<br><b>Dental Center</b></div>
+      <div class="card" style="border-left:3px solid var(--cyan);">
+        <p style="color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:1rem;">"Outstanding MRI support — they had our scanner back online within hours. Exceptional professionalism."</p>
+        <strong style="color:var(--cyan);font-size:0.9rem;">Dubai Hospital</strong>
+      </div>
+      <div class="card" style="border-left:3px solid var(--cyan);">
+        <p style="color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:1rem;">"Fast, reliable, and truly knowledgeable. ICON BIOTRONICS are our first call for any equipment issue."</p>
+        <strong style="color:var(--cyan);font-size:0.9rem;">Private Clinic, Abu Dhabi</strong>
+      </div>
+      <div class="card" style="border-left:3px solid var(--cyan);">
+        <p style="color:rgba(255,255,255,0.8);font-style:italic;margin-bottom:1rem;">"Highly professional team. They handled our autoclave validation perfectly — zero downtime."</p>
+        <strong style="color:var(--cyan);font-size:0.9rem;">Dental Center, Sharjah</strong>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ==============================
+     EMERGENCY CTA
+     ============================== -->
+<section class="emrg">
+  <div class="emrg-in">
+    <div class="emrg-badge"><span class="dot"></span>Available Right Now</div>
+    <h2 style="color:#fff;">Need Immediate Support?</h2>
+    <p>Our biomedical engineers are on call 24/7 across the UAE. Don't let equipment downtime affect patient care.</p>
+    <div class="btn-row">
+      <a href="tel:+971553252589" class="btn btn-p">📞 Call +971 55 325 2589</a>
+      <a href="https://wa.me/971553252589" class="btn btn-o" style="border-color:#25D366;color:#25D366;">💬 WhatsApp Us</a>
     </div>
   </div>
 </section>
 
-<section class="stats">
-  <div class="container grid">
-    <div>
-      <div class="num" data-target="15">0</div>
-      <p>Years Experience</p>
-    </div>
-    <div>
-      <div class="num" data-target="98">0</div>
-      <p>Client Satisfaction %</p>
-    </div>
-    <div>
-      <div class="num" data-target="24">0</div>
-      <p>Support Hours</p>
-    </div>
-  </div>
-</section>
 
-<section class="cta">
-  <h2>Need Immediate Support?</h2>
-  <button onclick="goContact()">Contact Us</button>
-</section>
-
+<!-- ==============================
+     FOOTER
+     ============================== -->
 <footer>
-© 2026 ICON BIOTRONICS • Dubai, UAE • +971 55 325 2589
+  <div class="foot-grid">
+
+    <div class="foot-brand">
+      <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1rem;">
+        <div class="logo-icon">IB</div>
+        <div class="logo-text">
+          <strong>ICON BIOTRONICS</strong>
+          <span>Biomedical Engineering UAE</span>
+        </div>
+      </div>
+      <p>ISO-certified biomedical engineering specialists serving hospitals and clinics across the UAE since 2009.</p>
+      <div class="fcb-row" style="justify-content:flex-start;">
+        <span class="fcb">ISO 9001</span>
+        <span class="fcb">ISO 13485</span>
+        <span class="fcb">UAE Licensed</span>
+      </div>
+    </div>
+
+    <div class="foot-col">
+      <h4>Services</h4>
+      <a href="services.html">MRI &amp; CT Systems</a>
+      <a href="services.html">Life Support Equipment</a>
+      <a href="services.html">Dental Equipment</a>
+      <a href="services.html">Lab &amp; Diagnostics</a>
+      <a href="services.html">AMC / CMC Contracts</a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Company</h4>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <a href="tel:+971553252589">📞 +971 55 325 2589</a>
+      <a href="mailto:iconbiotronics.uae@gmail.com">✉️ iconbiotronics.uae@gmail.com</a>
+      <a href="#">📍 Dubai, UAE</a>
+      <a href="https://wa.me/971553252589">💬 WhatsApp</a>
+    </div>
+
+  </div>
+
+  <div class="foot-bot">
+    <p>© 2026 ICON BIOTRONICS. All rights reserved. Dubai, UAE.</p>
+    <div class="fcb-row">
+      <span class="fcb">24/7 Emergency Support</span>
+      <span class="fcb">ISO Certified</span>
+      <span class="fcb">UAE Based Engineers</span>
+    </div>
+  </div>
 </footer>
+
+
+<!-- ==============================
+     FLOATING WHATSAPP BUTTON
+     ============================== -->
+<a href="https://wa.me/971553252589" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.115 1.535 5.842L.057 23.885l6.186-1.622A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.012-1.374l-.36-.213-3.727.977 1.003-3.638-.234-.374A9.818 9.818 0 012.182 12c0-5.42 4.398-9.818 9.818-9.818 5.42 0 9.818 4.398 9.818 9.818 0 5.42-4.398 9.818-9.818 9.818z"/>
+  </svg>
+</a>
+
+
+<!-- ==============================
+     SCRIPTS
+     ============================== -->
+<script>
+  // Hamburger toggle
+  const hambBtn = document.getElementById('hambBtn');
+  const mobNav = document.getElementById('mobNav');
+  if (hambBtn && mobNav) {
+    hambBtn.addEventListener('click', () => {
+      mobNav.classList.toggle('active');
+    });
+  }
+
+  // Animated counters
+  function animateCounters() {
+    document.querySelectorAll('.num[data-target]').forEach(el => {
+      const target = +el.getAttribute('data-target');
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(timer); }
+        el.textContent = Math.floor(current) + (el.closest('[data-suffix]') ? el.closest('[data-suffix]').dataset.suffix : (target === 98 ? '%' : '+'));
+      }, 16);
+    });
+  }
+
+  // Intersection observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.rv').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    observer.observe(el);
+  });
+
+  // Trigger counters when stats strip is visible
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  const statsStrip = document.querySelector('[data-target]');
+  if (statsStrip) statsObserver.observe(statsStrip.closest('section'));
+</script>
 
 </body>
 </html>
