@@ -28,6 +28,50 @@ button{
 }
 
 /* Hero Upgrade */
+
+.elite-hero{
+  padding:8rem 1rem;
+}
+
+.hero-buttons{
+  margin-top:20px;
+  display:flex;
+  gap:15px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+  font-weight:600;
+}
+
+.primary{
+  background:#007BFF;
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.trust-badges{
+  margin-top:25px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.trust-badges span{
+  background:rgba(255,255,255,0.1);
+  padding:6px 12px;
+  border-radius:20px;
+  font-size:13px;
+}
+
 .hero h1{
   font-size:3.2rem;
   letter-spacing:-1px;
