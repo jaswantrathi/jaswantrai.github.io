@@ -1,6 +1,8 @@
-// script.js - Adding Technical Interest with Animations and Interactivity
+// script.js - Enhanced with all missing functions
 
-// Fade-in animation on scroll
+// ======================
+// 1. INTERSECTION OBSERVER (FADE-IN)
+// ======================
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -14,16 +16,17 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all sections
 document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-// Smooth scrolling for navigation links (only for hash links)
+// ======================
+// 2. SMOOTH SCROLLING
+// ======================
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
-    if (href.startsWith('#')) {
+    if (href && href.startsWith('#')) {
       e.preventDefault();
       const targetId = href.substring(1);
       const targetSection = document.getElementById(targetId);
@@ -34,26 +37,114 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// Simple image gallery carousel (for gallery page)
+// ======================
+// 3. TAB SWITCHING (SERVICES)
+// ======================
+function switchTab(tabId) {
+  const allTabs = document.querySelectorAll('.tab-content');
+  allTabs.forEach(tab => tab.style.display = 'none');
+  
+  const allBtns = document.querySelectorAll('.tab-btn');
+  allBtns.forEach(btn => btn.classList.remove('active'));
+  
+  const activeTab = document.getElementById(tabId);
+  if (activeTab) {
+    activeTab.style.display = 'block';
+  }
+  
+  if (event && event.target) {
+    event.target.classList.add('active');
+  }
+}
+
+// ======================
+// 4. GALLERY FILTER
+// ======================
+function initGalleryFilter() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  
+  if (filterBtns.length === 0) return;
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const filter = this.getAttribute('data-f');
+      
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      galleryItems.forEach(item => {
+        const itemCategory = item.getAttribute('data-c');
+        if (filter === 'all' || itemCategory === filter) {
+          item.style.display = 'block';
+          item.classList.add('fade-in');
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+if (document.querySelector('.gallery-grid')) {
+  initGalleryFilter();
+}
+
+// ======================
+// 5. GALLERY CAROUSEL
+// ======================
 let currentImageIndex = 0;
 const galleryImages = document.querySelectorAll('.gallery-grid img');
 
 function showNextImage() {
   if (galleryImages.length > 0) {
-    galleryImages[currentImageIndex].style.opacity = '0.5';
+    galleryImages.forEach(img => img.style.opacity = '0.5');
     currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
     galleryImages[currentImageIndex].style.opacity = '1';
   }
 }
 
-// Auto-rotate gallery images every 3 seconds
 if (galleryImages.length > 0) {
+  galleryImages[0].style.opacity = '1';
+  galleryImages.forEach((img, idx) => {
+    if (idx > 0) img.style.opacity = '0.5';
+  });
   setInterval(showNextImage, 3000);
 }
 
-// Particle background effect for hero (simple)
+// ======================
+// 6. STAT COUNTER ANIMATION
+// ======================
+function animateCounters() {
+  const counters = document.querySelectorAll('.stat-num');
+  if (counters.length === 0) return;
+  
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-t')) || 0;
+    const suffix = counter.getAttribute('data-s') || '';
+    let current = 0;
+    const increment = Math.ceil(target / 30);
+    
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      counter.textContent = current + suffix;
+    }, 50);
+  });
+}
+
+window.addEventListener('load', animateCounters);
+
+// ======================
+// 7. PARTICLE EFFECT
+// ======================
 function createParticles() {
   const hero = document.querySelector('.hero');
+  if (!hero) return;
+  
   for (let i = 0; i < 50; i++) {
     const particle = document.createElement('div');
     particle.className = 'particle';
@@ -68,7 +159,6 @@ if (document.querySelector('.hero')) {
   createParticles();
 }
 
-// Add CSS for particles
 const particleStyle = document.createElement('style');
 particleStyle.textContent = `
   .particle {
@@ -88,17 +178,20 @@ particleStyle.textContent = `
 `;
 document.head.appendChild(particleStyle);
 
-// Contact form enhancement
+// ======================
+// 8. CONTACT FORM
+// ======================
 const contactForm = document.querySelector('form');
 if (contactForm) {
   contactForm.addEventListener('submit', function(e) {
-    // Add loading state
+    e.preventDefault();
     const submitBtn = this.querySelector('button');
+    if (!submitBtn) return;
+    
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    // Simulate send (in real app, this would be handled by Formspree)
     setTimeout(() => {
       alert('Thank you for your message! We\'ll get back to you soon.');
       submitBtn.textContent = originalText;
@@ -108,10 +201,14 @@ if (contactForm) {
   });
 }
 
-// Mobile menu toggle (if needed)
+// ======================
+// 9. MOBILE MENU
+// ======================
 function createMobileMenu() {
   const nav = document.querySelector('nav');
   const navLinks = document.querySelector('.nav-links');
+  
+  if (!nav || !navLinks) return;
 
   const menuToggle = document.createElement('button');
   menuToggle.textContent = '☰';
@@ -128,7 +225,6 @@ function createMobileMenu() {
     navLinks.classList.toggle('active');
   });
 
-  // Show toggle on mobile
   if (window.innerWidth <= 768) {
     menuToggle.style.display = 'block';
   }
@@ -145,7 +241,6 @@ function createMobileMenu() {
 
 createMobileMenu();
 
-// Add mobile menu styles
 const mobileStyle = document.createElement('style');
 mobileStyle.textContent = `
   .menu-toggle {
@@ -162,6 +257,7 @@ mobileStyle.textContent = `
     background: white;
     padding: 1rem;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
   }
 
   @media (min-width: 769px) {
