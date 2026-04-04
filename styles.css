@@ -108,18 +108,16 @@ nav#nav {
   transition: all 0.3s var(--ease);
 }
 
-.logo-icon img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  border-radius: 8px;
-}
+.logo-icon {
+  display: flex;
+  align-items: center;
 }
 
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+.logo-icon img {
+  height: 44px;       /* displays at 44px, sharp on retina screens */
+  width: auto;
+  object-fit: contain;
+  display: block;
 }
 
 .logo-text strong,
@@ -912,21 +910,21 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
-  .nav-inner {
-    padding: 0 1rem;
-  }
-
   .logo-text {
     display: none;
   }
 
-  .logo-icon {
-    width: 36px;
-    height: 36px;
-    font-size: 1rem;
-  }
+ .logo-icon {
+  display: flex;
+  align-items: center;
+}
 
+.logo-icon img {
+  height: 44px;       /* displays at 44px, sharp on retina screens */
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
   h1 {
     font-size: 1.5rem;
   }
