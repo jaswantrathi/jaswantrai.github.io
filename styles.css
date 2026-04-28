@@ -95,7 +95,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  flex-wrap: nowrap;        /* prevents nav links from dropping to second row */
+  flex-wrap: nowrap;
 }
 
 .logo-wrap {
@@ -103,20 +103,20 @@ nav {
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  flex-shrink: 0;           /* stops logo from shrinking when space is tight */
+  flex-shrink: 0;
 }
 
 .logo-icon {
   display: flex;
   align-items: center;
-  background: transparent;  /* removes the white box */
+  background: transparent;
   border-radius: 0;
   width: auto;
   height: auto;
 }
 
 .logo-icon img {
-  height: 38px;             /* compact enough to stay in one row */
+  height: 38px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -146,6 +146,7 @@ nav {
   align-items: center;
   flex-shrink: 0;
 }
+
 /* ========================================
    PAGE HERO SECTION
    ======================================== */
@@ -430,6 +431,100 @@ select option {
 .card p {
   color: rgba(255, 255, 255, 0.6);
   font-size: 0.95rem;
+}
+
+/* ========================================
+   GLOWING ICONS SYSTEM
+   ======================================== */
+
+/* Icon base styles */
+[class*="icon"], [class*="ic"] {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: drop-shadow(0 0 8px rgba(0, 232, 212, 0.3));
+}
+
+/* Icon pulse animation on load */
+@keyframes iconPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(0, 232, 212, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(0, 232, 212, 0.6));
+  }
+}
+
+.icon-box, .sc-ic, .info-icon {
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* Enhanced glow on hover */
+.card:hover [class*="icon"],
+.sc:hover [class*="ic"],
+.info-c:hover [class*="icon"] {
+  transform: scale(1.25) rotate(8deg);
+  filter: drop-shadow(0 0 25px rgba(0, 232, 212, 0.8))
+          drop-shadow(0 0 40px rgba(0, 232, 212, 0.5));
+  animation: none;
+}
+
+/* Glow pulse on hover */
+@keyframes pulseGlow {
+  0% {
+    filter: drop-shadow(0 0 0px rgba(0, 232, 212, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(0, 232, 212, 1))
+            drop-shadow(0 0 50px rgba(0, 232, 212, 0.6));
+  }
+  100% {
+    filter: drop-shadow(0 0 25px rgba(0, 232, 212, 0.8))
+            drop-shadow(0 0 40px rgba(0, 232, 212, 0.5));
+  }
+}
+
+/* Icon ring effect */
+.icon-box::before, .sc-ic::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border: 2px solid rgba(0, 232, 212, 0);
+  border-radius: 50%;
+  transition: all 0.4s ease;
+}
+
+.card:hover .icon-box::before,
+.sc:hover .sc-ic::before {
+  border-color: rgba(0, 232, 212, 0.6);
+  animation: expandRing 0.8s ease-out;
+}
+
+@keyframes expandRing {
+  0% {
+    inset: -12px;
+    border-color: rgba(0, 232, 212, 0.8);
+  }
+  100% {
+    inset: -25px;
+    border-color: rgba(0, 232, 212, 0);
+  }
+}
+
+/* Image styling */
+.service-img, .section-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: var(--r2);
+  margin: 1.5rem 0 1rem 0;
+  transition: all 0.4s var(--ease);
+  box-shadow: 0 10px 30px rgba(0, 232, 212, 0.1);
+}
+
+.card:hover .service-img,
+.card:hover .section-img {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 232, 212, 0.25);
+  filter: brightness(1.1) saturate(1.1);
 }
 
 /* ========================================
@@ -869,23 +964,25 @@ footer {
   .grid-2 {
     grid-template-columns: 1fr;
   }
-}
 
   .logo-text {
     display: none;
   }
 
- .logo-icon {
-  display: flex;
-  align-items: center;
+  .logo-icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-icon img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
 }
 
-.logo-icon img {
-  height: 44px;       /* displays at 44px, sharp on retina screens */
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
+@media (max-width: 600px) {
   h1 {
     font-size: 1.5rem;
   }
