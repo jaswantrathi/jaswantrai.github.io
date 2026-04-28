@@ -1,215 +1,298 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ICON BIOTRONICS | Elite Biomedical Engineering UAE</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <meta name="description" content="ISO 9001/13485 certified biomedical services in Dubai. Expert repair for MRI, CT, Ventilators, and Dental Systems with 13+ years experience.">
-  
-  <style>
-    :root {
-      --primary: #00e8d4;
-      --navy: #020b14;
-      --glass: rgba(255, 255, 255, 0.03);
-      --border: rgba(255, 255, 255, 0.1);
-      --text: #e0e0e0;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICON BIOTRONICS | Biomedical Engineering UAE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00e8d4; /* Neon Cyan */
+            --primary-glow: rgba(0, 232, 212, 0.5);
+            --bg-dark: #020b14;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --text-main: #e0e0e0;
+            --accent: #25D366; /* WhatsApp Green */
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { background-color: var(--navy); color: var(--text); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
-    h1, h2, h3 { font-family: 'Exo 2', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
 
-    /* --- NAVIGATION --- */
-    nav {
-      position: fixed; width: 100%; top: 0; z-index: 1000;
-      background: rgba(2, 11, 20, 0.85); backdrop-filter: blur(15px);
-      border-bottom: 1px solid var(--border); padding: 1rem 5%;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .logo { font-weight: 800; font-size: 1.4rem; color: #fff; text-decoration: none; }
-    .logo span { color: var(--primary); }
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { color: #fff; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
-    .nav-links a:hover { color: var(--primary); text-shadow: 0 0 8px var(--primary); }
-    .nav-cta { background: var(--primary); color: #000 !important; padding: 0.6rem 1.2rem; border-radius: 4px; font-weight: 700; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-    /* --- HERO --- */
-    .hero {
-      height: 100vh; display: flex; align-items: center; justify-content: center;
-      background: radial-gradient(circle at top right, #002d4d 0%, var(--navy) 60%);
-      position: relative; text-align: center; padding: 2rem;
-    }
-    .hero-content { z-index: 5; max-width: 900px; }
-    .eyebrow { 
-      color: var(--primary); border: 1px solid var(--primary); 
-      padding: 6px 16px; border-radius: 50px; display: inline-block; 
-      margin-bottom: 1.5rem; font-weight: 600; font-size: 0.8rem;
-    }
-    .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; color: #fff; }
-    .hero h1 span { color: var(--primary); text-shadow: 0 0 20px rgba(0, 232, 212, 0.4); }
-    
-    /* --- GLOW CARDS --- */
-    .section { padding: 8rem 5%; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-    .card {
-      background: var(--glass); border: 1px solid var(--border);
-      padding: 3rem 2rem; border-radius: 12px; transition: 0.4s ease;
-      position: relative; overflow: hidden;
-    }
-    .card:hover {
-      border-color: var(--primary); transform: translateY(-10px);
-      background: rgba(0, 232, 212, 0.05);
-    }
-    .icon-glow {
-      font-size: 3rem; margin-bottom: 1.5rem; transition: 0.4s;
-      display: inline-block; filter: drop-shadow(0 0 0px var(--primary));
-    }
-    .card:hover .icon-glow {
-      filter: drop-shadow(0 0 15px var(--primary)); transform: scale(1.1);
-    }
+        h1, h2, h3, .exo { font-family: 'Exo 2', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* --- TIMELINE --- */
-    .timeline { display: flex; justify-content: space-between; margin-top: 4rem; position: relative; }
-    .step { flex: 1; text-align: center; padding: 0 1rem; position: relative; }
-    .step::after { content: '→'; position: absolute; right: -10%; top: 20%; color: var(--primary); font-size: 1.5rem; }
-    .step:last-child::after { content: ''; }
-    .step-num { color: var(--primary); font-weight: 800; font-size: 2rem; margin-bottom: 1rem; display: block; }
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed; width: 100%; top: 0; z-index: 1000;
+            background: rgba(2, 11, 20, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 1rem 5%;
+            display: flex; justify-content: space-between; align-items: center;
+        }
 
-    /* --- FORM --- */
-    .form-box {
-      background: var(--glass); border: 1px solid var(--border);
-      padding: 3rem; border-radius: 15px; max-width: 600px; margin: 0 auto;
-    }
-    input, textarea {
-      width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--border);
-      padding: 1rem; color: #fff; margin-bottom: 1rem; border-radius: 4px;
-    }
-    input:focus { border-color: var(--primary); outline: none; }
-    .submit-btn {
-      width: 100%; padding: 1rem; background: var(--primary); border: none;
-      font-weight: 800; cursor: pointer; border-radius: 4px; transition: 0.3s;
-    }
-    .submit-btn:hover { box-shadow: 0 0 20px var(--primary); transform: scale(1.02); }
+        .logo-text { font-weight: 800; font-size: 1.5rem; color: #fff; }
+        .logo-text span { color: var(--primary); }
 
-    /* --- WHATSAPP --- */
-    .wa-float {
-      position: fixed; bottom: 30px; right: 30px; background: #25D366;
-      width: 60px; height: 60px; border-radius: 50%; display: flex;
-      align-items: center; justify-content: center; z-index: 1000;
-      box-shadow: 0 0 15px rgba(37, 211, 102, 0.4); transition: 0.3s;
-    }
-    .wa-float:hover { transform: scale(1.1); }
+        .nav-links a {
+            color: #fff; text-decoration: none; margin-left: 2rem;
+            font-size: 0.9rem; transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); text-shadow: 0 0 10px var(--primary-glow); }
 
-    /* --- REVEAL ANIMATION --- */
-    .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+            background: radial-gradient(circle at 50% 50%, #002d4d 0%, var(--bg-dark) 70%);
+            text-align: center; padding: 2rem;
+        }
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .timeline { flex-direction: column; gap: 3rem; }
-      .step::after { content: '↓'; right: 48%; top: 110%; }
-      .nav-links { display: none; }
-    }
-  </style>
+        .hero-content { position: relative; z-index: 5; max-width: 900px; }
+        
+        .eyebrow { 
+            color: var(--primary); font-weight: 600; font-size: 0.9rem; 
+            border: 1px solid var(--primary); padding: 5px 15px; border-radius: 50px;
+            display: inline-block; margin-bottom: 1.5rem; background: rgba(0, 232, 212, 0.1);
+        }
+
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem; color: #fff; }
+        .hero h1 span { color: var(--primary); text-shadow: 0 0 20px var(--primary-glow); }
+
+        .btn-container { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
+
+        .btn {
+            padding: 1rem 2rem; border-radius: 4px; font-weight: 700; text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-block;
+        }
+
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-primary:hover { transform: scale(1.05); box-shadow: 0 0 30px var(--primary-glow); }
+
+        .btn-outline { border: 1px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background: rgba(0,232,212,0.1); transform: translateY(-3px); }
+
+        /* --- SERVICES GRID & GLOW --- */
+        .section { padding: 8rem 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 3rem 2rem;
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateY(-10px);
+        }
+
+        .icon-box {
+            font-size: 3rem; margin-bottom: 1.5rem; transition: 0.4s;
+            filter: drop-shadow(0 0 0px var(--primary-glow));
+        }
+
+        .card:hover .icon-box {
+            transform: scale(1.2) rotate(5deg);
+            filter: drop-shadow(0 0 15px var(--primary-glow));
+        }
+
+        /* --- STATS STRIP --- */
+        .stats { 
+            background: linear-gradient(90deg, #001a2e, #002d4d); 
+            padding: 4rem 0; border-y: 1px solid var(--glass-border);
+        }
+        .stat-item h2 { font-size: 3.5rem; color: var(--primary); margin-bottom: 0.5rem; }
+
+        /* --- DYNAMIC FORM --- */
+        .contact-wrap {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px; padding: 4rem; max-width: 1000px; margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border);
+            padding: 1.2rem; color: #fff; margin-bottom: 1rem; border-radius: 4px;
+        }
+        input:focus { border-color: var(--primary); outline: none; background: rgba(255,255,255,0.1); }
+
+        /* --- FLOATING WHATSAPP --- */
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--accent); width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); z-index: 1000;
+            transition: 0.3s;
+        }
+        .wa-float:hover { transform: scale(1.1) rotate(10deg); }
+
+        /* --- ANIMATIONS --- */
+        .reveal { opacity: 0; transform: translateY(50px); transition: 1s all ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .btn-container { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="logo">ICON <span>BIOTRONICS</span></a>
-    <div class="nav-links">
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="tel:+971553252589" class="nav-cta">📞 24/7 EMERGENCY</a>
-    </div>
-  </nav>
+    <nav>
+        <div class="logo-text">ICON <span>BIOTRONICS</span></div>
+        <div class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1rem;">Emergency Call</a>
+        </div>
+    </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">📍 SERVING HOSPITALS ACROSS THE UAE</div>
-      <h1>Expert Solutions for <br><span>Critical Medical Assets</span></h1>
-      <p style="color: #aaa; font-size: 1.1rem; margin-bottom: 2rem;">
-        [span_7](start_span)ISO 9001 & 13485 Certified Engineering[span_7](end_span). [span_8](start_span)13+ Years of technical mastery[span_8](end_span). <br>
-        [span_9](start_span)[span_10](start_span)Specializing in MRI, CT, Life Support, and A-to-Z Dental solutions[span_9](end_span)[span_10](end_span).
-      </p>
-      <div style="display:flex; gap: 1rem; justify-content:center;">
-        <a href="tel:+971553252589" class="submit-btn" style="text-decoration:none; padding:1rem 2rem; width:auto;">Call An Engineer Now</a>
-      </div>
-    </div>
-  </section>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="eyebrow">🇦🇪 UAE'S #1 BIOMEDICAL PARTNER</div>
+            <h1>Elite Engineering for <br><span>Critical Medical Assets</span></h1>
+            <p style="font-size: 1.2rem; color: #aaa; margin-bottom: 2rem;">
+                ISO 9001 & 13485 Certified rapid-response technical support for <br>
+                [span_4](start_span)MRI, CT, Ventilators & Dental Systems[span_4](end_span).
+            </p>
+            <div class="btn-container">
+                <a href="tel:+971553252589" class="btn btn-primary">📞 Call Immediate Support</a>
+                <a href="#services" class="btn btn-outline">Explore Expertise</a>
+            </div>
+        </div>
+    </section>
 
-  <section class="section" style="background: rgba(0,232,212,0.02);">
-    <div style="text-align:center; margin-bottom: 4rem;" class="reveal">
-      <h2>Why Healthcare Leaders Choose Us</h2>
-    </div>
-    <div class="grid">
-      <div class="card reveal">
-        <span class="icon-glow">🧲</span>
-        <h3>Advanced Imaging</h3>
-        [span_11](start_span)<p>MRI and CT calibration, preventive maintenance, and rapid repair using OEM parts[span_11](end_span).</p>
-      </div>
-      <div class="card reveal">
-        <span class="icon-glow">🦷</span>
-        <h3>Dental Mastery</h3>
-        [span_12](start_span)<p>Specialized solutions for CBCT, OPG, Milling Machines, and Surgical Microscopes[span_12](end_span).</p>
-      </div>
-      <div class="card reveal">
-        <span class="icon-glow">🫁</span>
-        <h3>Life Support</h3>
-        [span_13](start_span)<p>Expert care for ICU Ventilators, Anaesthesia units, and Patient Monitoring Systems[span_13](end_span).</p>
-      </div>
-    </div>
-  </section>
+    <section class="stats reveal">
+        <div class="grid" style="text-align: center;">
+            <div class="stat-item">
+                <h2 class="num" data-target="13">0</h2>
+                [span_5](start_span)<p>Years Experience[span_5](end_span)</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="num" data-target="500">0</h2>
+                [span_6](start_span)<p>Equipments Serviced[span_6](end_span)</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="num" data-target="98">0</h2>
+                [span_7](start_span)<p>Client Satisfaction %[span_7](end_span)</p>
+            </div>
+            <div class="stat-item">
+                <h2 class="num" data-target="24">0</h2>
+                [span_8](start_span)<p>Hour Support[span_8](end_span)</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="section">
-    <div style="text-align:center; margin-bottom: 4rem;" class="reveal">
-      <p class="eyebrow">OUR PROCESS</p>
-      <h2>Rapid Technical Response</h2>
-    </div>
-    <div class="timeline reveal">
-      <div class="step"><span class="step-num">01</span><p><b>Request</b><br>30-Min Response</p></div>
-      <div class="step"><span class="step-num">02</span><p><b>Diagnostic</b><br>On-Site Visit</p></div>
-      <div class="step"><span class="step-num">03</span><p><b>Repair</b><br>Precision Engineering</p></div>
-      <div class="step"><span class="step-num">04</span><p><b>Certify</b><br>Validation Report</p></div>
-    </div>
-  </section>
+    <section id="services" class="section">
+        <div style="text-align:center; margin-bottom: 4rem;" class="reveal">
+            <p class="eyebrow">TECHNICAL SCOPE</p>
+            <h2>Our Specialized Expertise</h2>
+        </div>
+        <div class="grid reveal">
+            <div class="card">
+                <div class="icon-box">🧲</div>
+                <h3>Imaging Systems</h3>
+                [span_9](start_span)<p>Advanced MRI & CT calibration, cryogenic monitoring, and OEM-grade precision repair[span_9](end_span).</p>
+            </div>
+            <div class="card">
+                <div class="icon-box">🫁</div>
+                <h3>Life Support</h3>
+                [span_10](start_span)<p>ICU Ventilators, Anaesthesia machines, and Patient Monitoring System certification[span_10](end_span).</p>
+            </div>
+            <div class="card">
+                <div class="icon-box">🦷</div>
+                <h3>Dental Hub</h3>
+                [span_11](start_span)<p>CBCT/OPG Scanners, Dental Chairs, and sterilization validation for modern clinics[span_11](end_span).</p>
+            </div>
+            <div class="card">
+                <div class="icon-box">📋</div>
+                <h3>PPM & Contracts</h3>
+                [span_12](start_span)<p>Comprehensive AMC/CMC plans designed to minimize downtime and maximize asset life[span_12](end_span).</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact" class="section" style="background: rgba(255,255,255,0.01);">
-    <div class="form-box reveal">
-      <div style="text-align:center; margin-bottom:2rem;">
-        <h2>Request Technical Callback</h2>
-        <p style="font-size:0.9rem; color:var(--primary);">Engineers on call across UAE 24/7</p>
-      </div>
-      <form action="https://formsubmit.co/iconbiotronics.uae@gmail.com" method="POST">
-        <input type="text" name="name" placeholder="Contact Person / Clinic Name" required>
-        <input type="tel" name="phone" placeholder="UAE Mobile Number" required>
-        <input type="text" name="equipment" placeholder="Equipment Type (e.g. MRI, Dental Chair)">
-        <textarea name="message" rows="4" placeholder="Brief issue description"></textarea>
-        <button type="submit" class="submit-btn">Send Request →</button>
-      </form>
-    </div>
-  </section>
+    <section id="contact" class="section">
+        <div class="contact-wrap reveal">
+            <div style="text-align:center; margin-bottom:3rem;">
+                <h2 style="font-size: 2.5rem;">Request Rapid Callback</h2>
+                [span_13](start_span)<p>Our engineers typically respond within 30 minutes[span_13](end_span).</p>
+            </div>
+            <form action="https://formsubmit.co/iconbiotronics.uae@gmail.com" method="POST">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <input type="text" name="name" placeholder="Contact Person" required>
+                    <input type="tel" name="phone" placeholder="Mobile Number" required>
+                </div>
+                <input type="text" name="equipment" placeholder="Equipment Model (e.g., GE MRI, Siemens CT)">
+                <textarea name="message" rows="4" placeholder="Describe the technical issue..."></textarea>
+                <button type="submit" class="btn btn-primary" style="width:100%; border:none; cursor:pointer;">Initiate Service Request →</button>
+            </form>
+        </div>
+    </section>
 
-  <a href="https://wa.me/971553252589" class="wa-float">
-    <svg style="width:35px; fill:#fff;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
-  </a>
+    <a href="https://wa.me/971553252589" class="wa-float" aria-label="WhatsApp">
+        <svg style="width:35px; fill:#fff;" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+    </a>
 
-  <script>
-    function reveal() {
-      var reveals = document.querySelectorAll(".reveal");
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-          reveals[i].classList.add("active");
+    <script>
+        // Scroll Reveal
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
         }
-      }
-    }
-    window.addEventListener("scroll", reveal);
-    window.addEventListener("load", reveal);
-  </script>
+        window.addEventListener("scroll", reveal);
+
+        [span_14](start_span)// Counter Animation[span_14](end_span)
+        function animateCounters() {
+            const counters = document.querySelectorAll('.num');
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const increment = target / 100;
+                const updateCount = () => {
+                    const count = +counter.innerText;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + increment);
+                        setTimeout(updateCount, 20);
+                    } else {
+                        counter.innerText = target + (target === 98 ? '%' : '+');
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Trigger counter when visible
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            if(entries[0].isIntersecting) {
+                animateCounters();
+                observer.unobserve(statsSection);
+            }
+        }, { threshold: 0.5 });
+        observer.observe(statsSection);
+    </script>
 </body>
 </html>
