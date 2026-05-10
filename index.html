@@ -1,1646 +1,1289 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ICON BIOTRONICS | Precision Biomedical Engineering — Dubai, UAE</title>
-<meta name="description" content="Dubai's most trusted biomedical & dental equipment partner. Repair, calibration, maintenance & 24/7 emergency support for MRI, CT, Ultrasound, Dental systems across UAE.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* ====================================================
-   ICON BIOTRONICS — Complete Website
-   Design: Medical Precision Meets Luxury Tech
-   ==================================================== */
-
-/* ── Variables ── */
-:root {
-  --dark:    #050D1A;
-  --navy:    #0A1628;
-  --navy2:   #0E1E35;
-  --cyan:    #00E8D4;
-  --cyan2:   #00BFA5;
-  --gold:    #FFB020;
-  --coral:   #FF5A35;
-  --white:   #FFFFFF;
-  --light:   #F2F6FA;
-  --border:  #1E3050;
-  --text:    #0A1628;
-  --muted:   #5A7282;
-  --card-bg: rgba(14,30,53,0.7);
-  --glass:   rgba(255,255,255,0.05);
-  --r:       14px;
-  --r2:      24px;
-  --nav-h:   70px;
-  --ease:    cubic-bezier(0.23,1,0.32,1);
-}
-
-/* ── Reset ── */
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--dark);overflow-x:hidden}
-h1,h2,h3,h4{font-family:'Exo 2',sans-serif;line-height:1.15;font-weight:800}
-p{line-height:1.7}
-a{text-decoration:none;color:inherit;transition:all .3s var(--ease)}
-img{max-width:100%;display:block}
-ul{list-style:none}
-
-/* ── Custom scrollbar ── */
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-track{background:var(--dark)}
-::-webkit-scrollbar-thumb{background:var(--cyan2);border-radius:3px}
-
-/* ── Nav ── */
-#nav {
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  height:var(--nav-h);
-  transition:all .4s var(--ease);
-}
-#nav.scrolled {
-  background:rgba(5,13,26,0.95);
-  backdrop-filter:blur(20px);
-  border-bottom:1px solid var(--border);
-  box-shadow:0 4px 30px rgba(0,0,0,0.4);
-}
-.nav-inner {
-  max-width:1300px;margin:0 auto;
-  display:flex;align-items:center;justify-content:space-between;
-  height:100%;padding:0 2rem;
-}
-.logo-wrap {display:flex;align-items:center;gap:0.75rem}
-.logo-icon {
-  width:38px;height:38px;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
-  border-radius:8px;display:flex;align-items:center;justify-content:center;
-  font-family:'Exo 2',sans-serif;font-weight:900;font-size:1.1rem;color:var(--dark);
-  flex-shrink:0;
-}
-.logo-text {
-  font-family:'Exo 2',sans-serif;font-weight:800;font-size:1.15rem;
-  color:var(--white);letter-spacing:0.5px;line-height:1.1;
-}
-.logo-text span{display:block;font-size:0.55rem;font-weight:400;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-top:1px}
-.nav-links{display:flex;align-items:center;gap:0.25rem}
-.nav-links a {
-  font-size:0.875rem;font-weight:500;color:rgba(255,255,255,0.7);
-  padding:0.5rem 0.9rem;border-radius:8px;
-  transition:all .3s;position:relative;
-}
-.nav-links a:hover,.nav-links a.active{color:var(--white);background:rgba(255,255,255,0.07)}
-.nav-links a.active::after{
-  content:'';position:absolute;bottom:4px;left:50%;transform:translateX(-50%);
-  width:16px;height:2px;background:var(--cyan);border-radius:1px;
-}
-.nav-cta {
-  padding:0.55rem 1.4rem !important;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2)) !important;
-  color:var(--dark) !important;font-weight:700 !important;
-  border-radius:50px !important;
-}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(0,232,212,0.4) !important}
-
-/* Hamburger */
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:2px;transition:all .3s}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-/* Mobile nav drawer */
-.mobile-nav{
-  display:none;position:fixed;top:var(--nav-h);left:0;right:0;
-  background:rgba(5,13,26,0.98);backdrop-filter:blur(20px);
-  padding:1.5rem 2rem;z-index:999;border-bottom:1px solid var(--border);
-  flex-direction:column;gap:0.5rem;
-}
-.mobile-nav.open{display:flex}
-.mobile-nav a{color:rgba(255,255,255,0.8);padding:0.75rem 1rem;border-radius:8px;font-weight:500}
-.mobile-nav a:hover{background:rgba(255,255,255,0.07);color:var(--white)}
-
-/* ── HERO ── */
-#hero {
-  min-height:100vh;position:relative;
-  display:flex;align-items:center;justify-content:center;
-  overflow:hidden;background:var(--dark);
-  padding-top:var(--nav-h);
-}
-
-/* Animated grid */
-.hero-grid {
-  position:absolute;inset:0;
-  background-image:
-    linear-gradient(rgba(0,232,212,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(0,232,212,0.04) 1px,transparent 1px);
-  background-size:60px 60px;
-}
-
-/* Radial glow */
-.hero-glow {
-  position:absolute;inset:0;
-  background:
-    radial-gradient(ellipse 60% 60% at 20% 50%,rgba(0,232,212,0.12) 0%,transparent 65%),
-    radial-gradient(ellipse 40% 50% at 80% 30%,rgba(0,191,165,0.08) 0%,transparent 60%);
-}
-
-/* Floating particles */
-.particles {position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.particle {
-  position:absolute;border-radius:50%;
-  background:var(--cyan);opacity:0.35;
-  animation:floatP linear infinite;
-}
-@keyframes floatP {
-  0%{transform:translateY(100vh) rotate(0deg);opacity:0}
-  10%{opacity:0.35}
-  90%{opacity:0.35}
-  100%{transform:translateY(-100px) rotate(720deg);opacity:0}
-}
-
-/* ECG SVG line */
-.ecg-container {
-  position:absolute;bottom:18%;left:0;right:0;
-  height:80px;overflow:hidden;pointer-events:none;
-}
-.ecg-line {
-  width:200%;height:80px;
-  animation:moveEcg 4s linear infinite;
-}
-@keyframes moveEcg {
-  0%{transform:translateX(0)}
-  100%{transform:translateX(-50%)}
-}
-
-/* Hero content */
-.hero-content {
-  position:relative;z-index:2;
-  max-width:1100px;margin:0 auto;padding:2rem;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:4rem;align-items:center;
-}
-.hero-left {}
-.hero-tag {
-  display:inline-flex;align-items:center;gap:0.5rem;
-  background:rgba(0,232,212,0.1);border:1px solid rgba(0,232,212,0.3);
-  color:var(--cyan);padding:0.4rem 1rem;border-radius:50px;
-  font-size:0.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
-  margin-bottom:1.5rem;
-  animation:fadeInUp .8s var(--ease) both;
-}
-.hero-tag::before{content:'';width:6px;height:6px;background:var(--cyan);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.5)}}
-
-.hero-h1 {
-  font-size:clamp(2.8rem,5vw,4.8rem);
-  color:var(--white);margin-bottom:1.5rem;
-  letter-spacing:-1px;line-height:1.05;
-  animation:fadeInUp .8s .1s var(--ease) both;
-}
-.hero-h1 .cyan{color:var(--cyan)}
-.hero-h1 .line2{display:block;font-weight:300;font-size:0.65em;color:rgba(255,255,255,0.5);letter-spacing:0;margin-top:0.3rem}
-
-.hero-typewriter {
-  font-size:1.05rem;color:rgba(255,255,255,0.65);margin-bottom:2.5rem;
-  min-height:1.8rem;
-  animation:fadeInUp .8s .2s var(--ease) both;
-}
-.cursor{display:inline-block;width:2px;height:1.1em;background:var(--cyan);margin-left:2px;vertical-align:middle;animation:blink .7s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-
-.hero-btns {
-  display:flex;gap:1rem;flex-wrap:wrap;
-  animation:fadeInUp .8s .3s var(--ease) both;
-}
-.btn-hero-primary {
-  padding:0.9rem 2rem;background:linear-gradient(135deg,var(--cyan),var(--cyan2));
-  color:var(--dark);border-radius:50px;font-weight:700;font-size:0.9rem;
-  box-shadow:0 4px 24px rgba(0,232,212,0.35);transition:all .3s var(--ease);
-  display:inline-flex;align-items:center;gap:0.5rem;
-}
-.btn-hero-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,232,212,0.5);color:var(--dark)}
-.btn-hero-outline {
-  padding:0.9rem 2rem;border:1.5px solid rgba(255,255,255,0.25);
-  color:var(--white);border-radius:50px;font-weight:600;font-size:0.9rem;
-  transition:all .3s var(--ease);display:inline-flex;align-items:center;gap:0.5rem;
-}
-.btn-hero-outline:hover{border-color:var(--cyan);color:var(--cyan);background:rgba(0,232,212,0.06)}
-
-/* Hero right — device card */
-.hero-right {
-  animation:fadeInUp .8s .4s var(--ease) both;
-}
-.device-showcase {
-  position:relative;
-  background:linear-gradient(135deg,rgba(14,30,53,0.9),rgba(10,22,40,0.95));
-  border:1px solid rgba(0,232,212,0.2);
-  border-radius:20px;padding:2rem;
-  backdrop-filter:blur(10px);
-  box-shadow:0 20px 60px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.05);
-}
-.device-showcase::before {
-  content:'';position:absolute;top:-1px;left:20%;right:20%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-}
-.ds-header {
-  display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;
-}
-.ds-badge {
-  font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;
-  color:var(--cyan);background:rgba(0,232,212,0.1);padding:0.3rem 0.8rem;border-radius:20px;
-}
-.ds-status {display:flex;align-items:center;gap:0.4rem;font-size:0.75rem;color:rgba(255,255,255,0.5)}
-.ds-status span{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 2s infinite}
-.device-img {
-  width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.25rem;
-  border:1px solid rgba(0,232,212,0.1);
-}
-.device-metrics {
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:0.75rem;
-}
-.metric {
-  background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);
-  border-radius:10px;padding:0.75rem;text-align:center;
-}
-.metric-val{font-family:'Exo 2',sans-serif;font-size:1.3rem;font-weight:800;color:var(--cyan)}
-.metric-label{font-size:0.65rem;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
-
-@keyframes fadeInUp{
-  from{opacity:0;transform:translateY(24px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* ── STATS BAR ── */
-#stats {
-  background:linear-gradient(135deg,var(--navy) 0%,var(--navy2) 100%);
-  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  padding:2.5rem 2rem;
-}
-.stats-inner {
-  max-width:1300px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:2rem;text-align:center;
-}
-.stat-item{position:relative}
-.stat-item:not(:last-child)::after {
-  content:'';position:absolute;right:0;top:10%;bottom:10%;
-  width:1px;background:linear-gradient(to bottom,transparent,rgba(0,232,212,0.3),transparent);
-}
-.stat-num {
-  font-family:'Exo 2',sans-serif;font-size:2.8rem;font-weight:900;
-  background:linear-gradient(135deg,var(--cyan),var(--gold));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  line-height:1;
-}
-.stat-label{color:rgba(255,255,255,0.55);font-size:0.8rem;margin-top:0.4rem;text-transform:uppercase;letter-spacing:1px}
-
-/* ── SECTION COMMONS ── */
-.section-dark{background:var(--dark);padding:5rem 2rem}
-.section-navy{background:var(--navy);padding:5rem 2rem}
-.section-light{background:var(--light);padding:5rem 2rem}
-.section-white{background:#fff;padding:5rem 2rem}
-.wrap{max-width:1300px;margin:0 auto}
-
-.section-head{text-align:center;margin-bottom:3.5rem}
-.section-eyebrow {
-  display:inline-flex;align-items:center;gap:0.5rem;
-  font-size:0.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--cyan);margin-bottom:1rem;
-}
-.section-eyebrow::before,.section-eyebrow::after{
-  content:'';display:block;width:24px;height:1px;background:var(--cyan);
-}
-.section-h2-dark {
-  font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--white);
-  margin-bottom:0.75rem;
-}
-.section-h2-light {
-  font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--text);
-  margin-bottom:0.75rem;
-}
-.section-sub-dark{color:rgba(255,255,255,0.5);font-size:1rem;max-width:560px;margin:0 auto}
-.section-sub-light{color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto}
-
-/* ── SUPPLIERS MARQUEE ── */
-#partners {
-  background:var(--navy2);padding:2.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
-  overflow:hidden;
-}
-.partners-label {
-  text-align:center;font-size:0.72rem;font-weight:700;letter-spacing:2.5px;
-  text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:1.75rem;
-}
-.marquee-track {
-  display:flex;gap:0;
-  animation:marqueeScroll 28s linear infinite;
-  width:max-content;
-}
-.marquee-track:hover{animation-play-state:paused}
-@keyframes marqueeScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.supplier-item {
-  display:flex;align-items:center;justify-content:center;
-  min-width:160px;padding:0 2rem;
-  border-right:1px solid rgba(255,255,255,0.06);
-}
-.supplier-name {
-  font-family:'Exo 2',sans-serif;font-weight:700;font-size:1rem;
-  color:rgba(255,255,255,0.25);letter-spacing:0.5px;
-  transition:all .3s;cursor:default;white-space:nowrap;
-}
-.supplier-item:hover .supplier-name{color:var(--cyan);filter:none}
-.s-sub{display:block;font-size:0.55rem;font-weight:400;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.15);margin-top:1px}
-
-/* ── MARKET INSIGHTS ── */
-#market {background:var(--dark);padding:5rem 2rem}
-.market-grid {
-  display:grid;grid-template-columns:repeat(3,1fr);
-  gap:1.5rem;margin-top:3rem;
-}
-.market-card {
-  background:linear-gradient(135deg,rgba(14,30,53,0.8),rgba(10,22,40,0.9));
-  border:1px solid var(--border);border-radius:var(--r2);padding:2rem;
-  position:relative;overflow:hidden;transition:all .4s var(--ease);
-}
-.market-card:hover{border-color:rgba(0,232,212,0.4);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
-.market-card::before {
-  content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-  opacity:0;transition:opacity .3s;
-}
-.market-card:hover::before{opacity:1}
-.mc-icon{font-size:2rem;margin-bottom:1rem}
-.mc-val {
-  font-family:'Exo 2',sans-serif;font-size:2.5rem;font-weight:900;
-  color:var(--white);margin-bottom:0.25rem;line-height:1;
-}
-.mc-val span{font-size:1.2rem;color:var(--cyan)}
-.mc-label{color:rgba(255,255,255,0.6);font-size:0.85rem;margin-bottom:1rem}
-.mc-bar{height:3px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;margin-top:1rem}
-.mc-bar-fill{height:100%;background:linear-gradient(90deg,var(--cyan),var(--gold));border-radius:2px;width:0;transition:width 1.5s var(--ease)}
-.mc-badge{
-  position:absolute;top:1.25rem;right:1.25rem;
-  font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;
-  padding:0.25rem 0.65rem;border-radius:20px;
-}
-.badge-green{background:rgba(34,197,94,0.15);color:#22c55e;border:1px solid rgba(34,197,94,0.3)}
-.badge-blue{background:rgba(59,130,246,0.15);color:#60a5fa;border:1px solid rgba(59,130,246,0.3)}
-.badge-gold{background:rgba(255,176,32,0.15);color:var(--gold);border:1px solid rgba(255,176,32,0.3)}
-
-/* Market big text */
-.market-spotlight {
-  grid-column:1/-1;
-  background:linear-gradient(135deg,rgba(0,232,212,0.08),rgba(0,191,165,0.05));
-  border:1px solid rgba(0,232,212,0.2);
-  border-radius:var(--r2);padding:2.5rem;
-  display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;
-}
-.ms-text h3{font-family:'Exo 2',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:0.75rem}
-.ms-text p{color:rgba(255,255,255,0.55);font-size:0.92rem;max-width:680px;line-height:1.75}
-.ms-stat-big{text-align:center;flex-shrink:0}
-.ms-stat-big .num{font-family:'Exo 2',sans-serif;font-size:4rem;font-weight:900;color:var(--cyan);line-height:1}
-.ms-stat-big .unit{font-size:0.75rem;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase;margin-top:0.25rem}
-
-/* ── SERVICES TABS ── */
-#services{background:var(--light);padding:5rem 2rem}
-.tabs {
-  display:flex;gap:0.5rem;flex-wrap:wrap;
-  background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.08);
-  padding:0.35rem;border-radius:14px;margin-bottom:3rem;
-  backdrop-filter:blur(8px);width:fit-content;margin-left:auto;margin-right:auto;
-}
-.tab-btn {
-  padding:0.65rem 1.5rem;border-radius:10px;font-weight:600;font-size:0.875rem;
-  cursor:pointer;border:none;background:none;color:var(--muted);
-  transition:all .3s var(--ease);display:flex;align-items:center;gap:0.5rem;
-  font-family:'DM Sans',sans-serif;
-}
-.tab-btn.active{background:var(--navy);color:var(--white);box-shadow:0 4px 16px rgba(10,22,40,0.3)}
-.tab-content{display:none}
-.tab-content.active{display:block;animation:fadeInUp .4s var(--ease) both}
-.srv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
-.srv-card {
-  background:#fff;border-radius:var(--r2);padding:2rem;
-  border:1.5px solid rgba(0,0,0,0.06);
-  transition:all .4s var(--ease);
-  display:flex;gap:1.5rem;align-items:flex-start;
-}
-.srv-card:hover{border-color:var(--cyan2);box-shadow:0 12px 32px rgba(0,0,0,0.08);transform:translateY(-2px)}
-.srv-icon {
-  width:52px;height:52px;border-radius:12px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
-}
-.ic-blue{background:linear-gradient(135deg,#dbeafe,#bfdbfe)}
-.ic-teal{background:linear-gradient(135deg,#d1fae5,#a7f3d0)}
-.ic-gold{background:linear-gradient(135deg,#fef3c7,#fde68a)}
-.ic-rose{background:linear-gradient(135deg,#fee2e2,#fecaca)}
-.srv-body h3{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.5rem}
-.srv-body p{font-size:0.875rem;color:var(--muted);margin-bottom:0.75rem;line-height:1.65}
-.srv-tags{display:flex;flex-wrap:wrap;gap:0.35rem}
-.srv-tag {
-  font-size:0.7rem;font-weight:600;padding:0.2rem 0.6rem;border-radius:20px;
-  background:#f0f4f8;color:var(--muted);
-}
-.srv-img{
-  width:100%;height:220px;object-fit:cover;border-radius:var(--r2);
-  margin-bottom:1.5rem;
-}
-
-/* ── WHY US ── */
-#why{background:var(--navy);padding:5rem 2rem}
-.why-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;
-}
-.why-card {
-  background:var(--glass);border:1px solid var(--border);
-  border-radius:var(--r2);padding:2rem;
-  transition:all .4s var(--ease);position:relative;overflow:hidden;
-}
-.why-card:hover{background:rgba(0,232,212,0.05);border-color:rgba(0,232,212,0.3);transform:translateY(-4px)}
-.why-num {
-  font-family:'Exo 2',sans-serif;font-size:5rem;font-weight:900;
-  color:rgba(0,232,212,0.07);position:absolute;top:-0.5rem;right:1rem;line-height:1;
-}
-.why-icon{font-size:2.2rem;margin-bottom:1.25rem}
-.why-card h3{font-family:'Exo 2',sans-serif;font-size:1.1rem;color:var(--white);margin-bottom:0.65rem}
-.why-card p{color:rgba(255,255,255,0.5);font-size:0.875rem;line-height:1.7}
-
-/* ── PROCESS ── */
-#process{background:var(--dark);padding:5rem 2rem}
-.process-steps {
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:1.5rem;position:relative;margin-top:3rem;
-}
-.process-steps::before {
-  content:'';position:absolute;top:32px;left:12%;right:12%;height:1px;
-  background:linear-gradient(90deg,transparent,var(--cyan),var(--cyan),transparent);
-  opacity:0.3;z-index:0;
-}
-.step {
-  text-align:center;position:relative;z-index:1;
-  padding:2rem 1.25rem;
-  background:rgba(14,30,53,0.5);border:1px solid var(--border);
-  border-radius:var(--r2);transition:all .4s var(--ease);
-}
-.step:hover{border-color:rgba(0,232,212,0.4);background:rgba(0,232,212,0.04)}
-.step-num {
-  width:64px;height:64px;border-radius:50%;
-  background:linear-gradient(135deg,var(--navy),var(--navy2));
-  border:2px solid rgba(0,232,212,0.4);
-  display:flex;align-items:center;justify-content:center;
-  margin:0 auto 1.25rem;
-  font-family:'Exo 2',sans-serif;font-size:1.4rem;font-weight:900;color:var(--cyan);
-  position:relative;transition:all .3s;
-}
-.step:hover .step-num{background:linear-gradient(135deg,var(--cyan),var(--cyan2));color:var(--dark);border-color:var(--cyan)}
-.step h3{font-family:'Exo 2',sans-serif;font-size:1rem;color:var(--white);margin-bottom:0.5rem}
-.step p{color:rgba(255,255,255,0.45);font-size:0.82rem;line-height:1.6}
-
-/* ── GALLERY ── */
-#gallery{background:var(--light);padding:5rem 2rem}
-.filter-bar{
-  display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center;margin-bottom:2.5rem;
-}
-.filter-btn {
-  padding:0.5rem 1.25rem;border-radius:50px;border:1.5px solid rgba(0,0,0,0.1);
-  background:white;color:var(--muted);font-weight:600;font-size:0.82rem;
-  cursor:pointer;transition:all .3s;font-family:'DM Sans',sans-serif;
-}
-.filter-btn.active,.filter-btn:hover{background:var(--navy);color:white;border-color:var(--navy)}
-.gallery-masonry {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:1rem;
-}
-.g-item {
-  border-radius:var(--r);overflow:hidden;cursor:pointer;
-  position:relative;background:#dde3ec;
-  transition:all .4s var(--ease);
-}
-.g-item.hidden{display:none}
-.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease);display:block}
-.g-item:hover img{transform:scale(1.07)}
-.g-item.tall{grid-row:span 2}
-.g-item.wide{grid-column:span 2}
-.g-overlay {
-  position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(5,13,26,0.8),rgba(5,13,26,0.1));
-  opacity:0;transition:opacity .3s;
-  display:flex;align-items:flex-end;padding:1rem;
-}
-.g-item:hover .g-overlay{opacity:1}
-.g-caption{color:white;font-size:0.8rem;font-weight:600}
-
-/* Lightbox */
-.lightbox{
-  display:none;position:fixed;inset:0;background:rgba(0,0,0,0.94);
-  z-index:5000;justify-content:center;align-items:center;padding:2rem;
-}
-.lightbox.open{display:flex}
-.lightbox img{max-width:90vw;max-height:85vh;border-radius:var(--r);object-fit:contain}
-.lb-close{
-  position:absolute;top:1.5rem;right:2rem;color:white;font-size:2.5rem;
-  background:none;border:none;cursor:pointer;opacity:.7;line-height:1;
-}
-.lb-close:hover{opacity:1}
-
-/* ── TESTIMONIALS ── */
-#testimonials{background:var(--navy);padding:5rem 2rem}
-.testi-slider{position:relative;overflow:hidden}
-.testi-track{display:flex;transition:transform .5s var(--ease)}
-.testi-card {
-  min-width:100%;padding:0 1rem;
-}
-.testi-inner {
-  max-width:760px;margin:0 auto;
-  background:rgba(255,255,255,0.04);border:1px solid var(--border);
-  border-radius:var(--r2);padding:3rem;text-align:center;
-  position:relative;
-}
-.testi-inner::before{
-  content:'\201C';position:absolute;top:-1.5rem;left:2.5rem;
-  font-size:7rem;color:var(--cyan);opacity:0.2;
-  font-family:Georgia,serif;line-height:1;
-}
-.testi-stars{color:var(--gold);font-size:1.2rem;margin-bottom:1.25rem;letter-spacing:2px}
-.testi-text{font-size:1.05rem;color:rgba(255,255,255,0.75);font-style:italic;line-height:1.8;margin-bottom:1.5rem}
-.testi-author strong{display:block;font-family:'Exo 2',sans-serif;font-size:1rem;color:var(--white)}
-.testi-author span{font-size:0.82rem;color:var(--cyan)}
-.testi-dots{display:flex;gap:0.5rem;justify-content:center;margin-top:2rem}
-.tdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.2);cursor:pointer;transition:all .3s}
-.tdot.active{background:var(--cyan);width:24px;border-radius:4px}
-
-/* ── FAQ ── */
-#faq{background:var(--dark);padding:5rem 2rem}
-.faq-list{max-width:860px;margin:3rem auto 0}
-.faq-item{
-  border-bottom:1px solid var(--border);overflow:hidden;
-}
-.faq-q {
-  width:100%;display:flex;justify-content:space-between;align-items:center;
-  padding:1.5rem 0;background:none;border:none;cursor:pointer;
-  font-family:'Exo 2',sans-serif;font-size:1rem;font-weight:600;
-  color:var(--white);text-align:left;gap:1rem;
-}
-.faq-q:hover{color:var(--cyan)}
-.faq-icon{
-  width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border);
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
-  color:var(--cyan);font-size:1.1rem;transition:all .3s;
-}
-.faq-item.open .faq-icon{transform:rotate(45deg);border-color:var(--cyan);background:rgba(0,232,212,0.1)}
-.faq-a{
-  max-height:0;overflow:hidden;
-  transition:max-height .45s var(--ease),padding .3s;
-}
-.faq-item.open .faq-a{max-height:300px;padding-bottom:1.5rem}
-.faq-a p{color:rgba(255,255,255,0.55);font-size:0.9rem;line-height:1.8}
-
-/* ── CTA EMERGENCY ── */
-#emergency {
-  background:linear-gradient(135deg,#8B0000 0%,#CC2200 50%,#FF4422 100%);
-  padding:4.5rem 2rem;text-align:center;position:relative;overflow:hidden;
-}
-#emergency::before {
-  content:'';position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);
-  background-size:40px 40px;
-}
-.emrg-inner{position:relative;z-index:1}
-.emrg-badge {
-  display:inline-flex;align-items:center;gap:0.5rem;
-  background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.25);
-  padding:0.4rem 1rem;border-radius:50px;color:white;font-size:0.78rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.5rem;
-}
-.emrg-badge span{width:8px;height:8px;background:#fff;border-radius:50%;animation:pulse 1s infinite}
-#emergency h2{font-size:clamp(1.8rem,4vw,3rem);color:white;margin-bottom:1rem}
-#emergency p{color:rgba(255,255,255,0.85);font-size:1rem;max-width:520px;margin:0 auto 2rem}
-.emrg-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-.btn-white{
-  padding:0.9rem 2.5rem;background:white;color:#CC2200;border-radius:50px;
-  font-weight:700;font-size:0.9rem;transition:all .3s;
-  display:inline-flex;align-items:center;gap:0.5rem;
-}
-.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.3);color:#CC2200}
-.btn-outline-white{
-  padding:0.9rem 2.5rem;border:2px solid rgba(255,255,255,0.5);color:white;border-radius:50px;
-  font-weight:600;font-size:0.9rem;transition:all .3s;
-  display:inline-flex;align-items:center;gap:0.5rem;
-}
-.btn-outline-white:hover{background:rgba(255,255,255,0.15);border-color:white;color:white}
-.emrg-phone{color:rgba(255,255,255,0.9);font-size:1.25rem;font-weight:700;margin-top:1.5rem;display:block}
-
-/* ── CONTACT ── */
-#contact{background:var(--navy);padding:5rem 2rem}
-.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start}
-.contact-info-block h3{font-family:'Exo 2',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:0.75rem}
-.contact-info-block p{color:rgba(255,255,255,0.5);margin-bottom:2rem;font-size:0.92rem}
-.ci-item{
-  display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.25rem;
-}
-.ci-icon{
-  width:40px;height:40px;border-radius:10px;
-  background:rgba(0,232,212,0.1);border:1px solid rgba(0,232,212,0.2);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;
-}
-.ci-text strong{display:block;color:var(--white);font-size:0.85rem;margin-bottom:0.15rem}
-.ci-text span{color:rgba(255,255,255,0.45);font-size:0.82rem}
-.ci-text a{color:rgba(255,255,255,0.45)}
-.wa-btn {
-  display:inline-flex;align-items:center;gap:0.6rem;margin-top:1.5rem;
-  padding:0.8rem 1.75rem;background:#25D366;color:white;border-radius:50px;
-  font-weight:700;font-size:0.88rem;transition:all .3s;
-}
-.wa-btn:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(37,211,102,0.4);color:white}
-.contact-form-card {
-  background:rgba(255,255,255,0.03);border:1px solid var(--border);
-  border-radius:var(--r2);padding:2.5rem;
-}
-.contact-form-card h3{font-family:'Exo 2',sans-serif;font-size:1.25rem;color:var(--white);margin-bottom:2rem}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
-.cf-field{margin-bottom:1rem}
-.cf-field label{display:block;font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;margin-bottom:0.5rem}
-.cf-field input,.cf-field textarea,.cf-field select {
-  width:100%;padding:0.875rem 1rem;
-  background:rgba(255,255,255,0.05);border:1.5px solid var(--border);
-  border-radius:var(--r);color:var(--white);font-size:0.9rem;
-  font-family:'DM Sans',sans-serif;transition:all .3s;
-}
-.cf-field input:focus,.cf-field textarea:focus,.cf-field select:focus{
-  outline:none;border-color:var(--cyan);background:rgba(0,232,212,0.04);
-  box-shadow:0 0 0 3px rgba(0,232,212,0.08);
-}
-.cf-field select option{background:var(--navy);color:var(--white)}
-.cf-field textarea{resize:vertical;min-height:100px}
-::placeholder{color:rgba(255,255,255,0.25)}
-.btn-submit{
-  width:100%;padding:1rem;
-  background:linear-gradient(135deg,var(--cyan),var(--cyan2));
-  color:var(--dark);border:none;border-radius:50px;
-  font-weight:700;font-size:0.95rem;cursor:pointer;
-  font-family:'DM Sans',sans-serif;transition:all .3s;
-  margin-top:0.5rem;
-}
-.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,232,212,0.4)}
-.form-success-msg{
-  display:none;text-align:center;padding:2rem;
-  color:var(--cyan);font-weight:600;font-size:1rem;
-}
-
-/* ── FOOTER ── */
-footer{background:var(--dark);border-top:1px solid var(--border);padding:4rem 2rem 2rem}
-.footer-grid{
-  max-width:1300px;margin:0 auto;
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;
-}
-.footer-brand .logo-wrap{margin-bottom:1.25rem}
-.footer-brand p{color:rgba(255,255,255,0.4);font-size:0.85rem;line-height:1.75;max-width:280px}
-.footer-col h4{font-family:'Exo 2',sans-serif;font-size:0.85rem;font-weight:700;color:var(--white);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1.25rem}
-.footer-col a{display:block;color:rgba(255,255,255,0.4);font-size:0.85rem;margin-bottom:0.65rem;transition:color .2s}
-.footer-col a:hover{color:var(--cyan)}
-.footer-bottom{
-  max-width:1300px;margin:0 auto;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
-  padding-top:2rem;border-top:1px solid var(--border);
-}
-.footer-bottom p{color:rgba(255,255,255,0.25);font-size:0.8rem}
-.footer-certbadges{display:flex;gap:0.75rem;flex-wrap:wrap}
-.fcb{
-  font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;
-  padding:0.3rem 0.75rem;border-radius:20px;
-  background:rgba(0,232,212,0.08);color:var(--cyan);border:1px solid rgba(0,232,212,0.2);
-}
-
-/* ── FLOATING WHATSAPP ── */
-.wa-float {
-  position:fixed;bottom:2rem;right:2rem;
-  width:56px;height:56px;background:#25D366;
-  border-radius:50%;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 4px 24px rgba(37,211,102,0.5);z-index:800;
-  transition:all .3s;
-}
-.wa-float:hover{transform:scale(1.12);box-shadow:0 6px 32px rgba(37,211,102,0.65)}
-.wa-float svg{width:28px;height:28px;fill:white}
-
-/* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.reveal.visible{opacity:1;transform:none}
-
-/* ── RESPONSIVE ── */
-@media(max-width:1100px){
-  .hero-content{grid-template-columns:1fr;gap:2.5rem;text-align:center}
-  .hero-btns{justify-content:center}
-  .hero-right{display:none}
-  .market-grid{grid-template-columns:1fr 1fr}
-  .market-spotlight{grid-template-columns:1fr;gap:1.5rem}
-  .ms-stat-big{text-align:left}
-  .why-grid{grid-template-columns:1fr 1fr}
-  .process-steps{grid-template-columns:1fr 1fr}
-  .process-steps::before{display:none}
-  .footer-grid{grid-template-columns:1fr 1fr}
-  .contact-grid{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-  :root{--nav-h:60px}
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  .stats-inner{grid-template-columns:1fr 1fr;gap:1.5rem}
-  .stat-item::after{display:none}
-  .market-grid{grid-template-columns:1fr}
-  .why-grid{grid-template-columns:1fr}
-  .process-steps{grid-template-columns:1fr}
-  .gallery-masonry{grid-template-columns:1fr 1fr}
-  .g-item.tall,.g-item.wide{grid-column:auto;grid-row:auto}
-  .srv-grid{grid-template-columns:1fr}
-  .cf-row{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-  .gallery-masonry{grid-template-columns:1fr 1fr}
-  .filter-btn{font-size:0.75rem;padding:0.4rem 0.9rem}
-  .hero-h1{font-size:2.4rem}
-  .section-dark,.section-navy,.section-light,.section-white,#services,#why,#process,#gallery,#testimonials,#faq,#contact{padding:3.5rem 1.25rem}
-}
-</style>
-</head>
-<body>
-
-<!-- ── NAVIGATION ── -->
-<nav id="nav">
-  <div class="nav-inner">
-    <div class="logo-wrap">
-      <div class="logo-icon">IB</div>
-      <div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div>
-    </div>
-    <div class="nav-links">
-      <a href="#hero" class="active">Home</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#about-anchor">About</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:+971553252589" class="nav-cta">📞 Emergency 24/7</a>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-nav" id="mobileNav">
-  <a href="#hero" onclick="closeMobileNav()">🏠 Home</a>
-  <a href="#services" onclick="closeMobileNav()">⚙️ Services</a>
-  <a href="#gallery" onclick="closeMobileNav()">🖼️ Gallery</a>
-  <a href="#about-anchor" onclick="closeMobileNav()">ℹ️ About</a>
-  <a href="#contact" onclick="closeMobileNav()">📞 Contact</a>
-  <a href="tel:+971553252589" style="color:#ff5a35;font-weight:700;">🚨 Emergency: +971-55-325-2589</a>
-</div>
-
-<!-- ── HERO ── -->
-<section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
-  <div class="particles" id="particles"></div>
-
-  <!-- ECG Heartbeat line -->
-  <div class="ecg-container">
-    <svg class="ecg-line" viewBox="0 0 1200 80" preserveAspectRatio="none" fill="none">
-      <path d="M0,40 L80,40 L100,40 L110,15 L125,65 L140,5 L155,75 L165,40 L180,40 L260,40 L280,40 L290,15 L305,65 L320,5 L335,75 L345,40 L360,40 L440,40 L460,40 L470,15 L485,65 L500,5 L515,75 L525,40 L540,40 L620,40 L640,40 L650,15 L665,65 L680,5 L695,75 L705,40 L720,40 L800,40 L820,40 L830,15 L845,65 L860,5 L875,75 L885,40 L900,40 L980,40 L1000,40 L1010,15 L1025,65 L1040,5 L1055,75 L1065,40 L1080,40 L1160,40 L1200,40"
-        stroke="url(#ecgGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <defs>
-        <linearGradient id="ecgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stop-color="#00E8D4" stop-opacity="0"/>
-          <stop offset="20%" stop-color="#00E8D4" stop-opacity="0.6"/>
-          <stop offset="50%" stop-color="#00E8D4" stop-opacity="0.9"/>
-          <stop offset="80%" stop-color="#00E8D4" stop-opacity="0.6"/>
-          <stop offset="100%" stop-color="#00E8D4" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-    </svg>
-  </div>
-
-  <div class="hero-content">
-    <div class="hero-left">
-      <div class="hero-tag">
-        <span></span> Dubai's #1 Biomedical Engineering Company
-      </div>
-      <h1 class="hero-h1">
-        Precision Care for<br>
-        <span class="cyan">Critical Medical</span>
-        <span class="line2">Equipment — Trusted Across UAE</span>
-      </h1>
-      <div class="hero-typewriter" id="typewriter">
-        <span id="typed-text"></span><span class="cursor"></span>
-      </div>
-      <div class="hero-btns">
-        <a href="#contact" class="btn-hero-primary">⚡ Request Service</a>
-        <a href="#services" class="btn-hero-outline">View Services →</a>
-      </div>
-    </div>
-
-    <div class="hero-right">
-      <div class="device-showcase">
-        <div class="ds-header">
-          <span class="ds-badge">Live Monitoring</span>
-          <span class="ds-status"><span></span> Engineers On-Call</span>
-        </div>
-        <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_58971730.jpeg"
-             alt="MRI Equipment Service" class="device-img">
-        <div class="device-metrics">
-          <div class="metric">
-            <div class="metric-val" id="m1">0</div>
-            <div class="metric-label">SLA %</div>
-          </div>
-          <div class="metric">
-            <div class="metric-val" id="m2">0h</div>
-            <div class="metric-label">Response</div>
-          </div>
-          <div class="metric">
-            <div class="metric-val" id="m3">0</div>
-            <div class="metric-label">Certified</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── STATS BAR ── -->
-<div id="stats">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-num" data-target="15" data-suffix="+">0</div>
-      <div class="stat-label">Years Experience</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="500" data-suffix="+">0</div>
-      <div class="stat-label">Healthcare Clients</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="5000" data-suffix="+">0</div>
-      <div class="stat-label">Equipment Serviced</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num" data-target="24" data-suffix="/7">0</div>
-      <div class="stat-label">Emergency Support</div>
-    </div>
-  </div>
-</div>
-
-<!-- ── SUPPLIERS / PARTNERS ── -->
-<div id="partners">
-  <div class="partners-label">Authorized Service Partners & Equipment Suppliers We Support</div>
-  <div style="overflow:hidden">
-    <div class="marquee-track" id="marqueeTrack">
-      <!-- will be populated by JS -->
-    </div>
-  </div>
-</div>
-
-<!-- ── MARKET INSIGHTS ── -->
-<section id="market" class="section-dark">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Market Intelligence</div>
-      <h2 class="section-h2-dark">UAE Healthcare Market — A $34B Opportunity</h2>
-      <p class="section-sub-dark">Why forward-thinking healthcare facilities in Dubai trust professional biomedical engineering partners.</p>
-    </div>
-    <div class="market-grid">
-      <div class="market-card reveal">
-        <span class="mc-badge badge-green">▲ Growing</span>
-        <div class="mc-icon">🏥</div>
-        <div class="mc-val">$34<span>B</span></div>
-        <div class="mc-label">UAE Healthcare Market Size by 2030</div>
-        <div class="mc-bar"><div class="mc-bar-fill" data-width="88"></div></div>
-      </div>
-      <div class="market-card reveal">
-        <span class="mc-badge badge-blue">↑ 8.4%</span>
-        <div class="mc-icon">🔬</div>
-        <div class="mc-val">$1.8<span>B</span></div>
-        <div class="mc-label">Medical Device Market — UAE (2024)</div>
-        <div class="mc-bar"><div class="mc-bar-fill" data-width="60"></div></div>
-      </div>
-      <div class="market-card reveal">
-        <span class="mc-badge badge-gold">Critical</span>
-        <div class="mc-icon">⚙️</div>
-        <div class="mc-val">95<span>%</span></div>
-        <div class="mc-label">Hospitals Using Outsourced Biomedical Maintenance</div>
-        <div class="mc-bar"><div class="mc-bar-fill" data-width="95"></div></div>
-      </div>
-      <div class="market-card reveal">
-        <span class="mc-badge badge-green">Proven</span>
-        <div class="mc-icon">📉</div>
-        <div class="mc-val">30<span>%</span></div>
-        <div class="mc-label">Reduction in Equipment Downtime via PPM Programs</div>
-        <div class="mc-bar"><div class="mc-bar-fill" data-width="70"></div></div>
-      </div>
-      <div class="market-card reveal">
-        <span class="mc-badge badge-blue">DHA</span>
-        <div class="mc-icon">🏛️</div>
-        <div class="mc-val">4,000<span>+</span></div>
-        <div class="mc-label">DHA Licensed Healthcare Facilities in Dubai</div>
-        <div class="mc-bar"><div class="mc-bar-fill" data-width="75"></div></div>
-      </div>
-      <div class="market-card reveal">
-        <span class="mc-badge badge-gold">ROI</span>
-        <div class="mc-icon">💰</div>
-        <div class="mc-val">40<span>%</span></div>
-        <div class="mc-label">Cost Savings vs. OEM Service Contracts</div>
-        <div class="mc-bar"><div class="mc-bar-fill" data-width="80"></div></div>
-      </div>
-      <div class="market-spotlight reveal">
-        <div class="ms-text">
-          <h3>Why Dubai Hospitals Choose Expert Biomedical Partners</h3>
-          <p>With UAE healthcare investment at an all-time high and the government's Vision 2031 targeting world-class medical infrastructure, hospitals cannot afford equipment downtime. Every unplanned MRI outage costs a facility an average of <strong style="color:var(--gold)">AED 25,000–80,000 per day</strong> in lost revenue and patient displacement. ICON BIOTRONICS delivers guaranteed SLA response times, preventing these costly interruptions.</p>
-        </div>
-        <div class="ms-stat-big">
-          <div class="num" data-target-float="25">AED 0K</div>
-          <div class="unit">Daily Cost of Unplanned Downtime</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SERVICES TABS ── -->
-<section id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow" style="color:var(--navy2)">
-        <span style="background:var(--navy2)"></span> What We Do <span style="background:var(--navy2)"></span>
-      </div>
-      <h2 class="section-h2-light">Comprehensive Equipment Services</h2>
-      <p class="section-sub-light">From diagnostic imaging to dental sterilization — certified precision at every level.</p>
-    </div>
-    <div class="tabs">
-      <button class="tab-btn active" onclick="switchTab('imaging')">🔬 Imaging & Diagnostics</button>
-      <button class="tab-btn" onclick="switchTab('life')">❤️ Life Support</button>
-      <button class="tab-btn" onclick="switchTab('dental')">🦷 Dental Equipment</button>
-      <button class="tab-btn" onclick="switchTab('maintenance')">🔧 Maintenance Plans</button>
-    </div>
-
-    <!-- IMAGING TAB -->
-    <div class="tab-content active" id="tab-imaging">
-      <img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_292422976_0.jpeg" alt="Imaging Equipment" class="srv-img">
-      <div class="srv-grid">
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-blue">🧲</div>
-          <div class="srv-body">
-            <h3>MRI Systems (1.5T – 3T)</h3>
-            <p>Full service for Siemens, GE, Philips MRI systems. Includes helium recovery, gradient amplifier servicing, RF coil repair, PACS integration, and ±0.1% field calibration.</p>
-            <div class="srv-tags"><span class="srv-tag">Siemens</span><span class="srv-tag">GE</span><span class="srv-tag">Philips</span><span class="srv-tag">24/7 Response</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-teal">📡</div>
-          <div class="srv-body">
-            <h3>CT Scanners (Multi-Slice)</h3>
-            <p>X-ray tube replacement, gantry calibration, detector array servicing, dose optimization, and IEC 60601 compliance testing for all major brands.</p>
-            <div class="srv-tags"><span class="srv-tag">Low-Dose</span><span class="srv-tag">DICOM</span><span class="srv-tag">OEM Certified</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-gold">📻</div>
-          <div class="srv-body">
-            <h3>Ultrasound Systems</h3>
-            <p>Probe repair, frequency validation (2–18 MHz), transducer testing, software upgrades, and full image quality certification per AIUM standards.</p>
-            <div class="srv-tags"><span class="srv-tag">2–18 MHz</span><span class="srv-tag">Probe Repair</span><span class="srv-tag">AIUM</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-rose">☢️</div>
-          <div class="srv-body">
-            <h3>X-Ray & Fluoroscopy</h3>
-            <p>Radiation safety compliance, detector calibration, tube alignment, leakage testing per IAEA standards, and full QA documentation.</p>
-            <div class="srv-tags"><span class="srv-tag">IAEA Standard</span><span class="srv-tag">Safety Cert</span><span class="srv-tag">QA Report</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- LIFE SUPPORT TAB -->
-    <div class="tab-content" id="tab-life">
-      <img src="https://i.pinimg.com/736x/83/bc/29/83bc29fb534bb70d93f1024cf851de43.jpg" alt="Life Support" class="srv-img">
-      <div class="srv-grid">
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-rose">🫁</div>
-          <div class="srv-body">
-            <h3>Ventilators & Anesthesia</h3>
-            <p>Flow calibration (0–15 L/min), leak testing, battery cycling, oxygen sensor accuracy (&lt;100μA leakage current), and full safety audits.</p>
-            <div class="srv-tags"><span class="srv-tag">Dräger</span><span class="srv-tag">Hamilton</span><span class="srv-tag">Mindray</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-teal">💓</div>
-          <div class="srv-body">
-            <h3>Patient Monitoring Systems</h3>
-            <p>ECG validation, SpO2 calibration, defibrillator testing, alarm system verification, and full IEC 60601 electrical safety testing.</p>
-            <div class="srv-tags"><span class="srv-tag">ECG Validated</span><span class="srv-tag">Defib Testing</span><span class="srv-tag">IEC 60601</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-blue">💉</div>
-          <div class="srv-body">
-            <h3>Infusion & Syringe Pumps</h3>
-            <p>Occlusion pressure testing, flow accuracy (&lt;±2%), dose error rate validation, and firmware updates for all brands.</p>
-            <div class="srv-tags"><span class="srv-tag">BD</span><span class="srv-tag">Fresenius</span><span class="srv-tag">B.Braun</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-gold">⚡</div>
-          <div class="srv-body">
-            <h3>Defibrillators & AEDs</h3>
-            <p>Energy delivery verification, electrode pad testing, charge time validation, shock waveform analysis, and battery health assessment.</p>
-            <div class="srv-tags"><span class="srv-tag">Zoll</span><span class="srv-tag">Philips</span><span class="srv-tag">Cardiac Science</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DENTAL TAB -->
-    <div class="tab-content" id="tab-dental">
-      <img src="https://i.pinimg.com/1200x/78/c1/07/78c107c0a43c341d9c2f1018eaf2ef02.jpg" alt="Dental Equipment" class="srv-img">
-      <div class="srv-grid">
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-teal">🦷</div>
-          <div class="srv-body">
-            <h3>Dental Chairs & Units</h3>
-            <p>Hydraulic system repair, suction optimization, motor calibration, waterline disinfection, and full ADA & EN 13060 compliance certification.</p>
-            <div class="srv-tags"><span class="srv-tag">KaVo</span><span class="srv-tag">Sirona</span><span class="srv-tag">A-dec</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-blue">🧪</div>
-          <div class="srv-body">
-            <h3>Sterilization & Autoclaves</h3>
-            <p>Class B validation, biological indicator (spore) testing, chamber cleaning, seal integrity checks, and handpiece balancing up to 400,000 RPM.</p>
-            <div class="srv-tags"><span class="srv-tag">Melag</span><span class="srv-tag">Mocom</span><span class="srv-tag">Class B</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-gold">📷</div>
-          <div class="srv-body">
-            <h3>Dental Imaging (X-Ray/CBCT)</h3>
-            <p>Radiation leakage checks per IAEA standards, detector calibration, digital sensor servicing, and panoramic X-ray quality assurance.</p>
-            <div class="srv-tags"><span class="srv-tag">CBCT</span><span class="srv-tag">Panoramic</span><span class="srv-tag">IAEA</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-rose">💨</div>
-          <div class="srv-body">
-            <h3>Dental Compressors & Suction</h3>
-            <p>Compressed air quality testing (ISO 8573-1), vacuum pressure optimization, filter replacement, and infection control verification.</p>
-            <div class="srv-tags"><span class="srv-tag">ISO 8573-1</span><span class="srv-tag">Cattani</span><span class="srv-tag">Durr Dental</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MAINTENANCE TAB -->
-    <div class="tab-content" id="tab-maintenance">
-      <img src="https://cdn2.picryl.com/photo/2013/03/14/brian-speck-a-bio-medical-contractor-tests-medical-0728c9-1024.jpg" alt="Maintenance" class="srv-img">
-      <div class="srv-grid">
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-blue">📋</div>
-          <div class="srv-body">
-            <h3>Annual Maintenance Contracts (AMC)</h3>
-            <p>Full-coverage yearly agreements: unlimited callouts, scheduled PPM visits, parts coverage, compliance certification, and priority response SLAs.</p>
-            <div class="srv-tags"><span class="srv-tag">Unlimited Callouts</span><span class="srv-tag">Parts Included</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-teal">🛡️</div>
-          <div class="srv-body">
-            <h3>Comprehensive Maintenance Contracts (CMC)</h3>
-            <p>All AMC benefits plus extended warranty coverage, loaner equipment, and dedicated account manager for multi-site healthcare organizations.</p>
-            <div class="srv-tags"><span class="srv-tag">Multi-site</span><span class="srv-tag">Loaner Units</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-gold">📊</div>
-          <div class="srv-body">
-            <h3>Planned Preventive Maintenance (PPM)</h3>
-            <p>FMECA-based risk analysis, scheduled quarterly visits, performance benchmarking, and detailed compliance reports for DHA/MOH audits.</p>
-            <div class="srv-tags"><span class="srv-tag">FMECA</span><span class="srv-tag">DHA Compliant</span></div>
-          </div>
-        </div>
-        <div class="srv-card reveal">
-          <div class="srv-icon ic-rose">🔍</div>
-          <div class="srv-body">
-            <h3>Equipment Condition Appraisal</h3>
-            <p>Pre-purchase inspection, end-of-life assessment, insurance documentation, and lifecycle optimization reports for procurement decisions.</p>
-            <div class="srv-tags"><span class="srv-tag">Pre-Purchase</span><span class="srv-tag">Insurance Docs</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── WHY US ── -->
-<section id="about-anchor" style="background:var(--navy);padding:5rem 2rem">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Why Choose Us</div>
-      <h2 class="section-h2-dark">The ICON BIOTRONICS Difference</h2>
-      <p class="section-sub-dark">15 years of engineering excellence, international certifications, and a relentless commitment to uptime.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card reveal"><div class="why-num">01</div><div class="why-icon">⚡</div><h3>24/7 Emergency Response</h3><p>Rapid deployment within hours across all of Dubai and UAE. Our on-call certified engineers ensure your critical equipment never stays down.</p></div>
-      <div class="why-card reveal"><div class="why-num">02</div><div class="why-icon">🏆</div><h3>ISO 9001:2015 & ISO 13485 Certified</h3><p>Every procedure follows internationally audited quality management protocols. We exceed the standards that DHA, MOH, and JCIA require.</p></div>
-      <div class="why-card reveal"><div class="why-num">03</div><div class="why-icon">🔬</div><h3>OEM-Certified Engineers</h3><p>Our team holds manufacturer certifications from GE, Philips, Siemens, Dräger, and more — delivering OEM-quality service at independent pricing.</p></div>
-      <div class="why-card reveal"><div class="why-num">04</div><div class="why-icon">💰</div><h3>40% Cost Savings vs OEM</h3><p>Independent expertise means significant savings. Our transparent pricing and flexible contracts deliver premium service without premium OEM markups.</p></div>
-      <div class="why-card reveal"><div class="why-num">05</div><div class="why-icon">📄</div><h3>Full Compliance Documentation</h3><p>Every service generates DHA/MOH-ready compliance reports, calibration certificates, and audit-trail documentation — instantly available on request.</p></div>
-      <div class="why-card reveal"><div class="why-num">06</div><div class="why-icon">🌍</div><h3>UAE-Wide Coverage</h3><p>From Bur Dubai headquarters, we serve all seven Emirates — with dedicated teams in Abu Dhabi, Sharjah, and Al Ain available on-demand.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── PROCESS ── -->
-<section id="process" style="background:var(--dark);padding:5rem 2rem">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">How It Works</div>
-      <h2 class="section-h2-dark">From Call to Certified — In 4 Steps</h2>
-    </div>
-    <div class="process-steps">
-      <div class="step reveal"><div class="step-num">1</div><h3>Contact & Triage</h3><p>Call, WhatsApp, or submit online. We assess equipment issue and assign a certified specialist within the hour.</p></div>
-      <div class="step reveal"><div class="step-num">2</div><h3>On-Site Diagnosis</h3><p>Our engineer arrives with calibrated tools and OEM diagnostic software for precise fault identification.</p></div>
-      <div class="step reveal"><div class="step-num">3</div><h3>Repair & Calibration</h3><p>Using OEM-grade parts and certified procedures, we restore full functionality with precision calibration.</p></div>
-      <div class="step reveal"><div class="step-num">4</div><h3>Certification & Handover</h3><p>Complete compliance documentation, calibration certificates, and maintenance reports — ready for DHA/MOH audits.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ── GALLERY ── -->
-<section id="gallery" style="background:var(--light);padding:5rem 2rem">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow" style="color:var(--navy2)"><span style="background:var(--navy2)"></span> Our Work <span style="background:var(--navy2)"></span></div>
-      <h2 class="section-h2-light">Equipment & Operations Gallery</h2>
-    </div>
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="imaging">Imaging</button>
-      <button class="filter-btn" data-filter="lifesupport">Life Support</button>
-      <button class="filter-btn" data-filter="dental">Dental</button>
-      <button class="filter-btn" data-filter="engineers">Engineers</button>
-    </div>
-    <div class="gallery-masonry" id="galleryGrid">
-      <div class="g-item tall" data-cat="imaging"><img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/block/adobestock_1169377445.jpeg" alt="MRI System" loading="lazy"><div class="g-overlay"><span class="g-caption">MRI System</span></div></div>
-      <div class="g-item" data-cat="imaging"><img src="https://www.modernheartandvascular.com/wp-content/uploads/2022/10/CT-Scanner-1-Modern-Heart-and-Vascular-Institute-Cardiology-Heart-and-Vein-1024x763.png.webp" alt="CT Scanner" loading="lazy"><div class="g-overlay"><span class="g-caption">CT Scanner</span></div></div>
-      <div class="g-item" data-cat="engineers"><img src="https://cdn2.picryl.com/photo/2020/04/06/tech-sgt-alec-platt-biomedical-equipment-specialist-1d4fd5-1024.jpg" alt="Biomedical Technician" loading="lazy"><div class="g-overlay"><span class="g-caption">Biomedical Technician</span></div></div>
-      <div class="g-item tall" data-cat="dental"><img src="https://i.pinimg.com/1200x/78/c1/07/78c107c0a43c341d9c2f1018eaf2ef02.jpg" alt="Dental Chair" loading="lazy"><div class="g-overlay"><span class="g-caption">Dental Chair Unit</span></div></div>
-      <div class="g-item wide" data-cat="imaging"><img src="https://prolinkworks.com/sites/default/files/styles/full/public/images/block/adobestock_292422976_0.jpeg" alt="Ultrasound" loading="lazy"><div class="g-overlay"><span class="g-caption">Ultrasound System</span></div></div>
-      <div class="g-item" data-cat="engineers"><img src="https://cdn2.picryl.com/photo/2013/03/14/brian-speck-a-bio-medical-contractor-tests-medical-0728c9-1024.jpg" alt="Engineer Testing" loading="lazy"><div class="g-overlay"><span class="g-caption">Equipment Testing</span></div></div>
-      <div class="g-item" data-cat="lifesupport"><img src="https://i.pinimg.com/1200x/6f/85/e6/6f85e6df409fc60c5830d0d81dd852ba.jpg" alt="Patient Monitor" loading="lazy"><div class="g-overlay"><span class="g-caption">Patient Monitor</span></div></div>
-      <div class="g-item" data-cat="dental"><img src="https://i.pinimg.com/736x/cc/cb/ca/cccbca266fd514043e1745e8c1f1c352.jpg" alt="Autoclave" loading="lazy"><div class="g-overlay"><span class="g-caption">Sterilization Autoclave</span></div></div>
-      <div class="g-item" data-cat="lifesupport"><img src="https://i.pinimg.com/736x/83/bc/29/83bc29fb534bb70d93f1024cf851de43.jpg" alt="Ventilator" loading="lazy"><div class="g-overlay"><span class="g-caption">Ventilator Service</span></div></div>
-      <div class="g-item" data-cat="engineers"><img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/blog/radiologist-using-ultra-sound-tool-above-woman-2023-11-27-05-07-14-utc.jpg" alt="Radiology Support" loading="lazy"><div class="g-overlay"><span class="g-caption">Radiology Support</span></div></div>
-      <div class="g-item" data-cat="imaging"><img src="https://micromain.com/wp-content/uploads/Calibration-1.jpg" alt="Calibration" loading="lazy"><div class="g-overlay"><span class="g-caption">Precision Calibration</span></div></div>
-      <div class="g-item" data-cat="engineers"><img src="https://prolinkworks.com/sites/default/files/styles/half/public/images/blog/collaboration-planning-or-nurses-in-meeting-for-a-2023-03-09-08-47-01-utc_0.jpg" alt="Team Planning" loading="lazy"><div class="g-overlay"><span class="g-caption">Clinical Team Planning</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <button class="lb-close" id="lbClose">&times;</button>
-  <img src="" alt="" id="lbImg">
-</div>
-
-<!-- ── TESTIMONIALS ── -->
-<section id="testimonials" style="background:var(--navy);padding:5rem 2rem">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Client Stories</div>
-      <h2 class="section-h2-dark">Trusted by Dubai's Top Healthcare Providers</h2>
-    </div>
-    <div class="testi-slider reveal">
-      <div class="testi-track" id="testiTrack">
-        <div class="testi-card">
-          <div class="testi-inner">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-text">"ICON BIOTRONICS had our 3T MRI back online within 6 hours of the breakdown call. Their engineer arrived at 2 AM without hesitation. The calibration report was perfect for our DHA audit. Truly exceptional service."</p>
-            <div class="testi-author"><strong>Dr. Ahmed Al-Rashidi</strong><span>Head of Radiology — Dubai Hospital</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-inner">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-text">"We switched from our OEM service contract to ICON BIOTRONICS and saved 38% annually. The quality of work is identical — if not better. Their compliance documentation is thorough and our MOH inspector was impressed."</p>
-            <div class="testi-author"><strong>Eng. Sara Al-Mansoori</strong><span>Biomedical Manager — NMC Healthcare, Abu Dhabi</span></div>
-          </div>
-        </div>
-        <div class="testi-card">
-          <div class="testi-inner">
-            <div class="testi-stars">★★★★★</div>
-            <p class="testi-text">"As a multi-branch dental group, we needed a partner who understands both clinical requirements and technical precision. ICON BIOTRONICS maintains all 14 of our chairs, autoclaves, and CBCT units. Zero unplanned downtime in 2 years."</p>
-            <div class="testi-author"><strong>Dr. Khalid Mahmoud</strong><span>Director — Smile Dental Group, Dubai</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-dots" id="testiDots">
-        <div class="tdot active" onclick="goTesti(0)"></div>
-        <div class="tdot" onclick="goTesti(1)"></div>
-        <div class="tdot" onclick="goTesti(2)"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FAQ ── -->
-<section id="faq" style="background:var(--dark);padding:5rem 2rem">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">FAQ</div>
-      <h2 class="section-h2-dark">Common Questions</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q">What is your emergency response time across UAE? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>For clients on AMC/CMC contracts, we guarantee a 4-hour on-site response SLA within Dubai, and 6 hours for other Emirates. For non-contract emergency callouts, typical response is within 2–8 hours depending on location. Our 24/7 hotline ensures you always reach an engineer.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Are your engineers OEM-certified? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Yes. Our engineers hold factory certifications from GE HealthCare, Philips, Siemens Healthineers, Dräger, Mindray, and more. We invest continuously in training so our team maintains the same technical proficiency as OEM field engineers — at significantly lower cost to you.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Do you provide DHA/MOH-compliant documentation? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Absolutely. Every service generates a full compliance package: calibration certificates, test results, maintenance records, and engineer sign-off reports — all formatted for DHA, MOH, HAAD, and JCIA audit requirements. Digital copies are provided within 24 hours of service completion.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">How much can we save vs. an OEM service contract? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Our clients typically save 30–45% compared to direct OEM maintenance contracts, while receiving the same or superior service quality. For a 3T MRI system, this can translate to AED 80,000–150,000 in annual savings. We offer a free cost-comparison analysis — just contact us.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q">Do you supply spare parts and consumables? <span class="faq-icon">+</span></button>
-        <div class="faq-a"><p>Yes. We maintain a stocked inventory of OEM and equivalent-certified parts for fast turnaround. For specialized components, we have direct supply agreements with leading medical device parts distributors, with most parts sourced within 24–72 hours.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── EMERGENCY CTA ── -->
-<section id="emergency">
-  <div class="emrg-inner">
-    <div class="emrg-badge"><span></span> 24/7 Emergency Hotline Active</div>
-    <h2>Equipment Failure Costs You Money.<br>Call Us Before It Happens.</h2>
-    <p>Our certified biomedical engineers are on-call right now across Dubai & UAE — ready to respond to your most critical equipment emergencies.</p>
-    <div class="emrg-btns">
-      <a href="tel:+971553252589" class="btn-white">📞 +971-55-325-2589</a>
-      <a href="#contact" class="btn-outline-white">📋 Request a Quote</a>
-    </div>
-    <span class="emrg-phone">Average response time: <strong>4 hours</strong> · Coverage: <strong>All UAE</strong></span>
-  </div>
-</section>
-
-<!-- ── CONTACT ── -->
-<section id="contact" style="background:var(--navy);padding:5rem 2rem">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-eyebrow">Get In Touch</div>
-      <h2 class="section-h2-dark">Start the Conversation</h2>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info-block reveal">
-        <h3>We're Here to Help</h3>
-        <p>Whether you need emergency repair, want to explore a maintenance contract, or have questions about a specific device — our team responds fast.</p>
-        <div class="ci-item"><div class="ci-icon">📍</div><div class="ci-text"><strong>Head Office</strong><span>Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E.</span></div></div>
-        <div class="ci-item"><div class="ci-icon">📞</div><div class="ci-text"><strong>Phone / Emergency</strong><span><a href="tel:+971553252589">+971 55 325 2589</a></span></div></div>
-        <div class="ci-item"><div class="ci-icon">✉️</div><div class="ci-text"><strong>Email</strong><span><a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a></span></div></div>
-        <div class="ci-item"><div class="ci-icon">🕐</div><div class="ci-text"><strong>Working Hours</strong><span>Mon–Sat: 8:00 AM – 6:00 PM | Emergency: 24/7</span></div></div>
-        <a href="https://wa.me/971553252589?text=Hello%20ICON%20BIOTRONICS%2C%20I%20need%20equipment%20support." class="wa-btn" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          Chat on WhatsApp
-        </a>
-        <!-- Cert badges -->
-        <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-top:2rem">
-          <span class="fcb">ISO 9001:2015</span>
-          <span class="fcb">ISO 13485</span>
-          <span class="fcb">CE Marking</span>
-          <span class="fcb">DHA Approved</span>
-        </div>
-      </div>
-
-      <div class="contact-form-card reveal">
-        <h3>Send Us a Message</h3>
-        <form id="contactForm" action="https://formspree.io/f/mpqdpgrz" method="POST">
-          <div class="cf-row">
-            <div class="cf-field"><label>Full Name</label><input type="text" name="name" placeholder="Dr. John Smith" required></div>
-            <div class="cf-field"><label>Facility</label><input type="text" name="facility" placeholder="Dubai Hospital"></div>
-          </div>
-          <div class="cf-row">
-            <div class="cf-field"><label>Email</label><input type="email" name="email" placeholder="you@hospital.ae" required></div>
-            <div class="cf-field"><label>Phone</label><input type="tel" name="phone" placeholder="+971 50 000 0000"></div>
-          </div>
-          <div class="cf-field">
-            <label>Service Required</label>
-            <select name="service">
-              <option value="">Select a service...</option>
-              <option>MRI / CT System Repair</option>
-              <option>Ultrasound / X-Ray Service</option>
-              <option>Ventilator / Life Support</option>
-              <option>Patient Monitoring</option>
-              <option>Dental Equipment</option>
-              <option>Annual Maintenance Contract (AMC)</option>
-              <option>Emergency Callout</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="cf-field"><label>Message</label><textarea name="message" placeholder="Describe the issue or service you need..." rows="4"></textarea></div>
-          <button type="submit" class="btn-submit">Send Message →</button>
-          <div class="form-success-msg" id="formSuccess">✓ Message received! We'll respond within 2 hours during business hours.</div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── FOOTER ── -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div class="logo-wrap"><div class="logo-icon">IB</div><div class="logo-text">ICON BIOTRONICS<span>Precision Biomedical Engineering</span></div></div>
-      <p>Dubai's trusted partner for medical and dental equipment service, repair, maintenance, and supply. Serving UAE healthcare since 2009.</p>
-      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.25rem">
-        <span class="fcb">ISO 9001:2015</span><span class="fcb">ISO 13485</span><span class="fcb">CE Marking</span>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="#services">MRI & CT Systems</a>
-      <a href="#services">Ultrasound & X-Ray</a>
-      <a href="#services">Life Support</a>
-      <a href="#services">Dental Equipment</a>
-      <a href="#services">AMC / CMC Plans</a>
-    </div>
-    <div class="footer-col">
-      <h4>Company</h4>
-      <a href="#about-anchor">About Us</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#faq">FAQ</a>
-      <a href="#">Privacy Policy</a>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <a href="tel:+971553252589">+971 55 325 2589</a>
-      <a href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a>
-      <a href="#">Office 301, Fardan Business Tower</a>
-      <a href="#">Bur Dubai, Dubai, UAE</a>
-      <a href="https://wa.me/971553252589" target="_blank" style="color:#25D366 !important">💬 WhatsApp Us</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <p>&copy; 2026 ICON BIOTRONICS. All rights reserved. Registered in Dubai, UAE.</p>
-    <div class="footer-certbadges"><span class="fcb">24/7 Support</span><span class="fcb">UAE-Wide Coverage</span></div>
-  </div>
-</footer>
-
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/971553252589" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-</a>
-
-<script>
-// ── 1. NAV scroll effect ──
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-  // Active nav link
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    const sec = a.getAttribute('href');
-    if (!sec || !sec.startsWith('#')) return;
-    const el = document.querySelector(sec);
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    a.classList.toggle('active', rect.top <= 100 && rect.bottom > 100);
-  });
-});
-
-// ── 2. Mobile hamburger ──
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileNav.classList.toggle('open');
-});
-function closeMobileNav() {
-  hamburger.classList.remove('open');
-  mobileNav.classList.remove('open');
-}
-
-// ── 3. Floating particles ──
-const pContainer = document.getElementById('particles');
-for (let i = 0; i < 40; i++) {
-  const p = document.createElement('div');
-  p.className = 'particle';
-  const size = Math.random() * 4 + 2;
-  p.style.cssText = `
-    width:${size}px;height:${size}px;
-    left:${Math.random() * 100}%;
-    animation-delay:${Math.random() * 20}s;
-    animation-duration:${Math.random() * 15 + 12}s;
-    opacity:${Math.random() * 0.4 + 0.1};
-  `;
-  pContainer.appendChild(p);
-}
-
-// ── 4. Typewriter effect ──
-const phrases = [
-  'MRI & CT System Experts',
-  'Dental Equipment Specialists',
-  'Ventilator & Life Support',
-  '24/7 Emergency Engineers',
-  'ISO 9001:2015 Certified'
-];
-let pi = 0, ci = 0, deleting = false;
-const typed = document.getElementById('typed-text');
-function type() {
-  const phrase = phrases[pi];
-  if (!deleting) {
-    typed.textContent = phrase.substring(0, ci + 1);
-    ci++;
-    if (ci === phrase.length) { deleting = true; setTimeout(type, 1600); return; }
-  } else {
-    typed.textContent = phrase.substring(0, ci - 1);
-    ci--;
-    if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
-  }
-  setTimeout(type, deleting ? 40 : 75);
-}
-type();
-
-// ── 5. Counter animations ──
-function animateCount(el, target, suffix, duration) {
-  let start = 0, step = target / (duration / 16);
-  const tick = () => {
-    start = Math.min(start + step, target);
-    el.textContent = Math.floor(start).toLocaleString() + suffix;
-    if (start < target) requestAnimationFrame(tick);
-  };
-  tick();
-}
-
-// Hero mini-metrics
-setTimeout(() => {
-  animateCount(document.getElementById('m1'), 99, '%', 1200);
-  animateCount(document.getElementById('m2'), 4, 'h', 1000);
-  animateCount(document.getElementById('m3'), 18, '', 1200);
-}, 800);
-
-// Stats bar counters on scroll
-const statEls = document.querySelectorAll('.stat-num[data-target]');
-const statObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const el = e.target;
-      animateCount(el, +el.dataset.target, el.dataset.suffix || '', 1400);
-      statObserver.unobserve(el);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ICON BIOTRONICS | Precision Biomedical Engineering — Dubai, UAE</title>
+  <meta name="description" content="Dubai's most trusted biomedical & dental equipment partner. Repair, calibration, maintenance & 24/7 emergency support for MRI, CT, Ultrasound, Dental systems across UAE. ISO 9001:2015 & ISO 13485 Certified." />
+  <link rel="icon" type="image/png" href="images/biotronics-favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500;600&family=Roboto:wght@500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── VARIABLES ── */
+    :root {
+      --bg-deep:     #02040a;
+      --bg-navy:     #0a1a2f;
+      --silver:      #c0c0c0;
+      --silver-soft: #d8d8d8;
+      --white:       #ffffff;
+      --blue-neon:   #00a8ff;
+      --cyan-glow:   #4df3ff;
+      --red-alert:   #ff3b3b;
+      --card-bg:     #0f2238;
+      --border-soft: #1b3350;
+      --shadow-soft: 0 0 30px rgba(0,168,255,0.25);
+      --text-muted:  #9aa6c0;
+      --ease:        cubic-bezier(0.23,1,0.32,1);
     }
-  });
-}, { threshold: 0.5 });
-statEls.forEach(el => statObserver.observe(el));
 
-// ── 6. Scroll reveal ──
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      e.target.style.transitionDelay = (i % 4) * 0.08 + 's';
-      e.target.classList.add('visible');
-      revealObserver.unobserve(e.target);
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: radial-gradient(circle at top, #07152a 0, #02040a 55%, #000000 100%);
+      color: var(--silver-soft);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ── 7. Market bar fill ──
-const barObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.width = e.target.dataset.width + '%';
-      barObserver.unobserve(e.target);
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(1200px, 100% - 3rem);
+      margin: 0 auto;
     }
-  });
-}, { threshold: 0.3 });
-document.querySelectorAll('.mc-bar-fill').forEach(el => barObserver.observe(el));
 
-// ── 8. Supplier marquee ──
-const suppliers = [
-  { name: 'GE HealthCare', sub: 'Imaging & Monitoring' },
-  { name: 'Philips', sub: 'Diagnostic Imaging' },
-  { name: 'Siemens Healthineers', sub: 'Medical Technology' },
-  { name: 'Dräger', sub: 'Life Support' },
-  { name: 'Mindray', sub: 'Patient Monitoring' },
-  { name: 'Stryker', sub: 'Surgical Equipment' },
-  { name: 'Fujifilm', sub: 'Radiology' },
-  { name: 'Samsung Medison', sub: 'Ultrasound' },
-  { name: 'Olympus', sub: 'Endoscopy' },
-  { name: 'BD Becton Dickinson', sub: 'Medical Devices' },
-  { name: 'Carestream', sub: 'Digital Imaging' },
-  { name: 'Canon Medical', sub: 'CT & MRI' },
-  { name: 'Agfa HealthCare', sub: 'Imaging IT' },
-  { name: 'KaVo Kerr', sub: 'Dental Systems' },
-  { name: 'Dentsply Sirona', sub: 'Dental Technology' },
-  { name: 'Spacelabs Medical', sub: 'Patient Monitoring' },
-];
-const track = document.getElementById('marqueeTrack');
-const doubled = [...suppliers, ...suppliers];
-doubled.forEach(s => {
-  const item = document.createElement('div');
-  item.className = 'supplier-item';
-  item.innerHTML = `<div class="supplier-name">${s.name}<span class="s-sub">${s.sub}</span></div>`;
-  track.appendChild(item);
-});
+    section { padding: 80px 0; position: relative; overflow: hidden; }
 
-// ── 9. Service tabs ──
-function switchTab(id) {
-  document.querySelectorAll('.tab-btn').forEach((b, i) => {
-    b.classList.toggle('active', ['imaging','life','dental','maintenance'][i] === id);
-  });
-  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-}
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg-deep); }
+    ::-webkit-scrollbar-thumb { background: var(--blue-neon); border-radius: 3px; }
 
-// ── 10. Gallery filter & lightbox ──
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-    const filter = this.dataset.filter;
-    document.querySelectorAll('.g-item').forEach(item => {
-      if (filter === 'all' || item.dataset.cat === filter) {
-        item.classList.remove('hidden');
-      } else {
-        item.classList.add('hidden');
+    /* ── ANIMATED BACKGROUND ── */
+    .bg-dna {
+      position: fixed; inset: 0; pointer-events: none; z-index: -2;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(0,168,255,0.12) 0, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(77,243,255,0.12) 0, transparent 45%);
+      opacity: 0.7;
+    }
+
+    .particle {
+      position: fixed; width: 3px; height: 3px; border-radius: 50%;
+      background: rgba(77,243,255,0.7);
+      box-shadow: 0 0 10px rgba(77,243,255,0.9);
+      animation: floatParticle 18s linear infinite;
+      pointer-events: none; z-index: -1;
+    }
+    .particle:nth-child(2) { left: 10%; animation-duration: 22s; animation-delay: -4s; }
+    .particle:nth-child(3) { left: 30%; animation-duration: 26s; animation-delay: -8s; }
+    .particle:nth-child(4) { left: 55%; animation-duration: 20s; animation-delay: -2s; }
+    .particle:nth-child(5) { left: 75%; animation-duration: 24s; animation-delay: -6s; }
+    .particle:nth-child(6) { left: 90%; animation-duration: 28s; animation-delay: -10s; }
+
+    @keyframes floatParticle {
+      0%   { transform: translateY(100vh); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(-10vh); opacity: 0; }
+    }
+
+    /* ── HEADER / NAV ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(2,4,10,0.97), rgba(2,4,10,0.8));
+      border-bottom: 1px solid rgba(0,168,255,0.25);
+      transition: box-shadow 0.3s;
+    }
+    header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.6); }
+
+    .nav {
+      display: flex; align-items: center;
+      justify-content: space-between; padding: 10px 0;
+      gap: 0; flex-wrap: nowrap;
+    }
+
+    .nav-left { display: flex; align-items: center; flex-shrink: 0; }
+
+    .nav-logo { display: flex; align-items: center; }
+    .nav-logo img {
+      height: 42px; width: auto;
+      border-radius: 4px;
+      filter: drop-shadow(0 2px 10px rgba(0,168,255,0.4));
+    }
+
+    /* center links take all remaining space */
+    .nav-links {
+      display: flex; align-items: center;
+      gap: 0; /* we use padding on each link instead */
+      font-size: 0.78rem; text-transform: uppercase;
+      letter-spacing: 0.1em; color: #9aa6c0;
+      flex: 1; justify-content: center;
+    }
+
+    .nav-links a {
+      position: relative; padding: 6px 14px;
+      transition: color 0.2s; white-space: nowrap;
+    }
+    .nav-links a:hover { color: var(--silver-soft); }
+    .nav-links a::after {
+      content: ''; position: absolute; left: 14px; right: 14px; bottom: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue-neon), var(--cyan-glow));
+      transform: scaleX(0); transform-origin: center;
+      transition: transform 0.25s ease-out;
+    }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    .nav-cta {
+      display: flex; align-items: center; gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .nav-hotline {
+      font-size: 0.68rem; text-align: right; color: #ffb3b3;
+      white-space: nowrap; line-height: 1.3;
+    }
+    .nav-hotline span { display: block; font-weight: 600; font-size: 0.75rem; color: #ffe1e1; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 6px;
+    }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--silver-soft); border-radius: 2px; transition: all .3s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 0;
+      background: rgba(2,4,10,0.98); border-bottom: 1px solid rgba(0,168,255,0.25);
+      padding: 1rem 1.5rem;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      color: #9aa6c0; padding: 0.75rem 0; font-size: 0.9rem;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .mobile-nav a:hover { color: var(--cyan-glow); }
+
+    /* ── BUTTONS ── */
+    .btn {
+      border-radius: 999px; padding: 8px 16px;
+      font-family: 'Roboto', sans-serif; font-size: 0.75rem;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      border: 1px solid rgba(0,168,255,0.6);
+      color: var(--silver-soft);
+      background: radial-gradient(circle at top left, rgba(0,168,255,0.25), rgba(2,4,10,0.95));
+      cursor: pointer; transition: all 0.25s ease-out;
+      display: inline-flex; align-items: center; gap: 5px;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-neon), var(--cyan-glow));
+      color: #02040a; border: none;
+      box-shadow: 0 0 18px rgba(0,168,255,0.7);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 24px rgba(0,168,255,0.7);
+    }
+    .btn-primary:hover { box-shadow: 0 0 32px rgba(0,168,255,0.9); }
+
+    /* ── HERO ── */
+    .hero { padding-top: 90px; padding-bottom: 80px; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.4fr) minmax(0,1.1fr);
+      gap: 60px; align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 0.8rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: #7f8ca3; margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.4rem, 3.2vw, 3.1rem);
+      line-height: 1.15; margin-bottom: 18px;
+      background: linear-gradient(120deg, #f5f5f5, #c0c0c0, #f5f5f5);
+      -webkit-background-clip: text; color: transparent;
+    }
+
+    .hero-highlight {
+      background: linear-gradient(120deg, var(--blue-neon), var(--cyan-glow));
+      -webkit-background-clip: text; color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem; color: #a9b5cc;
+      max-width: 520px; margin-bottom: 26px; line-height: 1.75;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
+
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 24px; font-size: 0.8rem; color: #7f8ca3; }
+    .hero-meta strong { color: var(--silver-soft); font-weight: 500; }
+
+    /* Hero right visual */
+    .hero-right { position: relative; min-height: 340px; }
+
+    .hero-orbit {
+      position: absolute; inset: 0; border-radius: 32px;
+      background:
+        radial-gradient(circle at top, rgba(0,168,255,0.18), rgba(2,4,10,0.95)),
+        url('images/hero-lab.jpg') center/cover no-repeat;
+      border: 1px solid rgba(0,168,255,0.35);
+      box-shadow: var(--shadow-soft); overflow: hidden;
+    }
+
+    .hero-orbit::before {
+      content: '';
+      position: absolute; width: 220%; height: 220%; top: -60%; left: -60%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(77,243,255,0.18) 0, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0,168,255,0.22) 0, transparent 45%);
+      animation: orbitGlow 26s linear infinite;
+      opacity: 0.9; mix-blend-mode: screen;
+    }
+
+    @keyframes orbitGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+    .hero-dna {
+      position: absolute; inset: 12%; border-radius: 24px;
+      border: 1px solid rgba(0,168,255,0.35);
+      background:
+        linear-gradient(135deg, rgba(2,4,10,0.9), rgba(10,26,47,0.95)),
+        repeating-linear-gradient(135deg, rgba(0,168,255,0.08) 0, rgba(0,168,255,0.08) 1px, transparent 1px, transparent 6px);
+      overflow: hidden;
+    }
+    .hero-dna::before {
+      content: ''; position: absolute;
+      width: 2px; height: 220%; left: 50%; top: -10%;
+      background: linear-gradient(180deg, transparent, var(--cyan-glow), transparent);
+      box-shadow: 0 0 18px rgba(77,243,255,0.9);
+      animation: dnaPulse 4.5s ease-in-out infinite;
+    }
+    .hero-dna::after {
+      content: ''; position: absolute; inset: 18%;
+      border-radius: 50%; border: 1px dashed rgba(0,168,255,0.4);
+      box-shadow: 0 0 18px rgba(0,168,255,0.4);
+      animation: rotateRing 18s linear infinite;
+    }
+    @keyframes dnaPulse {
+      0%,100% { transform: translateX(-50%) scaleY(1); opacity: 0.4; }
+      50%      { transform: translateX(-50%) scaleY(1.1); opacity: 1; }
+    }
+    @keyframes rotateRing {
+      0%   { transform: rotate(0deg); }
+      100% { transform: rotate(-360deg); }
+    }
+
+    .hero-chip {
+      position: absolute; right: 10%; top: 12%;
+      padding: 10px 14px; border-radius: 14px;
+      background: rgba(2,4,10,0.9); border: 1px solid rgba(0,168,255,0.5);
+      box-shadow: 0 0 16px rgba(0,168,255,0.6);
+      font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.16em; color: #cdefff;
+    }
+    .hero-chip span { display: block; font-size: 0.65rem; color: #7f8ca3; margin-top: 4px; }
+
+    .hero-stats {
+      position: absolute; left: 8%; bottom: 10%;
+      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 10px; font-size: 0.75rem;
+    }
+    .hero-stat-card {
+      padding: 10px 12px; border-radius: 12px;
+      background: rgba(2,4,10,0.9); border: 1px solid rgba(0,168,255,0.35);
+      color: #a9b5cc;
+    }
+    .hero-stat-card strong { display: block; font-size: 1rem; color: var(--silver-soft); }
+
+    /* ── SECTION TITLES ── */
+    .section-eyebrow {
+      font-size: 0.78rem; letter-spacing: 0.26em;
+      text-transform: uppercase; color: #7f8ca3; margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      color: var(--silver-soft); margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 0.95rem; color: var(--text-muted);
+      max-width: 720px; margin-bottom: 36px; line-height: 1.75;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: linear-gradient(135deg, rgba(0,168,255,0.08), rgba(2,4,10,1));
+      border-top: 1px solid rgba(0,168,255,0.25);
+      border-bottom: 1px solid rgba(0,168,255,0.25);
+      padding: 36px 0;
+    }
+    .stats-inner {
+      display: grid; grid-template-columns: repeat(4,1fr);
+      gap: 2rem; text-align: center;
+    }
+    .stat-item { position: relative; }
+    .stat-item:not(:last-child)::after {
+      content: ''; position: absolute; right: 0; top: 10%; bottom: 10%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, rgba(0,168,255,0.3), transparent);
+    }
+    .stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.6rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--blue-neon), var(--cyan-glow));
+      -webkit-background-clip: text; color: transparent; line-height: 1;
+    }
+    .stat-label {
+      color: #7f8ca3; font-size: 0.78rem;
+      margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    /* ── OEM BRANDS ── */
+    .brands {
+      background: radial-gradient(circle at top, rgba(0,168,255,0.08), rgba(2,4,10,1));
+      border-top: 1px solid rgba(0,168,255,0.2);
+      border-bottom: 1px solid rgba(0,168,255,0.2);
+      padding: 50px 0; overflow: hidden;
+    }
+    .brands-marquee { overflow: hidden; }
+    .brands-row {
+      display: flex; gap: 14px; width: max-content;
+      animation: marqueeScroll 30s linear infinite;
+    }
+    .brands-row:hover { animation-play-state: paused; }
+    @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+    .brand-pill {
+      padding: 8px 16px; border-radius: 999px;
+      border: 1px solid rgba(0,168,255,0.35);
+      background: rgba(2,4,10,0.9); color: var(--silver-soft);
+      box-shadow: 0 0 12px rgba(0,168,255,0.18);
+      font-size: 0.8rem; white-space: nowrap;
+      transition: all 0.3s;
+    }
+    .brand-pill:hover { border-color: var(--cyan-glow); color: var(--cyan-glow); }
+
+    /* ── CARDS ── */
+    .grid-3 { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
+
+    .card {
+      background: radial-gradient(circle at top, rgba(0,168,255,0.1), var(--card-bg));
+      border-radius: 18px; border: 1px solid var(--border-soft);
+      padding: 22px 20px; position: relative; overflow: hidden;
+      transition: all 0.3s var(--ease);
+    }
+    .card::before {
+      content: ''; position: absolute; inset: -40%;
+      background: radial-gradient(circle at top, rgba(0,168,255,0.18), transparent 55%);
+      opacity: 0; transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(10%);
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 0 28px rgba(0,168,255,0.35); border-color: rgba(0,168,255,0.7); }
+    .card:hover::before { opacity: 1; transform: translateY(0); }
+
+    .card-icon {
+      width: 36px; height: 36px; border-radius: 12px;
+      background: radial-gradient(circle at top, var(--cyan-glow), var(--blue-neon));
+      display: flex; align-items: center; justify-content: center;
+      color: #02040a; font-size: 1.2rem; margin-bottom: 14px;
+      box-shadow: 0 0 16px rgba(0,168,255,0.7); position: relative; z-index: 1;
+    }
+    .card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem; color: var(--silver-soft);
+      margin-bottom: 6px; position: relative; z-index: 1;
+    }
+    .card-body { font-size: 0.9rem; color: #a9b5cc; margin-bottom: 10px; line-height: 1.65; position: relative; z-index: 1; }
+    .card-link { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--cyan-glow); position: relative; z-index: 1; transition: gap 0.2s; }
+    .card-link:hover { color: var(--white); }
+
+    /* ── SPLIT ABOUT ── */
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
+      gap: 40px; align-items: center;
+    }
+
+    .about-panel {
+      border-radius: 22px; border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, rgba(0,168,255,0.12), var(--card-bg));
+      padding: 24px 22px; position: relative; overflow: hidden;
+    }
+    .about-panel::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 80% 0, rgba(77,243,255,0.18), transparent 55%);
+      opacity: 0.7;
+    }
+    .about-panel-inner { position: relative; z-index: 1; }
+
+    .about-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 10px; border-radius: 999px;
+      background: rgba(2,4,10,0.85); border: 1px solid rgba(0,168,255,0.5);
+      font-size: 0.75rem; color: #cdefff; margin-bottom: 12px;
+    }
+    .about-badge span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--cyan-glow); box-shadow: 0 0 10px rgba(77,243,255,0.9);
+      animation: pulseDot 2s ease-in-out infinite;
+    }
+    @keyframes pulseDot {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: 0.5; transform: scale(1.5); }
+    }
+
+    .about-list {
+      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 12px; margin-top: 14px; font-size: 0.85rem; color: #c0cadf;
+    }
+    .about-item strong { display: block; color: var(--silver-soft); font-size: 0.9rem; margin-bottom: 2px; }
+
+    /* ── CORE AREAS ── */
+    .core-areas {
+      background: radial-gradient(circle at top, rgba(0,168,255,0.1), rgba(2,4,10,1));
+      border-top: 1px solid rgba(0,168,255,0.2);
+      border-bottom: 1px solid rgba(0,168,255,0.2);
+    }
+
+    .core-icon {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 1px solid rgba(0,168,255,0.6);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--cyan-glow); margin-bottom: 12px;
+      box-shadow: 0 0 18px rgba(0,168,255,0.7);
+      animation: corePulse 4s ease-in-out infinite;
+      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+      font-weight: 600;
+    }
+    @keyframes corePulse {
+      0%,100% { transform: scale(1); box-shadow: 0 0 18px rgba(0,168,255,0.7); }
+      50%      { transform: scale(1.06); box-shadow: 0 0 26px rgba(0,168,255,0.9); }
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: radial-gradient(circle at top, rgba(0,168,255,0.1), rgba(2,4,10,1));
+      border-top: 1px solid rgba(0,168,255,0.2);
+      border-bottom: 1px solid rgba(0,168,255,0.2);
+    }
+
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+
+    .testimonial-card {
+      border-radius: 18px; border: 1px solid var(--border-soft);
+      background: radial-gradient(circle at top, rgba(0,168,255,0.1), var(--card-bg));
+      padding: 20px 18px; position: relative; overflow: hidden;
+      transition: all 0.3s var(--ease);
+    }
+    .testimonial-card:hover { transform: translateY(-4px); border-color: rgba(0,168,255,0.5); }
+
+    .testimonial-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+    .testimonial-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      overflow: hidden; border: 1px solid rgba(0,168,255,0.6);
+      box-shadow: 0 0 12px rgba(0,168,255,0.5);
+      background: var(--card-bg);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+    }
+    .testimonial-name { font-size: 0.9rem; color: var(--silver-soft); font-weight: 600; }
+    .testimonial-role { font-size: 0.78rem; color: #9aa6c0; }
+    .testimonial-stars { font-size: 0.9rem; color: #ffd66b; margin-bottom: 8px; letter-spacing: 2px; }
+    .testimonial-text { font-size: 0.88rem; color: #c0cadf; font-style: italic; line-height: 1.75; }
+
+    /* ── FAQ ── */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+      gap: 40px; align-items: flex-start;
+    }
+
+    .faq-item {
+      border-radius: 16px; border: 1px solid var(--border-soft);
+      background: rgba(2,4,10,0.9); margin-bottom: 10px; overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .faq-item.open { border-color: rgba(0,168,255,0.5); }
+
+    .faq-question {
+      padding: 14px 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      font-size: 0.9rem; color: var(--silver-soft); gap: 10px;
+    }
+    .faq-question:hover { color: var(--cyan-glow); }
+    .faq-icon {
+      width: 26px; height: 26px; border-radius: 50%;
+      border: 1px solid var(--border-soft);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--cyan-glow); font-size: 1.1rem; flex-shrink: 0;
+      transition: all 0.3s;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+      border-color: var(--cyan-glow);
+      background: rgba(0,168,255,0.1);
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden; padding: 0 16px;
+      font-size: 0.85rem; color: #a9b5cc; line-height: 1.75;
+      transition: max-height 0.35s var(--ease), padding-bottom 0.3s;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 16px; }
+
+    /* ── EMERGENCY ── */
+    .emergency {
+      background: radial-gradient(circle at top, rgba(255,59,59,0.18), rgba(2,4,10,1));
+      border-top: 1px solid rgba(255,59,59,0.4);
+      border-bottom: 1px solid rgba(255,59,59,0.4);
+      position: relative;
+    }
+    .emergency::before {
+      content: ''; position: absolute; inset: 0;
+      background: repeating-linear-gradient(135deg, rgba(255,59,59,0.06) 0, rgba(255,59,59,0.06) 2px, transparent 2px, transparent 10px);
+      opacity: 0.5; animation: alertScan 6s linear infinite;
+    }
+    @keyframes alertScan {
+      0%   { transform: translateX(-10%); }
+      100% { transform: translateX(10%); }
+    }
+
+    .emergency-inner {
+      position: relative; z-index: 1;
+      display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .emergency-text { max-width: 520px; }
+    .emergency-title { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #ffe1e1; margin-bottom: 6px; }
+    .emergency-sub { font-size: 0.9rem; color: #ffb3b3; line-height: 1.7; }
+    .emergency-phone {
+      font-size: 1.2rem; font-weight: 700; color: #ffffff;
+      margin-top: 10px; display: flex; align-items: center; gap: 8px;
+    }
+    .emergency-btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    /* ── CONTACT ── */
+    #contact .about-panel { max-width: 100%; }
+
+    .cf-form {
+      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 12px; font-size: 0.85rem; margin-top: 14px;
+    }
+    .cf-form input, .cf-form textarea, .cf-form select {
+      padding: 10px 12px; border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      background: rgba(2,4,10,0.9); color: var(--silver-soft);
+      font-family: 'Inter', sans-serif; font-size: 0.85rem;
+      transition: border-color 0.3s;
+    }
+    .cf-form input:focus, .cf-form textarea:focus, .cf-form select:focus {
+      outline: none; border-color: var(--blue-neon);
+      box-shadow: 0 0 0 3px rgba(0,168,255,0.12);
+    }
+    .cf-form select option { background: var(--bg-navy); }
+    .cf-form textarea { resize: vertical; min-height: 90px; grid-column: 1/-1; }
+    .cf-form .full { grid-column: 1/-1; }
+    ::placeholder { color: #4a5568; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #020409;
+      border-top: 1px solid rgba(0,168,255,0.2);
+      padding: 50px 0 24px; font-size: 0.8rem; color: #7f8ca3;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: repeat(4,minmax(0,1fr));
+      gap: 26px; margin-bottom: 28px;
+    }
+    .footer-title { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: var(--silver-soft); margin-bottom: 12px; }
+    .footer-link { display: block; margin-bottom: 6px; color: #9aa6c0; transition: color 0.2s; }
+    .footer-link:hover { color: var(--cyan-glow); }
+    a.footer-link:hover { color: var(--cyan-glow); }
+    .footer-logo { margin-bottom: 12px; }
+    .footer-logo img { height: 52px; width: auto; opacity: 0.92; border-radius: 4px; filter: drop-shadow(0 2px 10px rgba(0,168,255,0.35)); }
+    .footer-desc { font-size: 0.82rem; color: #7f8ca3; line-height: 1.7; margin-bottom: 14px; }
+    .footer-certs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .fcb {
+      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
+      padding: 3px 8px; border-radius: 20px;
+      background: rgba(0,168,255,0.1); color: var(--cyan-glow); border: 1px solid rgba(0,168,255,0.25);
+    }
+    .footer-bottom {
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;
+      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 14px; font-size: 0.75rem;
+    }
+
+    /* ── FLOATING WHATSAPP ── */
+    .wa-float {
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 56px; height: 56px; background: #25D366;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 24px rgba(37,211,102,0.5); z-index: 900; transition: all 0.3s;
+    }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,0.7); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 960px) {
+      .hero-grid, .split, .faq-grid, .grid-3, .testimonial-grid, .footer-grid {
+        grid-template-columns: minmax(0,1fr);
       }
+      .grid-4 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .hero-right { order: -1; margin-bottom: 26px; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .stat-item::after { display: none; }
+      .nav-links { display: none; }
+      .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      .hero { padding-top: 80px; }
+      .hero-title { font-size: 2rem; }
+      .grid-4 { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); gap: 1rem; }
+      .cf-form { grid-template-columns: 1fr; }
+      .cf-form .full { grid-column: 1; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Animated background -->
+  <div class="bg-dna"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+
+  <!-- ── HEADER ── -->
+  <header id="header">
+    <div class="container nav">
+      <div class="nav-left">
+        <a href="#hero" class="nav-logo">
+          <img src="data:image/png;base64,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" alt="ICON BIOTRONICS Logo">
+        </a>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#what-we-do">What We Do</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="images/ICON-BIOTRONICS-Profile.pdf" target="_blank" class="btn">📄 Download Profile</a>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <div class="nav-hotline">
+          24/7 Hotline
+          <span>+971 55 325 2589</span>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#hero"       onclick="closeMobile()">🏠 Home</a>
+      <a href="#services"   onclick="closeMobile()">⚙️ Services</a>
+      <a href="#what-we-do" onclick="closeMobile()">🏥 What We Do</a>
+      <a href="#about"      onclick="closeMobile()">ℹ️ About</a>
+      <a href="#faq"        onclick="closeMobile()">❓ FAQ</a>
+      <a href="#contact"    onclick="closeMobile()">✉️ Contact</a>
+      <a href="tel:+971553252589" style="color:#ff8080;font-weight:600">🚨 Emergency: +971-55-325-2589</a>
+    </div>
+  </header>
+
+  <!-- ── HERO ── -->
+  <section id="hero" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Precision Biomedical Engineering — Dubai, UAE</div>
+        <h1 class="hero-title">
+          Critical Medical Equipment<br>
+          <span class="hero-highlight">Trusted Across UAE</span>
+        </h1>
+        <p class="hero-sub">
+          We specialize in installation, calibration, maintenance, and emergency support for life‑saving medical
+          equipment — ensuring hospitals, clinics, and dental practices operate with uncompromising reliability and
+          compliance.
+        </p>
+        <div class="hero-actions">
+          <a href="tel:+971553252589" class="btn btn-primary">🚨 Request Emergency Support</a>
+          <a href="#services" class="btn">View All Services</a>
+        </div>
+        <div class="hero-meta">
+          <div><strong>15+ Years</strong> Biomedical engineering expertise</div>
+          <div><strong>500+ Clients</strong> Across UAE healthcare sector</div>
+          <div><strong>5,000+ Devices</strong> Installed &amp; serviced</div>
+          <div><strong>24/7</strong> Emergency response coverage</div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-orbit"></div>
+        <div class="hero-dna"></div>
+        <div class="hero-chip">
+          AI‑Driven Diagnostics
+          <span>Predictive maintenance &amp; performance analytics</span>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-card"><strong>ISO 13485</strong> Certified quality management</div>
+          <div class="hero-stat-card"><strong>MOH / DHA</strong> Regulatory compliance</div>
+          <div class="hero-stat-card"><strong>4h SLA</strong> Dubai emergency response</div>
+          <div class="hero-stat-card"><strong>UAE‑Wide</strong> On‑site service coverage</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS BAR ── -->
+  <div class="stats-bar">
+    <div class="container stats-inner">
+      <div class="stat-item">
+        <div class="stat-num" data-target="15" data-suffix="+">0</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="500" data-suffix="+">0</div>
+        <div class="stat-label">Healthcare Clients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="5000" data-suffix="+">0</div>
+        <div class="stat-label">Devices Serviced</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num" data-target="99" data-suffix="%">0</div>
+        <div class="stat-label">Uptime SLA Achieved</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── OEM BRANDS MARQUEE ── -->
+  <section class="brands">
+    <div class="container">
+      <div class="section-eyebrow" style="margin-bottom:6px">Service Partners &amp; Equipment Suppliers</div>
+      <div class="section-title" style="margin-bottom:24px">Global brands we work with</div>
+    </div>
+    <div class="brands-marquee">
+      <div class="brands-row" id="brandsRow"></div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES ── -->
+  <section id="services">
+    <div class="container">
+      <div class="section-eyebrow">Solutions</div>
+      <div class="section-title">End‑to‑end biomedical engineering services</div>
+      <p class="section-sub">
+        From installation and commissioning to preventive maintenance and emergency repair, ICON BIOTRONICS provides
+        comprehensive support tailored to hospitals, clinics, and diagnostic centers across the UAE.
+      </p>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-icon">🩻</div>
+          <div class="card-title">Imaging &amp; Diagnostics</div>
+          <div class="card-body">X‑ray, CT, MRI, ultrasound, and digital radiography systems — installed, calibrated, and maintained for peak performance and safety.</div>
+          <div class="card-link">View imaging services →</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">❤️</div>
+          <div class="card-title">Life Support &amp; Critical Care</div>
+          <div class="card-body">Ventilators, patient monitors, defibrillators, anesthesia machines, and ICU equipment with strict uptime and compliance standards.</div>
+          <div class="card-link">Explore life support →</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🦷</div>
+          <div class="card-title">Dental &amp; Clinic Equipment</div>
+          <div class="card-body">Dental chairs, compressors, suction systems, autoclaves, and CBCT imaging — installed and serviced with minimal downtime.</div>
+          <div class="card-link">Dental solutions →</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🔧</div>
+          <div class="card-title">AMC / CMC Maintenance Plans</div>
+          <div class="card-body">Tailored annual and comprehensive maintenance contracts that reduce unexpected failures and optimize lifecycle costs for all facility sizes.</div>
+          <div class="card-link">Compare plans →</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">📊</div>
+          <div class="card-title">Asset Management &amp; Audits</div>
+          <div class="card-body">Complete inventory, performance tracking, and compliance audits to keep your biomedical assets under control and audit‑ready.</div>
+          <div class="card-link">Asset strategy →</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Emergency Breakdown Support</div>
+          <div class="card-body">24/7 on‑call engineers with rapid response SLAs to restore critical equipment and protect patient safety — across all UAE Emirates.</div>
+          <div class="card-link">Emergency support →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WHAT WE DO / WHO WE SERVE ── -->
+  <section id="what-we-do" style="background:radial-gradient(circle at top,rgba(0,168,255,0.07),rgba(2,4,10,1));border-top:1px solid rgba(0,168,255,0.15);border-bottom:1px solid rgba(0,168,255,0.15)">
+    <div class="container">
+      <div class="section-eyebrow">What We Do</div>
+      <div class="section-title">Support for both large hospitals and small clinics</div>
+      <p class="section-sub">Whether you operate a multi‑site hospital network or a single dental clinic, ICON BIOTRONICS provides scalable, right‑sized biomedical solutions that match your operational and budget realities.</p>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-icon">🏥</div>
+          <div class="card-title">Hospitals &amp; Medical Centers</div>
+          <div class="card-body">Full biomedical engineering support for radiology, ICU, OT, NICU, emergency, and inpatient departments with centralized reporting and unified SLAs.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🏨</div>
+          <div class="card-title">Clinics &amp; Polyclinics</div>
+          <div class="card-body">Installation, calibration, and maintenance for outpatient clinics, specialty centers, and day‑surgery units — with flexible service packages.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🦷</div>
+          <div class="card-title">Dental Practices</div>
+          <div class="card-body">Dedicated support for dental chairs, imaging, CAD/CAM, and lab equipment — ideal for both established practices and new startups.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🧪</div>
+          <div class="card-title">Laboratories &amp; Diagnostics</div>
+          <div class="card-body">Support for lab analyzers, sample processing, and diagnostic devices with strict quality and uptime requirements.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🏠</div>
+          <div class="card-title">Small Clinics &amp; New Setups</div>
+          <div class="card-body">Entry‑level maintenance plans, equipment selection guidance, and installation support for small and emerging healthcare providers.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🚚</div>
+          <div class="card-title">Relocation &amp; Commissioning</div>
+          <div class="card-body">Safe relocation, installation, and recommissioning of medical equipment when you expand, move, or upgrade your facility.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <div class="container split">
+      <div>
+        <div class="section-eyebrow">Who We Are</div>
+        <div class="section-title">Advancing healthcare through engineering precision</div>
+        <p class="section-sub">
+          ICON BIOTRONICS is a Dubai‑based biomedical engineering company dedicated to keeping critical medical
+          equipment safe, compliant, and operational — so clinicians can focus on patient care, not device downtime.
+        </p>
+        <p style="font-size:0.92rem;color:#a9b5cc;margin-bottom:18px;line-height:1.75">
+          Our team combines deep OEM experience, regulatory knowledge, and data‑driven diagnostics to deliver a new
+          standard of reliability for hospitals and clinics across the UAE.
+        </p>
+        <div class="about-list">
+          <div class="about-item"><strong>Certified Engineers</strong>MOH / DHA compliant, OEM‑trained professionals with years of field experience.</div>
+          <div class="about-item"><strong>Regulatory Alignment</strong>ISO 9001:2015 &amp; ISO 13485 quality frameworks embedded into every service process.</div>
+          <div class="about-item"><strong>Data‑Driven Decisions</strong>Predictive maintenance and performance analytics to reduce unplanned downtime.</div>
+          <div class="about-item"><strong>UAE‑Wide Coverage</strong>Rapid on‑site support across all Emirates with clear SLAs and transparent reporting.</div>
+        </div>
+      </div>
+
+      <div class="about-panel reveal">
+        <div class="about-panel-inner">
+          <div class="about-badge"><span></span> AI‑Enhanced Service Intelligence</div>
+          <h3 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;color:var(--silver-soft);margin-bottom:8px">
+            Real‑time visibility into your biomedical fleet
+          </h3>
+          <p style="font-size:0.88rem;color:#c0cadf;margin-bottom:16px;line-height:1.7">
+            Track uptime, service history, and risk across every device with a single, unified view — powered by
+            ICON BIOTRONICS' intelligent maintenance framework.
+          </p>
+          <div class="about-list">
+            <div class="about-item"><strong>Uptime Monitoring</strong>Identify high‑risk devices before failure.</div>
+            <div class="about-item"><strong>Compliance Logs</strong>Calibration and safety records at your fingertips.</div>
+            <div class="about-item"><strong>Cost Optimization</strong>Extend asset life and reduce emergency callouts.</div>
+            <div class="about-item"><strong>Executive Reporting</strong>Clear dashboards for management and regulators.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CORE EXPERTISE ── -->
+  <section class="core-areas">
+    <div class="container">
+      <div class="section-eyebrow">Core Expertise</div>
+      <div class="section-title">Where engineering meets clinical reality</div>
+      <p class="section-sub">We operate at the intersection of biomedical engineering, regulatory compliance, and clinical workflows — ensuring every device supports safe, efficient patient care.</p>
+      <div class="grid-3">
+        <div class="card reveal"><div class="core-icon">AI</div><div class="card-title">Artificial Intelligence in Maintenance</div><div class="card-body">Use data from your installed base to predict failures, prioritize interventions, and reduce unplanned downtime significantly.</div></div>
+        <div class="card reveal"><div class="core-icon">DX</div><div class="card-title">Clinical &amp; Diagnostic Equipment</div><div class="card-body">Deep expertise across imaging, lab, and monitoring systems — aligned with OEM specifications and safety standards.</div></div>
+        <div class="card reveal"><div class="core-icon">MT</div><div class="card-title">Medical Technology Lifecycle</div><div class="card-body">From procurement advisory to end‑of‑life planning, we help you manage the full lifecycle of your biomedical assets.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEPARTMENTS WE SERVE ── -->
+  <section>
+    <div class="container">
+      <div class="section-eyebrow">Our Work</div>
+      <div class="section-title">Departments and environments we support</div>
+      <p class="section-sub">ICON BIOTRONICS works across a wide range of clinical and technical departments, ensuring each area has reliable, compliant, and well‑maintained equipment.</p>
+      <div class="grid-4">
+        <div class="card reveal"><div class="card-title">Radiology</div><div class="card-body">Imaging suites, CT, MRI, X‑ray, and ultrasound rooms.</div></div>
+        <div class="card reveal"><div class="card-title">ICU &amp; Critical Care</div><div class="card-body">Ventilators, monitors, infusion pumps, and life support systems.</div></div>
+        <div class="card reveal"><div class="card-title">Operating Theatre</div><div class="card-body">Anesthesia machines, surgical lights, and OT monitoring.</div></div>
+        <div class="card reveal"><div class="card-title">Emergency &amp; Trauma</div><div class="card-body">Resuscitation, defibrillators, and emergency monitoring.</div></div>
+        <div class="card reveal"><div class="card-title">Dental Departments</div><div class="card-body">Chairs, imaging, compressors, and suction systems.</div></div>
+        <div class="card reveal"><div class="card-title">Laboratories</div><div class="card-body">Analyzers, centrifuges, and diagnostic lab equipment.</div></div>
+        <div class="card reveal"><div class="card-title">NICU &amp; Pediatrics</div><div class="card-body">Incubators, warmers, and neonatal monitoring systems.</div></div>
+        <div class="card reveal"><div class="card-title">Home‑Care Devices</div><div class="card-body">Support for select home‑care and outpatient devices.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIALS ── -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-eyebrow">Testimonials</div>
+      <div class="section-title">What our clients say</div>
+      <p class="section-sub">Healthcare leaders across the UAE trust ICON BIOTRONICS to keep their critical equipment running safely and reliably — every day, around the clock.</p>
+      <div class="testimonial-grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩‍⚕️</div>
+            <div>
+              <div class="testimonial-name">Dr. Aisha Rahman</div>
+              <div class="testimonial-role">Radiology Director, Dubai</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"ICON Biotronics reduced our imaging equipment downtime by over 40%. Their emergency response and technical depth are unmatched in the UAE market."</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👨‍💼</div>
+            <div>
+              <div class="testimonial-name">Eng. Mohammed Al‑Harthy</div>
+              <div class="testimonial-role">Biomedical Manager, Abu Dhabi</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"Their AMC plans gave us predictable costs and fewer breakdowns. Professional, transparent, and always aligned with our compliance needs."</div>
+        </div>
+        <div class="testimonial-card reveal">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">👩‍⚕️</div>
+            <div>
+              <div class="testimonial-name">Dr. Lina Farouk</div>
+              <div class="testimonial-role">Clinic Owner, Sharjah</div>
+            </div>
+          </div>
+          <div class="testimonial-stars">★★★★★</div>
+          <div class="testimonial-text">"As a growing clinic, we needed a partner who understood both budget and quality. ICON Biotronics delivered on both — highly recommended."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section id="faq">
+    <div class="container faq-grid">
+      <div>
+        <div class="section-eyebrow">FAQ</div>
+        <div class="section-title">Answers to common questions</div>
+        <p class="section-sub">Your operations depend on clarity and reliability. Here are answers to the questions we're asked most often by biomedical and facility teams.</p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:1rem">Ask us directly →</a>
+      </div>
+      <div>
+        <div class="faq-item">
+          <div class="faq-question"><span>What is your emergency response time?</span><div class="faq-icon">+</div></div>
+          <div class="faq-answer">We typically respond within 4 hours in Dubai and 6–8 hours across other Emirates, depending on location and access. For critical life support equipment, we prioritize immediate dispatch.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Are your engineers certified and compliant?</span><div class="faq-icon">+</div></div>
+          <div class="faq-answer">Yes. Our engineers are OEM‑trained where applicable and operate under ISO 9001:2015 and ISO 13485 quality frameworks, fully aligned with MOH and DHA regulations.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Do you provide spare parts and OEM components?</span><div class="faq-icon">+</div></div>
+          <div class="faq-answer">We source and supply genuine OEM parts or approved equivalents, depending on your budget and regulatory requirements, and always document replacements for audit trails.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Can you support multi‑site hospital groups?</span><div class="faq-icon">+</div></div>
+          <div class="faq-answer">Absolutely. We work with single clinics and multi‑facility hospital networks, offering centralized reporting, unified SLAs, and standardized maintenance protocols.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>What is the difference between AMC and CMC?</span><div class="faq-icon">+</div></div>
+          <div class="faq-answer">An AMC (Annual Maintenance Contract) covers scheduled preventive maintenance and labour. A CMC (Comprehensive Maintenance Contract) also includes spare parts, extended warranty, and a dedicated account manager — ideal for multi-site facilities.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Do you cover all seven Emirates?</span><div class="faq-icon">+</div></div>
+          <div class="faq-answer">Yes. From our Bur Dubai headquarters we serve all UAE Emirates — with dedicated teams available in Abu Dhabi, Sharjah, and Al Ain for faster response times across the country.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EMERGENCY ── -->
+  <section class="emergency">
+    <div class="container emergency-inner">
+      <div class="emergency-text">
+        <div class="emergency-title">24/7 Emergency Biomedical Support</div>
+        <div class="emergency-sub">When critical equipment fails, every minute matters. Our on‑call engineers are ready to respond around the clock across the UAE.</div>
+        <div class="emergency-phone">📞 <a href="tel:+971553252589" style="color:white">+971 55 325 2589</a></div>
+      </div>
+      <div class="emergency-btn-group">
+        <a href="tel:+971553252589" class="btn btn-primary">📞 Call Now</a>
+        <a href="https://wa.me/971553252589?text=Hello%20ICON%20BIOTRONICS%2C%20I%20need%20emergency%20support." target="_blank" rel="noopener" class="btn">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-eyebrow">Get in Touch</div>
+      <div class="section-title">Let's secure your biomedical infrastructure</div>
+      <p class="section-sub">Share your current equipment list, challenges, or upcoming projects — and we'll propose a tailored service strategy for your facility.</p>
+
+      <div class="about-panel" style="max-width:100%">
+        <div class="about-panel-inner">
+          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:2.5rem;align-items:start">
+            <!-- Contact info -->
+            <div>
+              <h3 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;color:var(--silver-soft);margin-bottom:12px">We're ready to help</h3>
+              <div style="display:flex;flex-direction:column;gap:12px;font-size:0.88rem;color:#c0cadf">
+                <div>📍 <strong style="color:var(--silver-soft)">Head Office</strong><br><span style="color:#9aa6c0">Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E.</span></div>
+                <div>📞 <strong style="color:var(--silver-soft)">Phone / Emergency</strong><br><a href="tel:+971553252589" style="color:var(--cyan-glow)">+971 55 325 2589</a></div>
+                <div>✉️ <strong style="color:var(--silver-soft)">Email</strong><br><a href="mailto:iconbiotronics.uae@gmail.com" style="color:var(--cyan-glow)">iconbiotronics.uae@gmail.com</a></div>
+                <div>🕐 <strong style="color:var(--silver-soft)">Working Hours</strong><br><span style="color:#9aa6c0">Mon–Sat: 8:00 AM – 6:00 PM · Emergency: 24/7</span></div>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:20px">
+                <span class="fcb">ISO 9001:2015</span>
+                <span class="fcb">ISO 13485</span>
+                <span class="fcb">CE Marking</span>
+                <span class="fcb">DHA Approved</span>
+              </div>
+              <a href="https://wa.me/971553252589" target="_blank" rel="noopener"
+                style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:10px 20px;background:#25D366;color:white;border-radius:999px;font-weight:600;font-size:0.85rem;transition:all .3s">
+                💬 Chat on WhatsApp
+              </a>
+            </div>
+
+            <!-- Contact form -->
+            <div>
+              <form class="cf-form" id="contactForm" action="https://formspree.io/f/mpqdpgrz" method="POST">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="text" name="facility" placeholder="Organization / Facility">
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number">
+                <select name="service" class="full">
+                  <option value="">Select a service...</option>
+                  <option>MRI / CT System Repair</option>
+                  <option>Ultrasound / X-Ray Service</option>
+                  <option>Ventilator / Life Support</option>
+                  <option>Patient Monitoring</option>
+                  <option>Dental Equipment</option>
+                  <option>Annual Maintenance Contract (AMC)</option>
+                  <option>Emergency Callout</option>
+                  <option>Other</option>
+                </select>
+                <textarea name="message" placeholder="Tell us about your equipment or service need…" class="full" rows="4"></textarea>
+                <button type="submit" class="btn btn-primary full" style="justify-self:start;padding:12px 28px">Send Inquiry →</button>
+                <div id="formSuccess" style="display:none;grid-column:1/-1;color:var(--cyan-glow);font-weight:600;padding:10px 0">
+                  ✓ Message received! We'll respond within 2 hours during business hours.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCABrAuEDASIAAhEBAxEB/8QAHQABAAMAAwEBAQAAAAAAAAAAAAYHCAQFCQMBAv/EAFcQAAAFAgIECQYHCwcNAQEAAAABAgMEBQYHEQgSF1YTITFBUWGRodEWIjJxlLEUM1R0gbLSCRUjNjdCUoSis8EkNWJzkqPhGCUmJzQ4RFNkcnWCk0Px/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAQFAQIDBv/EAC4RAAEDAwMDAwQCAwEBAAAAAAABAgMEEVISFBUFITETMkEiM1FxJIEjJTRhof/aAAwDAQACEQMRAD8A0jChy65ddxNv1mpR2ocltpluO9qJSk2kqPvMx2nkke8Nb9qMfGzfxtu7581+4QJYAIz5JHvDW/ajDySPeGt+1GJMAAjPkke8Nb9qMPJI94a37UYkwACM+SR7w1v2ow8kj3hrftRiTAAIz5JHvDW/ajDySPeGt+1GJMAAjPkke8Nb9qMPJI94a37UYkwACM+SR7w1v2ow8kj3hrftRiTAAIz5JHvDW/ajDySPeGt+1GJMAAjPkke8Nb9qMPJI94a37UYkwACM+SR7w1v2ow8kj3hrftRiTAAIz5JHvDW/ajDySPeGt+1GJMAAjPkke8Nb9qMPJI94a37UYkwACM+SR7w1v2ow8kj3hrftRiTAAIz5JHvDW/ajDySPeGt+1GJMAAzLpU1+6MPXKAm3Lnqjfw7huG4R3Xz1dXLLPk5TFInjPidn+N07uFwaevx9o/rPuQMvi+6dTRSQ3c2/cpOoVMkctmrbsT/bPidvdO7g2z4nb3Tu4QABYbGnxIG8nyUn+2fE7e6d3BtnxO3undwgABsafEzvZ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxMbyfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxM7yfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8TG8nyUn+2fE7e6d3BtnxO3undwgABsafEbyfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxG8nyUn+2fE7e6d3BtnxO3undwgABsafEbyfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8TO8nyUn+2fE7e6d3BtnxO3undwgABsafExvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxG8nyUn+2fE7e6d3BtnxO3undwgABsafEzvZ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxMbyfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxG8nyUn+2fE7e6d3BtnxO3undwgABsafEb2fJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxG8nyUn+2fE7e6d3BtnxO3undwgABsafEbyfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxG8nyUn+2fE7e6d3BtnxO3undwgABsafEbyfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxG8nyUn+2fE7e6d3BtnxO3undwgABsafEbyfJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwbZ8Tt7p3cIAAbGnxG8nyUn+2fE7e6d3BtnxO3undwgABsafEb2fJSf7Z8Tt7p3cG2fE7e6d3CAAGxp8RvJ8lJ/tnxO3undwCAAGxp8RvJ8lPRyzfxuu7581+4QJYInZv43Xd8+a/cIEsHkT1QAAAAADMAAAAAAAzAAAzLpDMAAAMwAAfilJTymReswStKvRUR+owB+gGZAAAAGYAAGYAAABmAAAAAAAADK+nr8faP6z7kDL41Bp6/H2j+s+5Ay+PS9K+x/Z53qn3gAALMrgAAAAAAAAJnhzhrc9/MynbfZYcKKoku8I5q5GZZkJejRwxKNREcOERHzm/8A4Dg+phYtnO7nZtPK5Lo1bFOgLjf0b8SmkayYsFzqS/8A4CC3nh7d9oFr12iSIzOeRPEWs3n6yBlTC9bNcgdTytS6tUiwAA7nEAJbhzh7cd+vSmrfaZcVFIjcJxerkR8g4+INk1yxqs3TK8203Icb4RJNr1i1Ry9ZmvRfub+k/TrVOxGgAB1NAA+kZh6S+iPHaW864eqhCEmalH0ERC17W0e8RK3GTJchMU1tREafhK8lH9BDlJPHF71sdI4ZJPahUgC9Z+jBfjDJrjzKZJURZ6pLNJn1cYqu9LLuWzphRrgpT0Q1egsyzQr1K5BrHVRSLZrjaSnljS7mkeAAHc4gBa1HwBxCqtLjVKJDiKYktk42Zv5GaTLiHL/yccS/kUP/AO/+AjLWQJ2VyHdKWZUvpUp4BcP+TjiX8ih//f8AwD/JxxL+RQ//AL/4BvIM0M7SbFSngE+xAwlu+xqMirV6PHbjLdJojQ7rHrH/APwQEzyIdmSMkS7FucnxuYtnJYALQtrAq/bhocSs02LFXEltk40ansjMj6h2rWjbiSvPOPBR63/8ByWrgRbK5DolLMvdGqU0Atufo8YmRWzWmmR5GXM2+RmK4uO361bs44VbpsiC+X5rqMs/UfIY3jnik7Ncimr4ZGJdyWOrAAHU5AAHaW1b1auSpJp9Dpz82Qr81tOZF1mfMMOcjUuplEVy2Q6sBd1H0Zr/AJrCHZTtPg6xZmlbhqMuwfCvaN2IdNjqejNw6gSfzWXMlH9BiNvYL21ISNnPa+kpgBy6tTJ9JnuQKlDeiSWjyW26nIyHEElFRUuhHVFTsoABKMO7Er991CRBoDTTjzDZOLJxerxGeQw97WJqd4Mtarlsnki4CZ4jYZ3VYTUZ24IiG2pJmTa216xZlzGIYMMkbIl2rdA9jmLZyWUAAnmHuE93X1SHarQY8dyM06bSjW7qnrED5WRpd62Msjc9bNS5AwHMrdOk0irSaZMJJSIzhtuEk8yIy5RwxsioqXQ1tZbKAE8w9wou6+qS7U6BHjuMNum0o1u6p6xCM3bQKhbFfk0SqoQiZGPJwkqzLP1jRsrHOVqL3Q2WNyNRyp2U6kAAdDQAPrEjSJklEaIw4+84eqhttJqUo+oiFnW5gFiTWWCfKkohIMsy+FOapn9A5yTRx+9bHRkT3+1LlWALvd0ZMQ0M66XKYtWXok8ZH7hUl00KoW1XpVEqiEImRlariUq1iI/WNIqmKVbMW5mSnkjS70sdWADsreoVXuCpIp1GgPzZK+RDSc8us+gh2c5GpdV7HNEVy2Q60BdFM0a8RZbKXHm4ETMs9Vx7My7CHIf0Y8QkFm27THD6OGMv4CMtdTottRISjnVPaUeAkmIFk16xqsim19ltp9aNdGovWI09IjYkMej2o5vgjuarFs7yAABsYPRyzfxuu7581+4QJYInZv43Xd8+a/cIEsHhz2YAAAFM6Y1crdu4MSqrQKi/AmNSW/wrKslZHnmQxFbeMuKUu4qbFcvSqKQ9LaQpJu8pGsiyG1dN1JHo/VczLkdaMv7Q888PUk5flAQfIdRYL+8IAeukE1HBYNZmpRtpMzPnPIf1IeaZZW684lttCTUtSjyJJFzmY/IxZRWi6EF7hkbTxxckU1tvDugTFNvPIJypuNqyNKT9FvMunlMAcnHTS3iUiRIomH0ZubKbUaF1B4s2kmX6Bc/rGZ7hxyxTrclT0q8ai3mfoMOcGkvURD44D4X1XFW8kUWE58HiskTsySZZk2jPm6z5hv8AsjAHC+16e3GZtqLNeSkiXIlp4Raz6eMAed8XFHEWM7wjN5VlKs8/9pVxj0Z0ZZ1cqmCtAqdxT3p1Qlsm8t5081GRnxF2DnVjB3DOqsqal2dSjJXKaWCSfaQl9ApMChUaLSKWwmPDitk2y2XIlJchADlvOoaaU44okISRmpSjyIiLlMxkfSE0r00qXIt3Dsm35DZmh6pLLNKT5yQXP6x2+nbitMtegx7Jocs2Z9TbNctaD85DPJq9WfuGQsG8P6tiZfMW3aaRpJZ68p8yzJpsuVR9YAV7FHEW4JKnahddWeWr81DyiL6CIcSl4hX3SJCXYV0VeO4k8y/lCuX1GPSrDnB+wrJozMCm0CG66lJE7IfaJbjiuczMx/GI+DFgXvSXolRoERh9SDJqSw2SHGz5jIyAGX8CtLWsQJjFHxEL4fCcUSCqCSyca61F+cQ2zR6jCqtNj1GnyG5EWQ2TjTqDzJST5DHlXjTh3VsMb3k27U/wiU/hIz5F5rrZ8iiGjvuf+Jz3w2Th3Vpa1oWk36drqz1cvSQXVzgDXl5OPs2lVnYzimn0Q3VNrTypUSDyMh5jzca8U2pjzZXrVckuKL43rHp7c6CctupoPkOI6X7BjyTZpbtXvI6THUlLsqYbLZnyaxqMiAG29B7F+bd8Cfa1z1RyZWWFm+w48rNTrR8pfQY1EPJG063WsOsQI1Uim4xPpcrJxHJrER5KSfUZD1EwrvalYgWXAuSkOkpqQ2XCI521l6ST6yMAQTTHr9btrBWXVaBUHoExuU0knmlZKJJmeZDKejlipiLcGNNt0mp3ZUZUORJMnWVuZpURJM8jGotOBvX0eqwf6DzKv2hi/RFTr6Qtq8WeUhZ/sKAHp+AAAAAAAyvp6/H2j+s+5Ay+NQaevx9o/rPuQMvj0vSvsf2ed6p94AACzK4AAAAAAANQ6Cbvn3Ix/VK95DpsYccMQqBiHV6JTahHYiRJBoaLgCM8usx2Ggl/O1ydHAte8xU2kP8AljuL5yYpmxMkrXo5L9i2WRzKRqtW3ckdN0j8SoslDr86JKbI/ObcYIiP6SGncK70ouLtjPOSoDWZfgJsVwtYkqy5uoYBSRqUSUkZqPkIuMzGxdEK2p9p2LVK9XknBZmrJ1CXvNNLaU+kefIMdRp4Y49TUspmgnle/S5boZjxZt9u1sQ6xQ2fiY8g+CLoSfGRCKiV4uV1q5cRq1WWD1mX5KuDPpSXERiKC2hv6bdXmxWTW1rpNI6Cy8rjr7fTHbV3mOg01HDViy03+hBb7x3Ggwf+mVcT/wBGj6xiP6Zh54yuF0QWfcKpqf7Bf0WLl/gp+ylRyKZClVKoR4EJpTsiQ4TbSElxqUZ8Q44v/QutWPVrym1+W0TiaY2RM5lxE4rn7BZVM3oxK8r4IllkRha+GWHlqYQWYu57mUwuopa4SRIdIj4M8uJCC6RUeImkrdNUqK2rWSikwEnkhRpJTiy6TM+Qc/TTvB6ZdMW0ozyiiwmydkJI+JTiuTP1EM7GIFHSpKnrTd1UnVVSsa+lF2RC4Lb0icRKXNQ5MnNVNjMtdp9BcZdRlyDSdkXfZeNdqyIUmE2p0kasmG+RGtsz/OSfR1jBglWFV0zbQvmm1eI+ptCX0okJI+JbZnkZGOlVQMc3VGllQ501a9rtL1uinfY84ZSsObm4JCjepUszXEdPlIv0T6yFbjeGkfbsW7cHpstDRKkRGSmRlc5ZZGfcMHjfp9Qs0X1eUNa6BIZPp8KXDTNIm/6bSYlNhnAbZitE2j8DmZkRZFmORT9IrEuRVYzS6hEJtx5CVJKMnkMyIxSw5NKMyqkQy5n0fWIdXUcFlXShzZVTXRNRv/GC5qpbeEk24qY6huc2y2tC1IJREZmWfEMts6SWJaEElcuCs+k45DQ+kQeej5PP/p2f4DCgrum08Ukaq5t+5P6hPJG9EatuxYeI2L92X5Qm6PXVRVMNvE8k229U8yFeHyGAGLiONkaaWpZCpfI563ct1N24PVGRE0cIFSiGn4RGpq1tmosy1kkeQzdI0iMTlPKMqtHQRH6KY6choLBdRL0XWucvvc+XcYxI98cv/uP3iooYY5JJNaXspa1sz2MZpW3Yv+yNJ66Ic9pu54saoQjVk440jUcSXSWXEY0DfdCt7FHDFyS200+mREN+HI1S10KyzLj7h5+jcWFcpyzdGuPOrJqYNmAtwkq4jLWI9Uu8hp1CnZCrXx9lubUU7pUc2TuljEEplUeS6wv0m1mg/WR5D5j6zHjkTH5B8rjil9p5j5C8b4KZ1r9iX4TWLUcQLtZosLWbZLJcl7Liab5z9fQNaXDWbGwDsxmJChtuTnE5NNJy4V9XOpR8uQ4WiRbUS38LiuB5skyajrPuOGXGTaeQvVkMtYx3XJvHECp1Z5xameGU3HSZ8SG0nkREKd162dWL7Wls21JCj09ziV3DpC4jVOet6LUm6cyZ+Yywgskl0ZnyiR4eaTFzU2e2zdbaKnBM8luISSXUdfWKAATnUMDm6dJDSsmR2rUbxvO0rOxosdupQFMm862aok1CSJaFfoq/iQxJd1AqFsXDLolTb1JMVw0K6D6DLqMXVoZ3fLp96O2s8+tUKc2a2mzPiQ4nnL1kO5037XYYm0m6o7RJXIzjyFF+cZcaTECmc6mqPQVey+CbUNbUQesid08mZhfuhG7qYjVFvP04PuMUEL00K1ZYpyE5+lBX7yE6vT+O4hUS/wCdppjECgUTE60KpQlLSb0dxTaV/nMPJ5DGBbnok+3a9Mo1SaNuTFcNCyMuXrLqGmIl/psbSYrtLqLxopNVeQS8z81twyLVV/Ad7pXYZJuagldtCjpXUoaNZ8my432ss8+syFZRyrTPRj/a4sauNKhqub7mmOBsLQec/wBXlWb/AEJ5n+yQx8ZGR5GRkZcpGNb6DqiOyq8nPjKXnl/6id1PvTkPp3aczPiOvhL9ri8885zv1jEfHdXyrWvKsK6Zjn1jHSibElmJ+iHJ71NfaDLutZNZaz9Cbnl60kKA0hnDcxkuNR80o09gvbQUUR23cCS5Sloz/skKAx3PPF+5jzz/AJcsVlMn82Qsahf4bCEjt7Pt2p3VcMWiUlhTsmQvVLi4klzqPqIdQNc6F9oMwLVmXjLaLh5ijbYUovRaTymXrMTauo9CJXfJEpYPWkRvwd9R7fw/wGs5uqVgm5NTWXG8pJKddX+iguYhVl2aUd0SpS029TIkCMR+abpcIsy6+YQDSCveXeuIM143VfAIbimIjWfElJHkZ+sxXQi09C16epN3cpIqKxWroi7Ihd9H0msQYj6VTU0+c3n5yFM6vF6yFTXfW37jueoV2SnUdmvG6aSPMk58w6kBNjp44luxLEOSeSRLOW5/TTanXUNoLNS1ElJdJnyDa9tQqFgdgumvPREP1FxlK3VZZKddUXEnPmIYtgPFHnMSFFmTTqVmXqMjG8r1oMXFTBVmJTpCM5MZt6K5nxEtJcRH3kIHU3d2Nd7b9yd05vZ6p7k8Ga6vpIYkTJq3osuLCZM/NabZIySXrPlH0pWkriNEeSqU7BmoLlQtgk5/SQra9bNuOzqiqFX6Y9FUR+a5q5tr6yVyCPiU2lpnt+lqKhGdU1DXd1W5NMXr+lYiXI3WpcNERaGEtcGhWZcXOQhYAJMbGsajW+CO97nu1O8gAAbmtj0cs38bru+fNfuECWCJ2b+N13fPmv3CBLB4c9mAAABS2mskj0e64ZlyLaMv7Q88MOfygW//AOSj/vCHofprKItHuuEZ8q2iL+0PPDDj8oFv/wDko/7wgB65IUTcJKz5EtkfYQ8msXq2/cWJlwVeQs1LfnOGWZ8hEoyIh6xOpNdKUgs81MGRf2R5DXawuNdNUjuEeu3LdSefTrGAN1fc+Laj07CaVcGoXwqqTF6ysuMkI80i9XEZ/SNMDOmgDXY9QwU+9aVkcimzXG3E9BKPWSfYY0WAAAGQA8vNK24Hrix0uKS6ozRHkfBmiM/RSjiIhof7nFQWEW/cNwqbI33ZCY6F85JIszLtMZcx6iuxMYbpYeIyUVRdPj61DWf3OWpNOWBXabrFwrE4lmXUpJcYA1YXEAEAAyV90at9h21aDciWy4diQqMpWXGaTLMu/MZZ0f6o9R8ZrWmsuGgyqDaDMj5SUeqZd41190UqTLOGVIpxqLhpE/XIufJKeXvGQcBqe5VMY7WhtINalVFtWRdCT1j9wA9Uq3kqhTc+Q4zn1THk7Qnfg+KUJ5PFqVhB/wB6Q9Yq1kmhTc+Qorn1THkowrVv9tSeapkZf/QAaB05cMlUavRb+pUXVp1VQkpeonibey5T9Y6LQyxccsS9UW7VHj+8VWcJB6x8TDp8SVeo+Qxum5rXp164cuW7VW0rjzYSUGZlnqK1eJRdZGPMDFOyavh3fE23aohSHozmbLpcROI5UrI/UAPQPTLJL+jpcK0mSiyaWky5/PIYr0Pv94a2P61f1DF0ULEdzEPQ6uai1F/hazRY6EOmo81ONEotVfZxfQKX0Pv94a2P61f1DAHp2AAAAAAAyvp6/H2j+s+5Ay+NQaevx9o/rPuQMvj0vSvsf2ed6p94AACzK4AAAAAAANMaCf8AO1yf1LXvMWFf1RwHh3RMbuiPT11bX/lOsyala3WK90Ev52uX+pa95irtJUv9c9f/AK0vcKNYUmrHJe36LhsvpUjVtc0valc0f2pqPvQugx5Gfmm41q8frUWQ7nGCxqhiLbyWaBdyoMQ0cTLOSmXvWZcYwQLj0Xr8rFDxCp9EXMeeplQXwK2FKM0pUfIZdAzP090aeox11T8mIq5sn+N7bIv4K6vu06xZlwvUWtxzafb40qL0XE8ykn0DoRrbTjpcZdtUWrmhJSW5CmdbLjNJlnl2jJIsaOdZ4kevkgVcKQyq1DRGgz+O9b+ZJ+sYj+mT+WZ75kz7hI9Bkv8ATGunz/BEfWMR3TM/LK58xZ9wgtX/AGC/omO/4U/ZSw1/oMsJTYtYk5FrLn6p/QkhkAav0F6o0dGrtHNX4Vt9L5F0kZZfwHfqiLt1OXTVtOhR2kI84/jJca3DPMpRkWfMRCAi3tLSgO0fF6dLNBkxUkJkNqPkMzLJRdoqESaVyOhaqfgjVLVbK5FA/UmaVEZcpHmQ/BzaDBdqlbg05hJqdkyENJIuczMh2cqI1VU5NS62N9oX8IwHNyQfp0MzVn/Vjz5cy4RWXJrGN8YwVBiz8Cp7SlJStMBMRpJnyqURJy94wL1mKrpKdnu/Kln1Ne7W/hAOTSizqkQi/wCej6xDjDmUMtatQU55ZyG/rELV3hSsb5Q2/pEf7vc4v+nZ/gMKDeGkQkj0f6kR80Zr3kMHis6T9t37LLqn3G/oAAC1Kw3Po5wfvno7U6ncJwfwmM61rZcmsZlmK9PRQaU6Zqu1eRnmeTBZifYE67OjTFWypSVpgPqSZcpHkoY9evK6yecLyiqnEs/+IV0+sefpo5nySem63cvKiSJkbPUbfsa4snR2s213k1KUUmuzGS120PmRINRcnmlxCktJfEG76rWFWvUKW9QaZHPzImfxpFyKMy4jL1DpMM8arvtavxnp9WlVGmaxFIjvr1s085lnyGQ0vjlatKxMwoOtUxtDstqOUuE8kvONOWZpz9XMMqklPOjp/qv8mt2TwqkPa3wYXH4v0FH1D+lJNKzSojJRHkZdY/FFmRl0i/8AgpjftIR979HVsmCyNFCMy1ek2xgNZmazMzzMzPMb8wgfZurAinRyVxP05UVfUeqaRhG4aa/SK7OpklBtuxX1tqSfKWRin6WtnyNXzctOopdjHJ4scAAAXBVE90fHnGcYrdU3nmqTqnl0GRjSGmwls8MoZq9IpydXsMUZon0Ryr4vQXyQamoCFPuHzFxZELS05a6ymm0S3kLI3luKkuJI+MklxEKao+quYifBbU66aN6r8mUxeWhb+Vd75iv3kKNF66FSTPFKSouQoK8+0hOr/wDncQ6L77SP6VaTbxtq+XEeq2ZGX/aQvnRXxNRdlu+S1XWSqpAa1Ums8+Ha5O0uQxRelsnVxsqh5ek00f7JCu7Sr9Sti4IlbpT6mZMZZKIyPiUXOk+oxGWmSopWp82O6VCwVLl+LlpaUeGarNuc63TWv8z1JZqSSS4mXOU0+roFmaDmXkjcPzkvqiyIb9vY14SqSokKTKa1Vp5VR3yLuyMQLRDpEy3Xrzt6eg0yIUxKVZlylq8RiC+oV9Msb/c2xMZAjKhHs8Lcyxe344Vf5459Yx047q+iIrzrBF8sd+sY6UX8fsQpZPcprHQR/mK4/nbf1CFBY5/lcuX58saB0FCytq4Dy/4tH1SFA48flgub58sVlN/2yFjUf8jCEHyH6h6AYbMJp+AMBMdORlSFLLLpNBmPP8+QyG9tHSrxrlwVprJGRm0wqG8nPkMuIY6si6Gr8XHS/e5Pmxg+cpSpr6lGesbijPtHxElxNt2Zat81SjTGjQpp9Ro4uJSDPMjL6BGhaRuRzUVCte1WuVFAAA3NQLcwMxqqmH6ypc5tU+iLVmbWt5zPWjwFRgOUsLJm6Xp2OkUronamqehNt3dh/ifSeCZehTyUWS4klJcIn/1P+ArHFTRppNSbcqFmOlTpREZnFXxtL9X6IyZAmy4EpMqFJdjvIPNK21mky7BoHA7SErEGpRqFeDhz4TyybRLV8Y0Z8RZ9JCokopqb64XdvwWjKuKo+mZO/wCSibmoVUtusv0isRFxZbJ5KQouXrLpIdYNj6YdnwKtYaLujoQmZBUnNwi+MaVzH0jHAsqOo3Eer5IFVB6D9PwAABKIx6OWb+N13fPmv3CBLBE7N/G67vnzX7hAlg8OezAAAApHTdMi0fqvmeWbrWX9oeemHqiRftAWZcRVFg/7wh6A6dTvB4BzUEWZuSmkl2mPPe0TcZuqkPGhRak1lXJ/TIAevcY84rR9KC9w83dMrD2VZeLM2oIZP711lZyozhJ80jM/OR6yMekFPPWgR1dLST7iERxiw4oWJtoPUCtNmkz86PIQXnsL5lF4ADz90WsXFYV3sp+albtFqBE1MbSfGnoWRdJD0hte4qNc1JYqtDqEedEeSSkraWR5dR9B9Q8z8YMDr5w4nOHPpjs2maxk1OjINaFFza2Xon6xDLbu26LZcM6HW59OPnSy6pJdgA9eTH8E4k1GklJNRcpZ8Y8r5GNmKb7JMuXpVdUiy4njIaY+57VCsVqRddTrFRlzXM2kEp9w1dJ8WYAr3T8sR2iYitXfGbP4FWUFwhkXEl5JZHn6+UQXRVxVLDDEFL8/WVRqgRMzCL8zj4ll6h6HYnWRRb/tCXblbYStl9B8G5l5zS+Zaesh5w42YJ3hhlVHEzoTsylqUfAT2UGpCi5tbL0T9YA9OqNU4NXpjFSpspqVFfQS23G1EpJkfqH0qM6LToT02c+3HjspNbjjiiJKUlymZmPKOysTb7sxrgbduSfBa/5SXDNHYY+944rYhXix8Fr9z1CYwfEbPCGSVesi5QBM9LvFZjEu/wAk0pSjo1MSbEYz/wD0PPzl/SYsL7n5h47UbplX7NaUUWnpNiJrFxLcV6Rl6iFd4DaPt2YkT2JkuK7S6AlZG7KeQaVOJ5yQR8vrHopZds0i0rciUGiRURoUVBIQlJcvWfSZgDk3MokW5UlHyFEdP9gx5IoXleaXC4sqgR/3g9Zb5c4KzK05+jBeP9gx5JHwn394bUV/tWtyf0gB68UA9ahQD6Y7f1SFK6X2ELGIdlOVemskmv0ps3GVJLjebLjNs/4C5rWVrW1TFdMRs/2SHYqIjIyMswB5GWrcVQtZ+qx0JWSJ0RyFKZM8syPp6yMhNtEZWrpC2qZHkRyFl/dqFiac2ExWvdKL0osXUpVVXlIQ2nzWn+f6D5RWuisamcf7UcUhRF8LMszLpQoAeogAAAAAADK+nr8faP6z7kDL41Bp6/H2j+s+5Ay+PS9K+x/Z53qn3gAALMrgAAAAAAA09oJN/wAouR7L81pPvFb6T9PmHjRW1tQ5K0LUgyUlpRkfmlz5DsdG7FWh4bxqsirQ5T65i0mg2SLiIi5xbytJXDt/8JIos1S/6TKVH2ilf60VU6RrLoWzfSkpmxudaxkmJRazLdJqNSZ7yzPIiRHWf8BoLRqwYuGNdkS7LmhKp8WJmthl303F5cRmXMRCUSdJ6y4rZnTrXlLX1khBe4VliNpGXdcsdyDSW26JDXmRmyozdUXQaub6B0e+rqE0I3SimjWUsC6ldqVDvdMu+4Faq8K1aY8l5NPUpcpaTzTwh8Wr9AzsP6dcW64pxxalrUealKPMzMfyJ9PAkMaMQhTzLM9XqaQ0FkZ3LX3OiOgu8x0Gmk1q4tIcy9OC33Dp9HXE+lYazao/U4MmV8MQhKOBMiyyz5cx12kDf9OxEuyPWKbDfittxiaUl0yzMyPqEFIZN6r7diY6Vm0Rl+5W4nmBl9OWDfkaqLNSoLv4GWgudB8/0cogYCxljSRqtX5IEb1jcjk+DeGM9g0zFqyI8ulyWvhraOGgyC40qIyz1T6jGJrrtqt2vVXabW6e9EfbPLz0mSVF0kfOQm+DmMtxYfPFGL/ONJUfnxXVH5vWg+YxoCPjrhJdUMkXHE4BWXGiXGJwi9RkKiPcUS6dOppaP9CrTVfS4xoy2484lpltTjijySlJZmZ9RDU2i9g3JpUlF63ZFJh1CdaFHdLjR/TV0GO/VihgLbucyjwoj0hPGko0LzjP1mXEKnxh0gq3dsdyk2+0ukUtRZLMlfhXS6DPmLqIdJJaiqTQxulPypoyKCmXU52pf/D76WWJca7K41blGfNynU5Z8K4R+a67ycXSRCiB+mZmeZnmZ8Zj8FjBC2FiMaQJpVlerlA59uFncFOI+eU0X7RDgDl0aUmFV4cxaTUhh9DiiLlMkqIx0d3apzb2VDdmkK2SsA6yWXoxGz70jBA0tiZpCW5dOHVRtmNSJ7L8uOlpLi1FqkZGR/wGaSFd0yJ8bHI9Ldyd1CRkj0Vq37AD5AA+TIWZAN24KtcHo3w0cmdMePtSoYWkf7Q7/wB6veNI2NpBW1QMNYdrP0ee48zCOOpxJp1TM0mWfeM3SlpclOuIIyStZqIj5iMxV0ET2SSK5PKljWyMexiNX4PmNlaGd0Jq9hSLdkr136Y5klKjzzbVyfRzDGosDAnEAsO7z++77Tr8N1k2n2WzyNXOR/QO9fAs0KonlDjRTJFKir4PvpF2oVpYo1KKy1wcSUr4THLLi1VcZkX0iuBcukPihbOJMWnvU6lzIlQiKMuEdMslIPm4usU0OlIr1iTWllOdSjPVXQvY0dofYks0ma5ZdXe1GJS9eEtZ+alfOn6RI9J3BaZW5jt4WqwTspSc5kRJcbmX56evqGUGlracS42tSFpPNKknkZGNA4SaSFSoENqk3ZFXU4jZEluShX4ZJdB58oh1NNJHL68H9oS4KiOSP0ZvHwUDLjvxH1sSmXGHkHkpDiTSpJ9ZGOZblDq1w1RqmUaC9MlOqyShtOeXWZ8xDX8jFPAe5EFJrDUPhlFmZSYXndpEOBLxzwltGMsrTpBSHjLzSjRyaI/Wo+MN9MqWSNb/APwbOJFusiWJHhJZ1HwYw8k1evvsonLRws1/3Np6RkjFu8X75vidXnNZLLitWO2o/QbLkIdhizipcmIc81VB74PAQebMNoz1E9Z9JiBDrR0rmOWST3Kc6qpa9Ejj9qAX5oRtmrEioOfoQT7zFBiz9HrESmYcXDOqdThyJSZDBNISyZEZHnnx5jtWsc+BzW+TjSORkzXO8HaaYDepjLLVl6cZo+4U4J/jte0C/r4VXqdFfjNKYS2aHTIzzL1CADakarYWo78GKlyOlcqfktLR1xKcsC7komLWdHnKJuSjPiQfMvLqG2qVS6Z985NxU/VNdSZRwi0ei4RF5qvXkPNMaFwW0hm7TtNNCuSHKnlGVlGdaUWZI/RPPoFf1Gjc9fUjTv8AJOoKtGJoevb4KZxFRqX5XEdE50v2jHQDt7zqbFauqpVaM2ptmXIU6hCuUiM8+MdQLWJFRiX/AAVslletjXugw3q2ZWnf05pF2JFAaQjfB4x3GWXLLNXJ0ib6PeM1Dw5tWVSqjTZkp5+SbpKaMiIiy6xWmLNyRLuv2pXDCYcYYlrJSUOekXFziup4npVvcqdlJ08rFpmNRe6EVF26KmJUezrjcodWcNFMqayIlmfmtOchGfUYpIPVxCdPC2aNWKQ4ZViej0N04/YSw8SaU1Uaa82xV46PwLuWaXk8yVH/ABGNrts25rVnuQ65R5UZSD9PgzNtRdJKLiFgYT493RZbTdOnF996WniJt5R8I2X9FXiLrh6SWHFVjEis02WyZ8RocYS6ntFXFuqT6NOppZP29V9V9KmNSSozyJJn9A5EiBOjMIfkwpLDTh5IW40aSV6s+UbDcxlwQjnw7UBpbhln5kAsxSekdidQsQHKWxQIL0WPB18zcSSdbPoIhLhqpZHo1WWQjS00UbFXXdSoEkalElJGZmeRF0jnVOi1ilmkqlS5kTWIlJN1k0kZHyZHyD5Uh5iNVokiShS2GnkrcSnlNJGRmQ2DTtIHCypQGY1VhPtEhBJ1X4xLIsi6R0qZ5IlTQy6HKnhjkRdTrGNePoMSGwbTrl2XDEp9HgvvGt1Ou6SD1Gyz4zNXIQ1W7iZgApJPqjQVOdHwDj9w66q6R9g0OG41atBdfdyMkETSWUZ82eXHkIrqyZ6WZGtySlJCxbukSx3elHVI1vYIJob7xKlyiajtpz41apecfq4higSvEy/K7f1eVVKy6WSfNZYR6DSegiEUEmhp1gjs7ypHrJ0mfdPCAAATCKejlm/jdd3z5r9wgSwROzfxuu7581+4QJYPDnswAAAONUqfBqUb4NUIjEpnPPUdQSk59ORjq02fayVEpNvUxJkeZGUZPEfYO9AAfiUklJJIsiIsiIfoAAPnJjsyWlNSGkOtq4jStJGR/QYh1Xwow6qr6n51oUl1xXKr4OkjPsE1AAV3EwRwsiq1mrLpWeefnNEYmNDoNHoTBsUemxIDR5ZpYaJJHl05DswAAcedCizoyo0yO1IZUWSkOIJST+gxyAAFa1vAnCqrvqemWdTuEUeZm2jUz7ByLewWwyoL6X6daFNQ6n0VraJZl2iwgAHzjsNR2ktMtobbSWSUILIiL1D6AAA/l5tDzSmnUJWhRZKSZZkZdA6Q7OtXPMrdpefzZPgO9AAfy0hLbaUISSUpLIiLkIh/QAAOLU6dBqcb4NUIjEpnPW1HUEpOfTkY4ES1rciSUSYtDpzLzZ5oWiOklJPqPIdyAAEAAAAAAAyvp6/H2j+s+5Ay+NQaevx9o/rPuQMvj0vSvsf2ed6p94AACzK4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD0cs38bbu+fNfuECWCFXDb1HfrMiY5D/Dv6purS4tJrMiIiM8jLmIcErco/yZz2hz7Q8OezLDAV55OUf5M57Q59oPJyj/JnPaHPtACwwFeeTlH+TOe0OfaDyco/yZz2hz7QAsMBXnk5R/kzntDn2g8nKP8AJnPaHPtACwwFeeTlH+TOe0OfaDyco/yZz2hz7QAsMBXnk5R/kzntDn2g8nKP8mc9oc+0ALDAV55OUf5M57Q59oPJyj/JnPaHPtACwwFeeTlH+TOe0OfaDyco/wAmc9oc+0ALDAV55OUf5M57Q59oPJyj/JnPaHPtACwwFeeTlH+TOe0OfaDyco/yZz2hz7QAsMBXnk5R/kzntDn2g8nKP8mc9oc+0ALDAV55OUf5M57Q59oPJyj/ACZz2hz7QAsMBXnk5R/kzntDn2g8nKP8mc9oc+0ALDAV55OUf5M57Q59oPJyj/JnPaHPtACmtPX460v1n3IGXxvKt4eWZWzaOr0FidwOfB8Ota9XPlyzMddsfwz3OpvYrxFpR9QSnj0K25WVdCs79V7GHgG4dj2GW51N7FeIbHsMtzqb2K8RL5huJG4lcjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivENj2GW51N7FeIcw3EcS7Iw8A3Dsewy3OpvYrxDY9hludTexXiHMNxHEuyMPANw7HsMtzqb2K8Q2PYZbnU3sV4hzDcRxLsjDwDcOx7DLc6m9ivEA5huI4l2R//Z" alt="ICON BIOTRONICS Dubai">
+          </div>
+          <p class="footer-desc">Precision biomedical engineering partner for hospitals, clinics, and diagnostic centers across the UAE. Serving healthcare since 2009.</p>
+          <div class="footer-certs">
+            <span class="fcb">ISO 9001:2015</span>
+            <span class="fcb">ISO 13485</span>
+            <span class="fcb">CE Marking</span>
+            <span class="fcb">DHA Approved</span>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Services</div>
+          <a class="footer-link" href="#services">Imaging &amp; Diagnostics</a>
+          <a class="footer-link" href="#services">Life Support &amp; ICU</a>
+          <a class="footer-link" href="#services">Dental Equipment</a>
+          <a class="footer-link" href="#services">AMC / CMC Plans</a>
+          <a class="footer-link" href="#services">Emergency Support</a>
+        </div>
+        <div>
+          <div class="footer-title">Company</div>
+          <a class="footer-link" href="#about">About Us</a>
+          <a class="footer-link" href="#what-we-do">What We Do</a>
+          <a class="footer-link" href="#faq">FAQ</a>
+          <span class="footer-link">Certifications</span>
+          <span class="footer-link">Careers</span>
+        </div>
+        <div>
+          <div class="footer-title">Contact</div>
+          <div class="footer-link">Office 301, Fardan Business Tower</div>
+          <div class="footer-link">Bur Dubai, Dubai, U.A.E.</div>
+          <a class="footer-link" href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a>
+          <a class="footer-link" href="tel:+971553252589">+971 55 325 2589</a>
+          <a class="footer-link" href="https://wa.me/971553252589" target="_blank" style="color:#25D366">💬 WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 ICON BIOTRONICS. All rights reserved. Registered in Dubai, UAE.</div>
+        <div><span style="color:#7f8ca3;cursor:pointer">Privacy Policy</span> &nbsp;•&nbsp; <span style="color:#7f8ca3;cursor:pointer">Terms of Service</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/971553252589?text=Hello%20ICON%20BIOTRONICS%2C%20I%20need%20equipment%20support." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // ── Header scroll ──
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
+
+    // ── Mobile nav ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      mobileNav.classList.toggle('open');
     });
-  });
-});
+    function closeMobile() {
+      hamburger.classList.remove('open');
+      mobileNav.classList.remove('open');
+    }
 
-const lightbox = document.getElementById('lightbox');
-const lbImg = document.getElementById('lbImg');
-document.querySelectorAll('.g-item').forEach(item => {
-  item.addEventListener('click', () => {
-    const img = item.querySelector('img');
-    lbImg.src = img.src; lbImg.alt = img.alt;
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
-});
-document.getElementById('lbClose').addEventListener('click', () => {
-  lightbox.classList.remove('open');
-  document.body.style.overflow = '';
-});
-lightbox.addEventListener('click', e => {
-  if (e.target === lightbox) { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-});
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { lightbox.classList.remove('open'); document.body.style.overflow = ''; }
-});
+    // ── Brands marquee ──
+    const brands = [
+      'GE HealthCare — Imaging & Monitoring','Philips — Diagnostic Imaging',
+      'Siemens Healthineers — Medical Technology','Dräger — Life Support',
+      'Mindray','Eighteeth','3Shape','Imes‑Icore','Vita','Ivoclar',
+      'Schick','NSK','Dentsply Sirona','Planmeca','Stryker',
+      'Fujifilm Medical','Samsung Medison','Canon Medical','KaVo Kerr','Olympus'
+    ];
+    const row = document.getElementById('brandsRow');
+    [...brands,...brands].forEach(b => {
+      const pill = document.createElement('div');
+      pill.className = 'brand-pill';
+      pill.textContent = b;
+      row.appendChild(pill);
+    });
 
-// ── 11. Testimonial slider ──
-let testiIdx = 0;
-const track2 = document.getElementById('testiTrack');
-const dots = document.querySelectorAll('.tdot');
-function goTesti(i) {
-  testiIdx = i;
-  track2.style.transform = `translateX(-${i * 100}%)`;
-  dots.forEach((d, j) => d.classList.toggle('active', j === i));
-}
-setInterval(() => goTesti((testiIdx + 1) % 3), 5000);
-
-// ── 12. FAQ accordion ──
-document.querySelectorAll('.faq-q').forEach(btn => {
-  btn.addEventListener('click', function() {
-    const item = this.parentElement;
-    const wasOpen = item.classList.contains('open');
-    document.querySelectorAll('.faq-item').forEach(fi => fi.classList.remove('open'));
-    if (!wasOpen) item.classList.add('open');
-  });
-});
-
-// ── 13. Contact form ──
-const form = document.getElementById('contactForm');
-const successMsg = document.getElementById('formSuccess');
-if (form) {
-  form.addEventListener('submit', async function(e) {
-    e.preventDefault();
-    const btn = form.querySelector('.btn-submit');
-    btn.textContent = 'Sending…'; btn.disabled = true;
-    try {
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { Accept: 'application/json' }
+    // ── Counter animation ──
+    function animateCount(el, target, suffix, duration) {
+      let start = 0;
+      const step = target / (duration / 16);
+      const tick = () => {
+        start = Math.min(start + step, target);
+        el.textContent = Math.floor(start).toLocaleString() + suffix;
+        if (start < target) requestAnimationFrame(tick);
+      };
+      tick();
+    }
+    const counterObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          animateCount(el, +el.dataset.target, el.dataset.suffix || '', 1400);
+          counterObserver.unobserve(el);
+        }
       });
-      if (res.ok) {
-        form.reset();
-        btn.textContent = '✓ Sent!';
-        successMsg.style.display = 'block';
-        setTimeout(() => { btn.textContent = 'Send Message →'; btn.disabled = false; successMsg.style.display = 'none'; }, 5000);
-      } else { btn.textContent = 'Failed — Try Again'; btn.disabled = false; }
-    } catch { btn.textContent = 'Error — Try Again'; btn.disabled = false; }
-  });
-}
-</script>
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+
+    // ── FAQ accordion ──
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    // ── Scroll reveal ──
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          e.target.style.transitionDelay = (i % 4) * 0.08 + 's';
+          e.target.classList.add('visible');
+          revealObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // ── Contact form ──
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const submitBtn = form.querySelector('[type="submit"]');
+        submitBtn.textContent = 'Sending…';
+        submitBtn.disabled = true;
+        try {
+          const res = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (res.ok) {
+            form.reset();
+            document.getElementById('formSuccess').style.display = 'block';
+            submitBtn.style.display = 'none';
+          } else {
+            submitBtn.textContent = 'Error — try again';
+            submitBtn.disabled = false;
+          }
+        } catch {
+          submitBtn.textContent = 'Error — try again';
+          submitBtn.disabled = false;
+        }
+      });
+    }
+
+    // ── Nav active highlight on scroll ──
+    const sections = document.querySelectorAll('section[id], div[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--cyan-glow)' : '';
+      });
+    });
+  </script>
 </body>
 </html>
