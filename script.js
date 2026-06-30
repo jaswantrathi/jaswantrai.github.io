@@ -1,88 +1,169 @@
 // ============================================
-// IMAGE SOURCES BY SERVICE TYPE
+// NAVIGATION TOGGLE
 // ============================================
-
-const serviceImages = {
-    mri: {
-        main: 'https://images.unsplash.com/photo-1631217314830-4df56b58db64?w=1000&h=600&fit=crop',
-        alt: ['https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000&h=600&fit=crop',
-              'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&h=600&fit=crop']
-    },
-    ct: {
-        main: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&h=600&fit=crop',
-        alt: ['https://images.unsplash.com/photo-1631217314830-4df56b58db64?w=1000&h=600&fit=crop',
-              'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1000&h=600&fit=crop']
-    },
-    ultrasound: {
-        main: 'https://images.unsplash.com/photo-1579154204601-01d82b27ebcc?w=1000&h=600&fit=crop',
-        alt: ['https://images.unsplash.com/photo-1576091160568-112d19c91846?w=1000&h=600&fit=crop']
-    },
-    dental: {
-        main: 'https://images.unsplash.com/photo-1609840917726-08ab4a0e489b?w=1000&h=600&fit=crop',
-        alt: ['https://images.unsplash.com/photo-1585772724684-38269d6639fd?w=1000&h=600&fit=crop']
-    },
-    ventilator: {
-        main: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&h=600&fit=crop',
-        alt: ['https://images.unsplash.com/photo-1576091160568-112d19c91846?w=1000&h=600&fit=crop']
-    },
-    maintenance: {
-        main: 'https://images.unsplash.com/photo-1576091160568-112d19c91846?w=1000&h=600&fit=crop',
-        alt: ['https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1000&h=600&fit=crop']
-    },
-    engineer: {
-        main: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1000&h=600&fit=crop',
-        alt: ['https://images.unsplash.com/photo-1576091160568-112d19c91846?w=1000&h=600&fit=crop']
-    }
-};
-
-// ============================================
-// ENHANCED ICON GLOW EFFECTS
-// ============================================
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Add glow effect to all icons on page load
-    const icons = document.querySelectorAll('[class*="icon"], [class*="ic"]');
+  const hamburger = document.getElementById('hambBtn');
+  const mobileNav = document.getElementById('mn');
+
+  if (hamburger) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+    });
+  }
+
+  // Close mobile menu when a link is clicked
+  const navLinks = mobileNav ? mobileNav.querySelectorAll('a') : [];
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+    });
+  });
+});
+
+// ============================================
+// FAQ ACCORDION
+// ============================================
+function initFAQ() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-q');
+    const answer = item.querySelector('.faq-a');
     
-    icons.forEach((icon, index) => {
-        // Stagger animation for visual appeal
-        setTimeout(() => {
-            icon.style.animation = 'iconPulse 3s ease-in-out infinite';
-        }, index * 100);
+    if (!question || !answer) return;
+    
+    question.addEventListener('click', function() {
+      const isOpen = item.classList.contains('open');
+      
+      // Close all other FAQs
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('open');
+        const otherAnswer = otherItem.querySelector('.faq-a');
+        if (otherAnswer) otherAnswer.classList.remove('open');
+      });
+      
+      // Toggle current FAQ
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.classList.add('open');
+      }
     });
+  });
+}
 
-    // Add glow on card hover
-    const cards = document.querySelectorAll('.card, .sc');
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            const icon = this.querySelector('[class*="icon"], [class*="ic"]');
-            if (icon) {
-                icon.style.animation = 'none';
-                icon.style.filter = 'drop-shadow(0 0 30px rgba(0, 232, 212, 0.9)) drop-shadow(0 0 50px rgba(0, 232, 212, 0.5))';
-                icon.style.transform = 'scale(1.25) rotate(8deg)';
-            }
+document.addEventListener('DOMContentLoaded', initFAQ);
 
-            // Image enhancement
-            const img = this.querySelector('img');
-            if (img) {
-                img.style.transform = 'scale(1.05)';
-                img.style.filter = 'brightness(1.1) saturate(1.1)';
-            }
-        });
-
-        card.addEventListener('mouseleave', function() {
-            const icon = this.querySelector('[class*="icon"], [class*="ic"]');
-            if (icon) {
-                icon.style.animation = 'iconPulse 3s ease-in-out infinite';
-                icon.style.filter = 'drop-shadow(0 0 8px rgba(0, 232, 212, 0.3))';
-                icon.style.transform = 'scale(1) rotate(0deg)';
-            }
-
-            // Image reset
-            const img = this.querySelector('img');
-            if (img) {
-                img.style.transform = 'scale(1)';
-                img.style.filter = 'brightness(1) saturate(1)';
-            }
-        });
+// ============================================
+// FORM HANDLING
+// ============================================
+function handleFormSubmit(e) {
+  if (e.target.id === 'cForm') {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    // Show loading state
+    const submitBtn = form.querySelector('[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Sending...';
+    submitBtn.disabled = true;
+    
+    // Send form via Formspree
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset();
+        const successMsg = form.querySelector('.form-ok');
+        if (successMsg) {
+          successMsg.style.display = 'block';
+          setTimeout(() => {
+            successMsg.style.display = 'none';
+          }, 4000);
+        }
+      }
+    })
+    .catch(error => console.error('Form error:', error))
+    .finally(() => {
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
     });
+  }
+}
+
+document.addEventListener('submit', handleFormSubmit);
+
+// ============================================
+// COUNTER ANIMATION
+// ============================================
+function animateCounters() {
+  const counters = document.querySelectorAll('.stat-num');
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        entry.target.classList.add('animated');
+        const target = parseInt(entry.target.dataset.t);
+        const suffix = entry.target.dataset.s || '';
+        let current = 0;
+        const increment = Math.ceil(target / 50);
+        
+        const counter = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(counter);
+          }
+          entry.target.textContent = current + suffix;
+        }, 30);
+      }
+    });
+  });
+  
+  counters.forEach(counter => observer.observe(counter));
+}
+
+document.addEventListener('DOMContentLoaded', animateCounters);
+
+// ============================================
+// SCROLL REVEAL ANIMATION
+// ============================================
+function initScrollReveal() {
+  const revealElements = document.querySelectorAll('.rv, .rv-l, .rv-r, .reveal');
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  revealElements.forEach(el => observer.observe(el));
+}
+
+document.addEventListener('DOMContentLoaded', initScrollReveal);
+
+// ============================================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// ============================================
+document.addEventListener('click', function(e) {
+  if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
+    e.preventDefault();
+    const targetId = e.target.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+    
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 });
