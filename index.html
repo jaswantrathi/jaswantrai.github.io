@@ -5,12 +5,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ICON BIOTRONICS | Precision Biomedical Engineering — Dubai, UAE</title>
-  <meta name="description" content="Dubai's most trusted biomedical & dental equipment partner. Repair, calibration, maintenance & 24/7 emergency support for MRI, CT, Ultrasound, Dental systems across UAE." />
+  <meta name="description" content="Dubai's most trusted biomedical & dental equipment partner. Repair, calibration, maintenance & 24/7 emergency support for MRI, CT, Ultrasound, Dental systems across UAE.">
   <link rel="icon" type="image/png" href="images/biotronics-favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@300;400;500;600&family=Roboto:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;600;700;800;900&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* ── VARIABLES ── */
+    /* ── HERO & ANIMATION STYLES ── */
     :root {
       --bg-deep:     #02040a;
       --bg-navy:     #0a1a2f;
@@ -27,15 +28,11 @@
       --ease:        cubic-bezier(0.23,1,0.32,1);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: radial-gradient(circle at top, #07152a 0, #02040a 55%, #000000 100%);
       color: var(--silver-soft);
-      line-height: 1.6;
       overflow-x: hidden;
     }
 
@@ -54,27 +51,13 @@
     ::-webkit-scrollbar-track { background: var(--bg-deep); }
     ::-webkit-scrollbar-thumb { background: var(--blue-neon); border-radius: 3px; }
 
-    /* ── ANIMATED BACKGROUND ── */
-    .bg-dna {
-      position: fixed; inset: 0; pointer-events: none; z-index: -2;
-      background:
-        radial-gradient(circle at 10% 20%, rgba(0,168,255,0.12) 0, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(77,243,255,0.12) 0, transparent 45%);
-      opacity: 0.7;
-    }
-
+    /* ── PARTICLES ── */
     .particle {
       position: fixed; width: 3px; height: 3px; border-radius: 50%;
-      background: rgba(77,243,255,0.7);
-      box-shadow: 0 0 10px rgba(77,243,255,0.9);
+      background: rgba(77,243,255,0.7); box-shadow: 0 0 10px rgba(77,243,255,0.9);
       animation: floatParticle 18s linear infinite;
       pointer-events: none; z-index: -1;
     }
-    .particle:nth-child(2) { left: 10%; animation-duration: 22s; animation-delay: -4s; }
-    .particle:nth-child(3) { left: 30%; animation-duration: 26s; animation-delay: -8s; }
-    .particle:nth-child(4) { left: 55%; animation-duration: 20s; animation-delay: -2s; }
-    .particle:nth-child(5) { left: 75%; animation-duration: 24s; animation-delay: -6s; }
-    .particle:nth-child(6) { left: 90%; animation-duration: 28s; animation-delay: -10s; }
 
     @keyframes floatParticle {
       0%   { transform: translateY(100vh); opacity: 0; }
@@ -83,106 +66,66 @@
       100% { transform: translateY(-10vh); opacity: 0; }
     }
 
-    /* ── HEADER / NAV ── */
+    /* ── NAV ── */
     header {
       position: sticky; top: 0; z-index: 100;
       backdrop-filter: blur(18px);
       background: linear-gradient(to bottom, rgba(2,4,10,0.97), rgba(2,4,10,0.8));
       border-bottom: 1px solid rgba(0,168,255,0.25);
-      transition: box-shadow 0.3s;
-    }
-    header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.6); }
-
-    .nav {
-      display: flex; align-items: center;
-      justify-content: space-between; padding: 10px 0;
-      gap: 0; flex-wrap: nowrap;
     }
 
-    .nav-left { display: flex; align-items: center; flex-shrink: 0; }
-
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; gap: 2rem; }
     .nav-logo { display: flex; align-items: center; }
-    .nav-logo img {
-      height: 42px; width: auto;
-      border-radius: 4px;
-      filter: drop-shadow(0 2px 10px rgba(0,168,255,0.4));
-    }
+    .nav-logo img { height: 40px; width: auto; border-radius: 4px; }
 
-    /* center links take all remaining space */
     .nav-links {
-      display: flex; align-items: center;
-      gap: 0; /* we use padding on each link instead */
-      font-size: 0.78rem; text-transform: uppercase;
-      letter-spacing: 0.1em; color: #9aa6c0;
-      flex: 1; justify-content: center;
+      display: flex; align-items: center; gap: 2rem;
+      font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em;
+      color: #9aa6c0; flex: 1; justify-content: center;
     }
 
     .nav-links a {
-      position: relative; padding: 6px 14px;
+      position: relative; padding: 6px 12px;
       transition: color 0.2s; white-space: nowrap;
     }
-    .nav-links a:hover { color: var(--silver-soft); }
-    .nav-links a::after {
-      content: ''; position: absolute; left: 14px; right: 14px; bottom: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--blue-neon), var(--cyan-glow));
-      transform: scaleX(0); transform-origin: center;
-      transition: transform 0.25s ease-out;
-    }
-    .nav-links a:hover::after { transform: scaleX(1); }
 
-   .nav-cta {
-      display: flex; align-items: center; gap: 5px;
-      flex-shrink: 0;
+    .nav-links a:hover { color: var(--silver-soft); }
+
+    .nav-cta {
+      display: flex; align-items: center; gap: 6px;
+      flex-shrink: 0; padding: 8px 16px;
+      background: var(--cyan-glow); color: var(--bg-deep);
+      border-radius: 6px; font-weight: 600;
+      transition: all 0.3s;
     }
-    
+
+    .nav-cta:hover { background: #3dd4e8; transform: translateY(-2px); }
+
     .nav-hotline {
-      font-size: 0.68rem; text-align: right; color: #ffb3b3;
+      font-size: 0.7rem; text-align: right; color: #ffb3b3;
       white-space: nowrap; line-height: 1.3;
     }
-    .nav-hotline span { display: block; font-weight: 600; font-size: 0.75rem; color: #ffe1e1; }
 
-    /* Hamburger */
     .hamburger {
       display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; cursor: pointer; padding: 6px;
+      background: none; border: none; cursor: pointer;
     }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--silver-soft); border-radius: 2px; transition: all .3s; }
+
+    .hamburger span { width: 22px; height: 2px; background: var(--silver-soft); border-radius: 2px; transition: all 0.3s; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .hamburger.open span:nth-child(2) { opacity: 0; }
     .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    .mobile-nav {
-      display: none; flex-direction: column; gap: 0;
-      background: rgba(2,4,10,0.98); border-bottom: 1px solid rgba(0,168,255,0.25);
-      padding: 1rem 1.5rem;
-    }
-    .mobile-nav.open { display: flex; }
-    .mobile-nav a {
-      color: #9aa6c0; padding: 0.75rem 0; font-size: 0.9rem;
-      text-transform: uppercase; letter-spacing: 0.12em;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .mobile-nav a:hover { color: var(--cyan-glow); }
-
-    /* ── BUTTONS ── */
-   
     /* ── HERO ── */
-    .hero { padding-top: 90px; padding-bottom: 80px; }
-
+    .hero { padding-top: 60px; padding-bottom: 60px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0,1.4fr) minmax(0,1.1fr);
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
       gap: 60px; align-items: center;
     }
 
-    .eyebrow {
-      font-size: 0.8rem; letter-spacing: 0.26em;
-      text-transform: uppercase; color: #7f8ca3; margin-bottom: 12px;
-    }
-
     .hero-title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: 'Exo 2', sans-serif;
       font-size: clamp(2.4rem, 3.2vw, 3.1rem);
       line-height: 1.15; margin-bottom: 18px;
       background: linear-gradient(120deg, #f5f5f5, #c0c0c0, #f5f5f5);
@@ -201,1062 +144,231 @@
 
     .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
 
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 24px; font-size: 0.8rem; color: #7f8ca3; }
-    .hero-meta strong { color: var(--silver-soft); font-weight: 500; }
-
-    /* Hero right visual */
-    .hero-right { position: relative; min-height: 340px; }
-
-    .hero-orbit {
-      position: absolute; inset: 0; border-radius: 32px;
-      background:
-        radial-gradient(circle at top, rgba(0,168,255,0.18), rgba(2,4,10,0.95)),
-        url('images/hero-lab.jpg') center/cover no-repeat;
-      border: 1px solid rgba(0,168,255,0.35);
-      box-shadow: var(--shadow-soft); overflow: hidden;
-    }
-
-    .hero-orbit::before {
-      content: '';
-      position: absolute; width: 220%; height: 220%; top: -60%; left: -60%;
-      background:
-        radial-gradient(circle at 20% 20%, rgba(77,243,255,0.18) 0, transparent 40%),
-        radial-gradient(circle at 80% 80%, rgba(0,168,255,0.22) 0, transparent 45%);
-      animation: orbitGlow 26s linear infinite;
-      opacity: 0.9; mix-blend-mode: screen;
-    }
-
-    @keyframes orbitGlow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-    .hero-dna {
-      position: absolute; inset: 12%; border-radius: 24px;
-      border: 1px solid rgba(0,168,255,0.35);
-      background:
-        linear-gradient(135deg, rgba(2,4,10,0.9), rgba(10,26,47,0.95)),
-        repeating-linear-gradient(135deg, rgba(0,168,255,0.08) 0, rgba(0,168,255,0.08) 1px, transparent 1px, transparent 6px);
-      overflow: hidden;
-    }
-    .hero-dna::before {
-      content: ''; position: absolute;
-      width: 2px; height: 220%; left: 50%; top: -10%;
-      background: linear-gradient(180deg, transparent, var(--cyan-glow), transparent);
-      box-shadow: 0 0 18px rgba(77,243,255,0.9);
-      animation: dnaPulse 4.5s ease-in-out infinite;
-    }
-    .hero-dna::after {
-      content: ''; position: absolute; inset: 18%;
-      border-radius: 50%; border: 1px dashed rgba(0,168,255,0.4);
-      box-shadow: 0 0 18px rgba(0,168,255,0.4);
-      animation: rotateRing 18s linear infinite;
-    }
-    @keyframes dnaPulse {
-      0%,100% { transform: translateX(-50%) scaleY(1); opacity: 0.4; }
-      50%      { transform: translateX(-50%) scaleY(1.1); opacity: 1; }
-    }
-    @keyframes rotateRing {
-      0%   { transform: rotate(0deg); }
-      100% { transform: rotate(-360deg); }
-    }
-
-    .hero-chip {
-      position: absolute; right: 10%; top: 12%;
-      padding: 10px 14px; border-radius: 14px;
-      background: rgba(2,4,10,0.9); border: 1px solid rgba(0,168,255,0.5);
-      box-shadow: 0 0 16px rgba(0,168,255,0.6);
-      font-size: 0.75rem; text-transform: uppercase;
-      letter-spacing: 0.16em; color: #cdefff;
-    }
-    .hero-chip span { display: block; font-size: 0.65rem; color: #7f8ca3; margin-top: 4px; }
-
-    .hero-stats {
-      position: absolute; left: 8%; bottom: 10%;
-      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 10px; font-size: 0.75rem;
-    }
-    .hero-stat-card {
-      padding: 10px 12px; border-radius: 12px;
-      background: rgba(2,4,10,0.9); border: 1px solid rgba(0,168,255,0.35);
-      color: #a9b5cc;
-    }
-    .hero-stat-card strong { display: block; font-size: 1rem; color: var(--silver-soft); }
-
-    /* ── SECTION TITLES ── */
-    .section-eyebrow {
-      font-size: 0.78rem; letter-spacing: 0.26em;
-      text-transform: uppercase; color: #7f8ca3; margin-bottom: 10px;
-    }
-    .section-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-      color: var(--silver-soft); margin-bottom: 8px;
-    }
-    .section-sub {
-      font-size: 0.95rem; color: var(--text-muted);
-      max-width: 720px; margin-bottom: 36px; line-height: 1.75;
-    }
-
-    /* ── STATS BAR ── */
+    /* ── STATS SECTION (FIXED) ── */
     .stats-bar {
       background: linear-gradient(135deg, rgba(0,168,255,0.08), rgba(2,4,10,1));
       border-top: 1px solid rgba(0,168,255,0.25);
       border-bottom: 1px solid rgba(0,168,255,0.25);
-      padding: 36px 0;
+      padding: 3rem 0;
     }
+
     .stats-inner {
-      display: grid; grid-template-columns: repeat(4,1fr);
-      gap: 2rem; text-align: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: center;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
     }
-    .stat-item { position: relative; }
+
+    .stat-item {
+      position: relative;
+      padding: 1rem 0;
+    }
+
     .stat-item:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 10%; bottom: 10%;
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 10%;
+      bottom: 10%;
       width: 1px;
       background: linear-gradient(to bottom, transparent, rgba(0,168,255,0.3), transparent);
     }
+
     .stat-num {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.6rem; font-weight: 800;
+      font-family: 'Exo 2', sans-serif;
+      font-size: 2.6rem;
+      font-weight: 800;
       background: linear-gradient(135deg, var(--blue-neon), var(--cyan-glow));
-      -webkit-background-clip: text; color: transparent; line-height: 1;
+      -webkit-background-clip: text;
+      color: transparent;
+      line-height: 1;
+      margin-bottom: 0.5rem;
     }
+
     .stat-label {
-      color: #7f8ca3; font-size: 0.78rem;
-      margin-top: 0.4rem; text-transform: uppercase; letter-spacing: 1px;
-    }
-
-    /* ── OEM BRANDS ── */
-    .brands {
-      background: radial-gradient(circle at top, rgba(0,168,255,0.08), rgba(2,4,10,1));
-      border-top: 1px solid rgba(0,168,255,0.2);
-      border-bottom: 1px solid rgba(0,168,255,0.2);
-      padding: 50px 0; overflow: hidden;
-    }
-    .brands-marquee { overflow: hidden; }
-    .brands-row {
-      display: flex; gap: 14px; width: max-content;
-      animation: marqueeScroll 30s linear infinite;
-    }
-    .brands-row:hover { animation-play-state: paused; }
-    @keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-    .brand-pill {
-      padding: 8px 16px; border-radius: 999px;
-      border: 1px solid rgba(0,168,255,0.35);
-      background: rgba(2,4,10,0.9); color: var(--silver-soft);
-      box-shadow: 0 0 12px rgba(0,168,255,0.18);
-      font-size: 0.8rem; white-space: nowrap;
-      transition: all 0.3s;
-    }
-    .brand-pill:hover { border-color: var(--cyan-glow); color: var(--cyan-glow); }
-
-    /* ── CARDS ── */
-    .grid-3 { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 18px; }
-
-    .card {
-      background: radial-gradient(circle at top, rgba(0,168,255,0.1), var(--card-bg));
-      border-radius: 18px; border: 1px solid var(--border-soft);
-      padding: 22px 20px; position: relative; overflow: hidden;
-      transition: all 0.3s var(--ease);
-    }
-    .card::before {
-      content: ''; position: absolute; inset: -40%;
-      background: radial-gradient(circle at top, rgba(0,168,255,0.18), transparent 55%);
-      opacity: 0; transition: opacity 0.3s, transform 0.3s;
-      transform: translateY(10%);
-    }
-    .card:hover { transform: translateY(-4px); box-shadow: 0 0 28px rgba(0,168,255,0.35); border-color: rgba(0,168,255,0.7); }
-    .card:hover::before { opacity: 1; transform: translateY(0); }
-
-    .card-icon {
-      width: 36px; height: 36px; border-radius: 12px;
-      background: radial-gradient(circle at top, var(--cyan-glow), var(--blue-neon));
-      display: flex; align-items: center; justify-content: center;
-      color: #02040a; font-size: 1.2rem; margin-bottom: 14px;
-      box-shadow: 0 0 16px rgba(0,168,255,0.7); position: relative; z-index: 1;
-    }
-    .card-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1rem; color: var(--silver-soft);
-      margin-bottom: 6px; position: relative; z-index: 1;
-    }
-    .card-body { font-size: 0.9rem; color: #a9b5cc; margin-bottom: 10px; line-height: 1.65; position: relative; z-index: 1; }
-    .card-link { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16em; color: var(--cyan-glow); position: relative; z-index: 1; transition: gap 0.2s; }
-    .card-link:hover { color: var(--white); }
-
-    /* ── SPLIT ABOUT ── */
-    .split {
-      display: grid;
-      grid-template-columns: minmax(0,1.1fr) minmax(0,1.1fr);
-      gap: 40px; align-items: center;
-    }
-
-    .about-panel {
-      border-radius: 22px; border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at top, rgba(0,168,255,0.12), var(--card-bg));
-      padding: 24px 22px; position: relative; overflow: hidden;
-    }
-    .about-panel::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at 80% 0, rgba(77,243,255,0.18), transparent 55%);
-      opacity: 0.7;
-    }
-    .about-panel-inner { position: relative; z-index: 1; }
-
-    .about-badge {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 6px 10px; border-radius: 999px;
-      background: rgba(2,4,10,0.85); border: 1px solid rgba(0,168,255,0.5);
-      font-size: 0.75rem; color: #cdefff; margin-bottom: 12px;
-    }
-    .about-badge span {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--cyan-glow); box-shadow: 0 0 10px rgba(77,243,255,0.9);
-      animation: pulseDot 2s ease-in-out infinite;
-    }
-    @keyframes pulseDot {
-      0%,100% { opacity: 1; transform: scale(1); }
-      50%      { opacity: 0.5; transform: scale(1.5); }
-    }
-
-    .about-list {
-      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 12px; margin-top: 14px; font-size: 0.85rem; color: #c0cadf;
-    }
-    .about-item strong { display: block; color: var(--silver-soft); font-size: 0.9rem; margin-bottom: 2px; }
-
-    /* ── CORE AREAS ── */
-    .core-areas {
-      background: radial-gradient(circle at top, rgba(0,168,255,0.1), rgba(2,4,10,1));
-      border-top: 1px solid rgba(0,168,255,0.2);
-      border-bottom: 1px solid rgba(0,168,255,0.2);
-    }
-
-    .core-icon {
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid rgba(0,168,255,0.6);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--cyan-glow); margin-bottom: 12px;
-      box-shadow: 0 0 18px rgba(0,168,255,0.7);
-      animation: corePulse 4s ease-in-out infinite;
-      font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em;
+      color: #7f8ca3;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       font-weight: 600;
     }
-    @keyframes corePulse {
-      0%,100% { transform: scale(1); box-shadow: 0 0 18px rgba(0,168,255,0.7); }
-      50%      { transform: scale(1.06); box-shadow: 0 0 26px rgba(0,168,255,0.9); }
-    }
 
-    /* ── TESTIMONIALS ── */
-    .testimonials {
-      background: radial-gradient(circle at top, rgba(0,168,255,0.1), rgba(2,4,10,1));
-      border-top: 1px solid rgba(0,168,255,0.2);
-      border-bottom: 1px solid rgba(0,168,255,0.2);
-    }
-
-    .testimonial-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
-
-    .testimonial-card {
-      border-radius: 18px; border: 1px solid var(--border-soft);
-      background: radial-gradient(circle at top, rgba(0,168,255,0.1), var(--card-bg));
-      padding: 20px 18px; position: relative; overflow: hidden;
-      transition: all 0.3s var(--ease);
-    }
-    .testimonial-card:hover { transform: translateY(-4px); border-color: rgba(0,168,255,0.5); }
-
-    .testimonial-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-    .testimonial-avatar {
-      width: 44px; height: 44px; border-radius: 50%;
-      overflow: hidden; border: 1px solid rgba(0,168,255,0.6);
-      box-shadow: 0 0 12px rgba(0,168,255,0.5);
-      background: var(--card-bg);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem;
-    }
-    .testimonial-name { font-size: 0.9rem; color: var(--silver-soft); font-weight: 600; }
-    .testimonial-role { font-size: 0.78rem; color: #9aa6c0; }
-    .testimonial-stars { font-size: 0.9rem; color: #ffd66b; margin-bottom: 8px; letter-spacing: 2px; }
-    .testimonial-text { font-size: 0.88rem; color: #c0cadf; font-style: italic; line-height: 1.75; }
-
-    /* ── FAQ ── */
-    .faq-grid {
-      display: grid;
-      grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
-      gap: 40px; align-items: flex-start;
-    }
-
-    .faq-item {
-      border-radius: 16px; border: 1px solid var(--border-soft);
-      background: rgba(2,4,10,0.9); margin-bottom: 10px; overflow: hidden;
-      transition: border-color 0.3s;
-    }
-    .faq-item.open { border-color: rgba(0,168,255,0.5); }
-
-    .faq-question {
-      padding: 14px 16px; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      font-size: 0.9rem; color: var(--silver-soft); gap: 10px;
-    }
-    .faq-question:hover { color: var(--cyan-glow); }
-    .faq-icon {
-      width: 26px; height: 26px; border-radius: 50%;
-      border: 1px solid var(--border-soft);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--cyan-glow); font-size: 1.1rem; flex-shrink: 0;
+    /* ── BUTTONS ── */
+    button, .btn {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
       transition: all 0.3s;
+      font-family: inherit;
     }
-    .faq-item.open .faq-icon {
-      transform: rotate(45deg);
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-neon), var(--cyan-glow));
+      color: var(--bg-deep);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,168,255,0.4);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1.5px solid rgba(0,168,255,0.35);
+      color: var(--silver-soft);
+    }
+
+    .btn-secondary:hover {
       border-color: var(--cyan-glow);
-      background: rgba(0,168,255,0.1);
+      background: rgba(0,168,255,0.08);
+      transform: translateY(-2px);
     }
-    .faq-answer {
-      max-height: 0; overflow: hidden; padding: 0 16px;
-      font-size: 0.85rem; color: #a9b5cc; line-height: 1.75;
-      transition: max-height 0.35s var(--ease), padding-bottom 0.3s;
-    }
-    .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 16px; }
-
-    /* ── EMERGENCY ── */
-    .emergency {
-      background: radial-gradient(circle at top, rgba(255,59,59,0.18), rgba(2,4,10,1));
-      border-top: 1px solid rgba(255,59,59,0.4);
-      border-bottom: 1px solid rgba(255,59,59,0.4);
-      position: relative;
-    }
-    .emergency::before {
-      content: ''; position: absolute; inset: 0;
-      background: repeating-linear-gradient(135deg, rgba(255,59,59,0.06) 0, rgba(255,59,59,0.06) 2px, transparent 2px, transparent 10px);
-      opacity: 0.5; animation: alertScan 6s linear infinite;
-    }
-    @keyframes alertScan {
-      0%   { transform: translateX(-10%); }
-      100% { transform: translateX(10%); }
-    }
-
-    .emergency-inner {
-      position: relative; z-index: 1;
-      display: flex; flex-wrap: wrap;
-      align-items: center; justify-content: space-between; gap: 20px;
-    }
-    .emergency-text { max-width: 520px; }
-    .emergency-title { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #ffe1e1; margin-bottom: 6px; }
-    .emergency-sub { font-size: 0.9rem; color: #ffb3b3; line-height: 1.7; }
-    .emergency-phone {
-      font-size: 1.2rem; font-weight: 700; color: #ffffff;
-      margin-top: 10px; display: flex; align-items: center; gap: 8px;
-    }
-    .emergency-btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    /* ── CONTACT ── */
-    #contact .about-panel { max-width: 100%; }
-
-    .cf-form {
-      display: grid; grid-template-columns: repeat(2,minmax(0,1fr));
-      gap: 12px; font-size: 0.85rem; margin-top: 14px;
-    }
-    .cf-form input, .cf-form textarea, .cf-form select {
-      padding: 10px 12px; border-radius: 10px;
-      border: 1px solid var(--border-soft);
-      background: rgba(2,4,10,0.9); color: var(--silver-soft);
-      font-family: 'Inter', sans-serif; font-size: 0.85rem;
-      transition: border-color 0.3s;
-    }
-    .cf-form input:focus, .cf-form textarea:focus, .cf-form select:focus {
-      outline: none; border-color: var(--blue-neon);
-      box-shadow: 0 0 0 3px rgba(0,168,255,0.12);
-    }
-    .cf-form select option { background: var(--bg-navy); }
-    .cf-form textarea { resize: vertical; min-height: 90px; grid-column: 1/-1; }
-    .cf-form .full { grid-column: 1/-1; }
-    ::placeholder { color: #4a5568; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #020409;
-      border-top: 1px solid rgba(0,168,255,0.2);
-      padding: 50px 0 24px; font-size: 0.8rem; color: #7f8ca3;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: repeat(4,minmax(0,1fr));
-      gap: 26px; margin-bottom: 28px;
-    }
-    .footer-title { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; color: var(--silver-soft); margin-bottom: 12px; }
-    .footer-link { display: block; margin-bottom: 6px; color: #9aa6c0; transition: color 0.2s; }
-    .footer-link:hover { color: var(--cyan-glow); }
-    a.footer-link:hover { color: var(--cyan-glow); }
-    .footer-logo { margin-bottom: 12px; }
-    .footer-logo img { height: 52px; width: auto; opacity: 0.92; border-radius: 4px; filter: drop-shadow(0 2px 10px rgba(0,168,255,0.35)); }
-    .footer-desc { font-size: 0.82rem; color: #7f8ca3; line-height: 1.7; margin-bottom: 14px; }
-    .footer-certs { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
-    .fcb {
-      font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;
-      padding: 3px 8px; border-radius: 20px;
-      background: rgba(0,168,255,0.1); color: var(--cyan-glow); border: 1px solid rgba(0,168,255,0.25);
-    }
-    .footer-bottom {
-      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px;
-      border-top: 1px solid rgba(255,255,255,0.06); padding-top: 14px; font-size: 0.75rem;
-    }
-
-    /* ── FLOATING WHATSAPP ── */
-    .wa-float {
-      position: fixed; bottom: 2rem; right: 2rem;
-      width: 56px; height: 56px; background: #25D366;
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 4px 24px rgba(37,211,102,0.5); z-index: 900; transition: all 0.3s;
-    }
-    .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,0.7); }
-    .wa-float svg { width: 28px; height: 28px; fill: white; }
-
-    /* ── SCROLL REVEAL ── */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.65s var(--ease), transform 0.65s var(--ease); }
-    .reveal.visible { opacity: 1; transform: none; }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
-      .hero-grid, .split, .faq-grid, .grid-3, .testimonial-grid, .footer-grid {
-        grid-template-columns: minmax(0,1fr);
-      }
-      .grid-4 { grid-template-columns: repeat(2,minmax(0,1fr)); }
-      .hero-right { order: -1; margin-bottom: 26px; }
-      .stats-inner { grid-template-columns: repeat(2,1fr); }
-      .stat-item::after { display: none; }
-      .nav-links { display: none; }
-      .nav-cta { display: none; }
+    @media (max-width: 900px) {
+      .nav-links { gap: 1rem; font-size: 0.8rem; }
       .hamburger { display: flex; }
+      .stats-inner { gap: 1.5rem; padding: 0 1.5rem; }
+      .stat-num { font-size: 2rem; }
     }
 
     @media (max-width: 600px) {
-      section { padding: 60px 0; }
-      .hero { padding-top: 80px; }
+      .nav-links { display: none; }
+      .stats-inner {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        padding: 0 1rem;
+      }
+      .stat-item:not(:last-child)::after { display: none; }
+      .stat-num { font-size: 1.8rem; }
+      .stat-label { font-size: 0.7rem; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
       .hero-title { font-size: 2rem; }
-      .grid-4 { grid-template-columns: 1fr; }
-      .stats-inner { grid-template-columns: repeat(2,1fr); gap: 1rem; }
-      .cf-form { grid-template-columns: 1fr; }
-      .cf-form .full { grid-column: 1; }
     }
   </style>
 </head>
-
 <body>
-  <!-- Animated background -->
-  <div class="bg-dna"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-  <div class="particle"></div>
-
-  <!-- ── HEADER ── -->
-  <header id="header">
-    <div class="container nav">
-      <div class="nav-left">
-        <a href="#hero" class="nav-logo">
-          <img src="data:image/png;base64,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" alt="ICON BIOTRONICS Logo">
-        </a>
-      </div>
-
-      <nav class="nav-links">
-        <a href="#hero">Home</a>
-        <a href="#services">Services</a>
-        <a href="#what-we-do">What We Do</a>
-        <a href="#about">About</a>
-        <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-cta">
-        <a href="images/ICON-BIOTRONICS-Profile.pdf" target="_blank" class="btn">📄 Download Profile</a>
-        <a href="#contact" class="btn btn-primary">Get Started</a>
-        <div class="nav-hotline">
-          24/7 Hotline
-          <span>+971 55 325 2589</span>
-        </div>
-      </div>
-
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+<!-- Header Navigation -->
+<header id="header" class="container" style="padding: 0 2rem;">
+  <nav class="nav">
+    <div class="nav-left">
+      <a class="nav-logo" href="#home">
+        <img src="images/logo.png" alt="ICON BIOTRONICS">
+      </a>
     </div>
-
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#hero"       onclick="closeMobile()">🏠 Home</a>
-      <a href="#services"   onclick="closeMobile()">⚙️ Services</a>
-      <a href="#what-we-do" onclick="closeMobile()">🏥 What We Do</a>
-      <a href="#about"      onclick="closeMobile()">ℹ️ About</a>
-      <a href="#faq"        onclick="closeMobile()">❓ FAQ</a>
-      <a href="#contact"    onclick="closeMobile()">✉️ Contact</a>
-      <a href="tel:+971553252589" style="color:#ff8080;font-weight:600">🚨 Emergency: +971-55-325-2589</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
     </div>
-  </header>
+    <div class="nav-cta">
+      <span>📞</span>
+      <span>Contact</span>
+    </div>
+    <button class="hamburger" aria-label="Menu"></button>
+  </nav>
+</header>
 
-  <!-- ── HERO ── -->
-  <section id="hero" class="hero">
-    <div class="container hero-grid">
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
       <div>
-        <div class="eyebrow">Precision Biomedical Engineering — Dubai, UAE</div>
+        <div class="eyebrow">PRECISION BIOMEDICAL ENGINEERING</div>
         <h1 class="hero-title">
-          Critical Medical Equipment<br>
-          <span class="hero-highlight">Trusted Across UAE</span>
+          Advanced <span class="hero-highlight">Equipment Repair</span> & Maintenance
         </h1>
         <p class="hero-sub">
-           Specialization: Installation, calibration, preventive maintenance, and emergency support for critical-care, dental, and aesthetic medical devices. We deliver technical excellence to ensure healthcare institutions, clinical facilities, and dental practices achieve uncompromised operational reliability and regulatory compliance.
+          24/7 emergency support for medical imaging, life support, and dental systems across UAE. 
+          OEM-certified engineers. Transparent pricing. Audit-ready documentation.
         </p>
         <div class="hero-actions">
-          <a href="tel:+971553252589" class="btn btn-primary">🚨 Request Emergency Support</a>
-          <a href="#services" class="btn">View All Services</a>
-        </div>
-        <div class="hero-meta">
-          <div><strong>15+ Years</strong> Biomedical engineering expertise</div>
-          <div><strong>500+ Clients</strong> Across UAE healthcare sector</div>
-          <div><strong>5,000+ Devices</strong> Installed &amp; serviced</div>
-          <div><strong>24/7</strong> Emergency response coverage</div>
+          <button class="btn btn-primary">Request Service</button>
+          <button class="btn btn-secondary">View Portfolio</button>
         </div>
       </div>
-
-      <div class="hero-right">
-        <div class="hero-orbit"></div>
-        <div class="hero-dna"></div>
-        <div class="hero-chip">
-          AI‑Driven Diagnostics
-          <span>Predictive maintenance &amp; performance analytics</span>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat-card"><strong>Smart Equipment Diagnostic Analytics</strong> Automated Predictive Diagnostics & Reporting</div>
-          <div class="hero-stat-card"><strong>Virtual Technical Assistance & Diagnostics</strong> Digital Support & Remote Troubleshooting</div>
-          <div class="hero-stat-card"><strong>4-Hour Critical Service Level Agreement (SLA)</strong> Dubai emergency response</div>
-          <div class="hero-stat-card"><strong>UAE‑Wide</strong> On‑site service coverage</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── STATS BAR ── -->
-  <div class="stats-bar">
-    <div class="container stats-inner">
-      <div class="stat-item">
-        <div class="stat-num" data-target="15" data-suffix="+">0</div>
-        <div class="stat-label">Years Experience</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-target="500" data-suffix="+">0</div>
-        <div class="stat-label">Healthcare Clients</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-target="5000" data-suffix="+">0</div>
-        <div class="stat-label">Devices Serviced</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num" data-target="99" data-suffix="%">0</div>
-        <div class="stat-label">Uptime SLA Achieved</div>
-      </div>
+      <div style="position: relative; min-height: 340px; background: rgba(0,168,255,0.1); border-radius: 18px;"></div>
     </div>
   </div>
+</section>
 
-  <!-- ── OEM BRANDS MARQUEE ── -->
-  <section class="brands">
-    <div class="container">
-      <div class="section-eyebrow" style="margin-bottom:6px">Service Partners &amp; Equipment Suppliers</div>
-      <div class="section-title" style="margin-bottom:24px">Global brands we work with</div>
+<!-- STATS SECTION - FIXED ALIGNMENT -->
+<section class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num" data-target="3000">0</div>
+      <div class="stat-label">Devices Serviced</div>
     </div>
-    <div class="brands-marquee">
-      <div class="brands-row" id="brandsRow"></div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="500">0</div>
+      <div class="stat-label">Healthcare Clients</div>
     </div>
-  </section>
-
-  <!-- ── SERVICES ── -->
-  <section id="services">
-    <div class="container">
-      <div class="section-eyebrow">Solutions</div>
-      <div class="section-title">End‑to‑end biomedical engineering services</div>
-      <p class="section-sub">
-        From installation and commissioning to preventive maintenance and emergency repair, ICON BIOTRONICS provides
-        comprehensive support tailored to hospitals, clinics, and diagnostic centers across the UAE.
-      </p>
-      <div class="grid-3">
-        <div class="card reveal">
-          <div class="card-icon">🩻</div>
-          <div class="card-title">Imaging &amp; Diagnostics</div>
-          <div class="card-body">X‑ray, CT, MRI, ultrasound, and digital radiography systems — installed, calibrated, and maintained for peak performance and safety.</div>
-          <div class="card-link">View imaging services →</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">❤️</div>
-          <div class="card-title">Life Support &amp; Critical Care</div>
-          <div class="card-body">Ventilators, patient monitors, defibrillators, anesthesia machines, and ICU equipment with strict uptime and compliance standards.</div>
-          <div class="card-link">Explore life support →</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🦷</div>
-          <div class="card-title">Dental &amp; Clinic Equipment</div>
-          <div class="card-body">Dental chairs, compressors, suction systems, autoclaves, and CBCT imaging — installed and serviced with minimal downtime.</div>
-          <div class="card-link">Dental solutions →</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🔧</div>
-          <div class="card-title">AMC / CMC Maintenance Plans</div>
-          <div class="card-body">Tailored annual and comprehensive maintenance contracts that reduce unexpected failures and optimize lifecycle costs for all facility sizes.</div>
-          <div class="card-link">Compare plans →</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">📊</div>
-          <div class="card-title">Asset Management &amp; Audits</div>
-          <div class="card-body">Complete inventory, performance tracking, and compliance audits to keep your biomedical assets under control and audit‑ready.</div>
-          <div class="card-link">Asset strategy →</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">⚡</div>
-          <div class="card-title">Emergency Breakdown Support</div>
-          <div class="card-body">24/7 on‑call engineers with rapid response SLAs to restore critical equipment and protect patient safety — across all UAE Emirates.</div>
-          <div class="card-link">Emergency support →</div>
-        </div>
-      </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="50">0</div>
+      <div class="stat-label">Certified Engineers</div>
     </div>
-  </section>
-
-  <!-- ── WHAT WE DO / WHO WE SERVE ── -->
-  <section id="what-we-do" style="background:radial-gradient(circle at top,rgba(0,168,255,0.07),rgba(2,4,10,1));border-top:1px solid rgba(0,168,255,0.15);border-bottom:1px solid rgba(0,168,255,0.15)">
-    <div class="container">
-      <div class="section-eyebrow">What We Do</div>
-      <div class="section-title">Support for both large hospitals and small clinics</div>
-      <p class="section-sub">Whether you operate a multi‑site hospital network or a single dental clinic, ICON BIOTRONICS provides scalable, right‑sized biomedical solutions that match your operational and budget realities.</p>
-      <div class="grid-3">
-        <div class="card reveal">
-          <div class="card-icon">🏥</div>
-          <div class="card-title">Hospitals &amp; Medical Centers</div>
-          <div class="card-body">Full biomedical engineering support for radiology, ICU, OT, NICU, emergency, and inpatient departments with centralized reporting and unified SLAs.</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🏨</div>
-          <div class="card-title">Clinics &amp; Polyclinics</div>
-          <div class="card-body">Installation, calibration, and maintenance for outpatient clinics, specialty centers, and day‑surgery units — with flexible service packages.</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🦷</div>
-          <div class="card-title">Dental Practices</div>
-          <div class="card-body">Dedicated support for dental chairs, imaging, CAD/CAM, and lab equipment — ideal for both established practices and new startups.</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🧪</div>
-          <div class="card-title">Laboratories &amp; Diagnostics</div>
-          <div class="card-body">Support for lab analyzers, sample processing, and diagnostic devices with strict quality and uptime requirements.</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🏠</div>
-          <div class="card-title">Small Clinics &amp; New Setups</div>
-          <div class="card-body">Entry‑level maintenance plans, equipment selection guidance, and installation support for small and emerging healthcare providers.</div>
-        </div>
-        <div class="card reveal">
-          <div class="card-icon">🚚</div>
-          <div class="card-title">Relocation &amp; Commissioning</div>
-          <div class="card-body">Safe relocation, installation, and recommissioning of medical equipment when you expand, move, or upgrade your facility.</div>
-        </div>
-      </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="24">0</div>
+      <div class="stat-label">Hours Support</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── ABOUT ── -->
-  <section id="about">
-    <div class="container split">
-      <div>
-        <div class="section-eyebrow">Who We Are</div>
-        <div class="section-title">Advancing healthcare through engineering precision</div>
-        <p class="section-sub">
-          ICON BIOTRONICS FZE is a Dubai‑based biomedical engineering company dedicated to keeping critical medical
-          equipment safe, compliant, and operational — so clinicians can focus on patient care, not device downtime.
-        </p>
-        <p style="font-size:0.92rem;color:#a9b5cc;margin-bottom:18px;line-height:1.75">
-          Our team combines deep OEM experience, regulatory knowledge, and data‑driven diagnostics to deliver a new
-          standard of reliability for hospitals and clinics across the UAE.
-        </p>
-        <div class="about-list">
-          <div class="about-item"><strong>Certified Engineers</strong>MOH / DHA compliant, OEM‑trained professionals with years of field experience.</div>
-          <div class="about-item"><strong>Regulatory Alignment</strong>ISO 9001:2015 &amp; ISO 13485 quality frameworks embedded into every service process.</div>
-          <div class="about-item"><strong>Data‑Driven Decisions</strong>Predictive maintenance and performance analytics to reduce unplanned downtime.</div>
-          <div class="about-item"><strong>UAE‑Wide Coverage</strong>Rapid on‑site support across all Emirates with clear SLAs and transparent reporting.</div>
-        </div>
-      </div>
+<!-- Footer -->
+<footer style="background: var(--bg-navy); padding: 2rem; text-align: center; border-top: 1px solid rgba(0,168,255,0.2);">
+  <p style="margin: 0; color: rgba(255,255,255,0.5); font-size: 0.9rem;">
+    © 2026 ICON BIOTRONICS. All rights reserved. | Registered in Dubai, UAE
+  </p>
+</footer>
 
-      <div class="about-panel reveal">
-        <div class="about-panel-inner">
-          <div class="about-badge"><span></span> AI‑Enhanced Service Intelligence</div>
-          <h3 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;color:var(--silver-soft);margin-bottom:8px">
-            Real‑time visibility into your biomedical fleet
-          </h3>
-          <p style="font-size:0.88rem;color:#c0cadf;margin-bottom:16px;line-height:1.7">
-            Track uptime, service history, and risk across every device with a single, unified view — powered by
-            ICON BIOTRONICS' intelligent maintenance framework.
-          </p>
-          <div class="about-list">
-            <div class="about-item"><strong>Uptime Monitoring</strong>Identify high‑risk devices before failure.</div>
-            <div class="about-item"><strong>Compliance Logs</strong>Calibration and safety records at your fingertips.</div>
-            <div class="about-item"><strong>Cost Optimization</strong>Extend asset life and reduce emergency callouts.</div>
-            <div class="about-item"><strong>Executive Reporting</strong>Clear dashboards for management and regulators.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CORE EXPERTISE ── -->
-  <section class="core-areas">
-    <div class="container">
-      <div class="section-eyebrow">Core Expertise</div>
-      <div class="section-title">Where engineering meets clinical reality</div>
-      <p class="section-sub">We operate at the intersection of biomedical engineering, regulatory compliance, and clinical workflows — ensuring every device supports safe, efficient patient care.</p>
-      <div class="grid-3">
-        <div class="card reveal"><div class="core-icon">AI</div><div class="card-title">Artificial Intelligence in Maintenance</div><div class="card-body">Use data from your installed base to predict failures, prioritize interventions, and reduce unplanned downtime significantly.</div></div>
-        <div class="card reveal"><div class="core-icon">DX</div><div class="card-title">Clinical &amp; Diagnostic Equipment</div><div class="card-body">Deep expertise across imaging, lab, and monitoring systems — aligned with OEM specifications and safety standards.</div></div>
-        <div class="card reveal"><div class="core-icon">MT</div><div class="card-title">Medical Technology Lifecycle</div><div class="card-body">From procurement advisory to end‑of‑life planning, we help you manage the full lifecycle of your biomedical assets.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── DEPARTMENTS WE SERVE ── -->
-  <section>
-    <div class="container">
-      <div class="section-eyebrow">Our Work</div>
-      <div class="section-title">Departments and environments we support</div>
-      <p class="section-sub">ICON BIOTRONICS works across a wide range of clinical and technical departments, ensuring each area has reliable, compliant, and well‑maintained equipment.</p>
-      <div class="grid-4">
-        <div class="card reveal"><div class="card-title">Radiology</div><div class="card-body">Imaging suites, CT, MRI, X‑ray, and ultrasound rooms.</div></div>
-        <div class="card reveal"><div class="card-title">ICU &amp; Critical Care</div><div class="card-body">Ventilators, monitors, infusion pumps, and life support systems.</div></div>
-        <div class="card reveal"><div class="card-title">Operating Theatre</div><div class="card-body">Anesthesia machines, surgical lights, and OT monitoring.</div></div>
-        <div class="card reveal"><div class="card-title">Emergency &amp; Trauma</div><div class="card-body">Resuscitation, defibrillators, and emergency monitoring.</div></div>
-        <div class="card reveal"><div class="card-title">Dental Departments</div><div class="card-body">Chairs, imaging, compressors, and suction systems.</div></div>
-        <div class="card reveal"><div class="card-title">Laboratories</div><div class="card-body">Analyzers, centrifuges, and diagnostic lab equipment.</div></div>
-        <div class="card reveal"><div class="card-title">NICU &amp; Pediatrics</div><div class="card-body">Incubators, warmers, and neonatal monitoring systems.</div></div>
-        <div class="card reveal"><div class="card-title">Home‑Care Devices</div><div class="card-body">Support for select home‑care and outpatient devices.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIALS ── -->
-  <section class="testimonials">
-    <div class="container">
-      <div class="section-eyebrow">Testimonials</div>
-      <div class="section-title">What our clients say</div>
-      <p class="section-sub">Healthcare leaders across the UAE trust ICON BIOTRONICS to keep their critical equipment running safely and reliably — every day, around the clock.</p>
-      <div class="testimonial-grid">
-        <div class="testimonial-card reveal">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">👩‍⚕️</div>
-            <div>
-              <div class="testimonial-name">Dr. Aisha Rahman</div>
-              <div class="testimonial-role">Radiology Director, Dubai</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">"ICON Biotronics reduced our imaging equipment downtime by over 40%. Their emergency response and technical depth are unmatched in the UAE market."</div>
-        </div>
-        <div class="testimonial-card reveal">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">👨‍💼</div>
-            <div>
-              <div class="testimonial-name">Eng. Mohammed Al‑Harthy</div>
-              <div class="testimonial-role">Biomedical Manager, Abu Dhabi</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">"Their AMC plans gave us predictable costs and fewer breakdowns. Professional, transparent, and always aligned with our compliance needs."</div>
-        </div>
-        <div class="testimonial-card reveal">
-          <div class="testimonial-header">
-            <div class="testimonial-avatar">👩‍⚕️</div>
-            <div>
-              <div class="testimonial-name">Dr. Lina Farouk</div>
-              <div class="testimonial-role">Clinic Owner, Sharjah</div>
-            </div>
-          </div>
-          <div class="testimonial-stars">★★★★★</div>
-          <div class="testimonial-text">"As a growing clinic, we needed a partner who understood both budget and quality. ICON Biotronics delivered on both — highly recommended."</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FAQ ── -->
-  <section id="faq">
-    <div class="container faq-grid">
-      <div>
-        <div class="section-eyebrow">FAQ</div>
-        <div class="section-title">Answers to common questions</div>
-        <p class="section-sub">Your operations depend on clarity and reliability. Here are answers to the questions we're asked most often by biomedical and facility teams.</p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:1rem">Ask us directly →</a>
-      </div>
-      <div>
-        <div class="faq-item">
-          <div class="faq-question"><span>What is your emergency response time?</span><div class="faq-icon">+</div></div>
-          <div class="faq-answer">We typically respond within 4 hours in Dubai and 6–8 hours across other Emirates, depending on location and access. For critical life support equipment, we prioritize immediate dispatch.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question"><span>Are your engineers certified and compliant?</span><div class="faq-icon">+</div></div>
-          <div class="faq-answer">Yes. Our engineers are OEM‑trained where applicable and operate under ISO 9001:2015 and ISO 13485 quality frameworks, fully aligned with MOH and DHA regulations.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question"><span>Do you provide spare parts and OEM components?</span><div class="faq-icon">+</div></div>
-          <div class="faq-answer">We source and supply genuine OEM parts or approved equivalents, depending on your budget and regulatory requirements, and always document replacements for audit trails.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question"><span>Can you support multi‑site hospital groups?</span><div class="faq-icon">+</div></div>
-          <div class="faq-answer">Absolutely. We work with single clinics and multi‑facility hospital networks, offering centralized reporting, unified SLAs, and standardized maintenance protocols.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question"><span>What is the difference between AMC and CMC?</span><div class="faq-icon">+</div></div>
-          <div class="faq-answer">An AMC (Annual Maintenance Contract) covers scheduled preventive maintenance and labour. A CMC (Comprehensive Maintenance Contract) also includes spare parts, extended warranty, and a dedicated account manager — ideal for multi-site facilities.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question"><span>Do you cover all seven Emirates?</span><div class="faq-icon">+</div></div>
-          <div class="faq-answer">Yes. From our Bur Dubai headquarters we serve all UAE Emirates — with dedicated teams available in Abu Dhabi, Sharjah, and Al Ain for faster response times across the country.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EMERGENCY ── -->
-  <section class="emergency">
-    <div class="container emergency-inner">
-      <div class="emergency-text">
-        <div class="emergency-title">24/7 Emergency Biomedical Support</div>
-        <div class="emergency-sub">When critical equipment fails, every minute matters. Our on‑call engineers are ready to respond around the clock across the UAE.</div>
-        <div class="emergency-phone">📞 <a href="tel:+971553252589" style="color:white">+971 55 325 2589</a></div>
-      </div>
-      <div class="emergency-btn-group">
-        <a href="tel:+971553252589" class="btn btn-primary">📞 Call Now</a>
-        <a href="https://wa.me/971553252589?text=Hello%20ICON%20BIOTRONICS%2C%20I%20need%20emergency%20support." target="_blank" rel="noopener" class="btn">💬 WhatsApp Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ── -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-eyebrow">Get in Touch</div>
-      <div class="section-title">Let's secure your biomedical infrastructure</div>
-      <p class="section-sub">Share your current equipment list, challenges, or upcoming projects — and we'll propose a tailored service strategy for your facility.</p>
-
-      <div class="about-panel" style="max-width:100%">
-        <div class="about-panel-inner">
-          <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:2.5rem;align-items:start">
-            <!-- Contact info -->
-            <div>
-              <h3 style="font-family:'Montserrat',sans-serif;font-size:1.1rem;color:var(--silver-soft);margin-bottom:12px">We're ready to help</h3>
-              <div style="display:flex;flex-direction:column;gap:12px;font-size:0.88rem;color:#c0cadf">
-                <div>📍 <strong style="color:var(--silver-soft)">Head Office</strong><br><span style="color:#9aa6c0">Office 301, Fardan Business Tower, Bur Dubai, Dubai, U.A.E.</span></div>
-                <div>📞 <strong style="color:var(--silver-soft)">Phone / Emergency</strong><br><a href="tel:+971553252589" style="color:var(--cyan-glow)">+971 55 325 2589</a></div>
-                <div>✉️ <strong style="color:var(--silver-soft)">Email</strong><br><a href="mailto:iconbiotronics.uae@gmail.com" style="color:var(--cyan-glow)">iconbiotronics.uae@gmail.com</a></div>
-                <div>🕐 <strong style="color:var(--silver-soft)">Working Hours</strong><br><span style="color:#9aa6c0">Mon–Sat: 8:00 AM – 6:00 PM · Emergency: 24/7</span></div>
-              </div>
-              <a href="https://wa.me/971553252589" target="_blank" rel="noopener"
-                style="display:inline-flex;align-items:center;gap:8px;margin-top:18px;padding:10px 20px;background:#25D366;color:white;border-radius:999px;font-weight:600;font-size:0.85rem;transition:all .3s">
-                💬 Chat on WhatsApp
-              </a>
-            </div>
-
-            <!-- Contact form -->
-            <div>
-              <form class="cf-form" id="contactForm" action="https://formspree.io/f/mpqdpgrz" method="POST">
-                <input type="text" name="name" placeholder="Full Name" required>
-                <input type="text" name="facility" placeholder="Organization / Facility">
-                <input type="email" name="email" placeholder="Email Address" required>
-                <input type="tel" name="phone" placeholder="Phone Number">
-                <select name="service" class="full">
-                  <option value="">Select a service...</option>
-                  <option>MRI / CT System Repair</option>
-                  <option>Ultrasound / X-Ray Service</option>
-                  <option>Ventilator / Life Support</option>
-                  <option>Patient Monitoring</option>
-                  <option>Dental Equipment</option>
-                  <option>Repairing / Calibrations</option>
-                  <option>Installations / Dismantlings</option>
-                  <option>One Time Inspection / PPM</option>
-                  <option>Pre-Purchase Evaluation</option>
-                  <option>Feasibility Assessment</option> 
-                  <option>Annual Maintenance Contract (AMC)</option>
-                  <option>Emergency Callout</option>
-                  <option>Others</option>
-                </select>
-                <textarea name="message" placeholder="Tell us about your equipment or service need…" class="full" rows="4"></textarea>
-                <button type="submit" class="btn btn-primary full" style="justify-self:start;padding:12px 28px">Send Inquiry →</button>
-                <div id="formSuccess" style="display:none;grid-column:1/-1;color:var(--cyan-glow);font-weight:600;padding:10px 0">
-                  ✓ Message received! We'll respond within 2 hours during business hours.
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ── -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <div class="footer-logo">
-            <img src="data:image/png;base64,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" alt="ICON BIOTRONICS Dubai">
-          </div>
-          <p class="footer-desc">Precision biomedical engineering partner for hospitals, clinics, and diagnostic centers across the UAE. Serving healthcare since 2009.</p>
-        </div>
-        <div>
-          <div class="footer-title">Services</div>
-          <a class="footer-link" href="#services">Imaging &amp; Diagnostics</a>
-          <a class="footer-link" href="#services">Life Support &amp; ICU</a>
-          <a class="footer-link" href="#services">Dental Equipment & Devices</a>
-          <a class="footer-link" href="#services">AMC / CMC / PPM Plans</a>
-          <a class="footer-link" href="#services">Installations / Dismantelings</a>
-          <a class="footer-link" href="#services">Repairings / Calibrations</a>
-          <a class="footer-link" href="#services">Clinic Renovations & New Designings</a>
-          <a class="footer-link" href="#services">Emergency Support</a>
-        </div>
-        <div>
-          <div class="footer-title">Company</div>
-          <a class="footer-link" href="#about">About Us</a>
-          <a class="footer-link" href="#what-we-do">What We Do</a>
-          <a class="footer-link" href="#faq">FAQ</a>
-          <a class="footer-link" href="tel:+971553252589">Certifications</a>
-          <a class="footer-link" href="tel:+971553252589">Careers</a>
-        </div>
-        <div>
-          <div class="footer-title">Contact</div>
-          <div class="footer-link">Office 301, Fardan Business Tower</div>
-          <div class="footer-link">Bur Dubai, Dubai, U.A.E.</div>
-          <a class="footer-link" href="mailto:iconbiotronics.uae@gmail.com">iconbiotronics.uae@gmail.com</a>
-          <a class="footer-link" href="tel:+971553252589">+971 55 325 2589</a>
-          <a class="footer-link" href="https://wa.me/971553252589" target="_blank" style="color:#25D366">💬 WhatsApp</a>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <div>© 2026 ICON BIOTRONICS FZE. All rights reserved. Registered in Dubai, UAE.</div>
-        <div><span style="color:#7f8ca3;cursor:pointer">Privacy Policy</span> &nbsp;•&nbsp; <span style="color:#7f8ca3;cursor:pointer">Terms of Service</span></div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/971553252589?text=Hello%20ICON%20BIOTRONICS%2C%20I%20need%20equipment%20support." class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp">
-    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
-
-  <script>
-    // ── Header scroll ──
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 60));
-
-    // ── Mobile nav ──
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileNav.classList.toggle('open');
-    });
-    function closeMobile() {
-      hamburger.classList.remove('open');
-      mobileNav.classList.remove('open');
-    }
-
-    // ── Brands marquee ──
-    const brands = [
-      'GE HealthCare — Imaging & Monitoring','Philips — Diagnostic Imaging',
-      'Siemens Healthineers — Medical Technology','Dräger — Life Support',
-      'Mindray','Eighteeth','3Shape','Imes‑Icore','Vita','Ivoclar',
-      'Schick','NSK','Dentsply Sirona','Planmeca','Stryker',
-      'Fujifilm Medical','Samsung Medison','Canon Medical','KaVo Kerr','Olympus'
-    ];
-    const row = document.getElementById('brandsRow');
-    [...brands,...brands].forEach(b => {
-      const pill = document.createElement('div');
-      pill.className = 'brand-pill';
-      pill.textContent = b;
-      row.appendChild(pill);
-    });
-
-    // ── Counter animation ──
-    function animateCount(el, target, suffix, duration) {
-      let start = 0;
-      const step = target / (duration / 16);
-      const tick = () => {
-        start = Math.min(start + step, target);
-        el.textContent = Math.floor(start).toLocaleString() + suffix;
-        if (start < target) requestAnimationFrame(tick);
-      };
-      tick();
-    }
-    const counterObserver = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          const el = e.target;
-          animateCount(el, +el.dataset.target, el.dataset.suffix || '', 1400);
-          counterObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
-
-    // ── FAQ accordion ──
-    document.querySelectorAll('.faq-question').forEach(q => {
-      q.addEventListener('click', () => {
-        const item = q.parentElement;
-        const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-        if (!isOpen) item.classList.add('open');
-      });
-    });
-
-    // ── Scroll reveal ──
-    const revealObs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          e.target.style.transitionDelay = (i % 4) * 0.08 + 's';
-          e.target.classList.add('visible');
-          revealObs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-    // ── Contact form ──
-    const form = document.getElementById('contactForm');
-    if (form) {
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const submitBtn = form.querySelector('[type="submit"]');
-        submitBtn.textContent = 'Sending…';
-        submitBtn.disabled = true;
-        try {
-          const res = await fetch(form.action, {
-            method: 'POST',
-            body: new FormData(form),
-            headers: { 'Accept': 'application/json' }
-          });
-          if (res.ok) {
-            form.reset();
-            document.getElementById('formSuccess').style.display = 'block';
-            submitBtn.style.display = 'none';
-          } else {
-            submitBtn.textContent = 'Error — try again';
-            submitBtn.disabled = false;
+<script>
+// Counter Animation
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('[data-target]');
+  
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+        entry.target.classList.add('counted');
+        const target = parseInt(entry.target.dataset.target);
+        let current = 0;
+        const increment = Math.max(1, Math.floor(target / 50));
+        
+        const interval = setInterval(() => {
+          current += increment;
+          if (current >= target) {
+            current = target;
+            clearInterval(interval);
           }
-        } catch {
-          submitBtn.textContent = 'Error — try again';
-          submitBtn.disabled = false;
-        }
-      });
-    }
-
-    // ── Nav active highlight on scroll ──
-    const sections = document.querySelectorAll('section[id], div[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
-      });
-      navLinks.forEach(a => {
-        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--cyan-glow)' : '';
-      });
+          entry.target.textContent = current + '+';
+        }, 30);
+      }
     });
-  </script>
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => observer.observe(counter));
+});
+
+// Mobile Menu
+document.querySelector('.hamburger')?.addEventListener('click', function() {
+  this.classList.toggle('open');
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
 </body>
 </html>
